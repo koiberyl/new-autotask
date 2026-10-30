@@ -146,6 +146,10 @@
   .homei{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);width:140px;height:5px;border-radius:3px;background:#0B1014;z-index:28}
   .toast{position:absolute;left:50%;top:64px;transform:translate(-50%,-8px);background:rgba(20,22,30,.92);color:#fff;font-size:13px;padding:9px 14px;border-radius:12px;opacity:0;pointer-events:none;transition:all .2s;z-index:40;white-space:nowrap}
   .toast.on{opacity:1;transform:translate(-50%,0)}
+  .pdp-alert-toast{position:absolute;left:12px;right:12px;top:64px;z-index:41;display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:14px;background:rgba(255,255,255,.97);box-shadow:0 4px 18px rgba(20,56,110,.16),inset 0 0 0 1px #D6E7FF;color:#24466F;opacity:0;pointer-events:none;transform:translateY(-8px);transition:all .2s}
+  .pdp-alert-toast.on{opacity:1;pointer-events:auto;transform:translateY(0)}
+  .pdp-alert-toast span{flex:1;min-width:0;font-size:12.5px;line-height:17px}
+  .pdp-alert-toast button{flex:none;border:0;border-radius:9px;background:#EEF5FF;color:#007AFF;padding:8px 10px;font:600 13px/1 var(--sf);white-space:nowrap;cursor:pointer}
 
   /* =========== AI version · everything in one blue =========== */
   .ai .uq{background:linear-gradient(165deg,#EEF3FF 0%,#F3F6FF 100%);box-shadow:inset 0 0 0 .5px rgba(20,40,90,.09)}
@@ -232,10 +236,11 @@
   .kbd .krow.last{padding:0 4px}
   .kbd .khome{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:rgba(0,0,0,.4)}
   /* product picker sheet: the composer's helper for Compare / Track */
+  .ps-wrap{position:absolute;inset:0;z-index:39;pointer-events:auto}
   .ps-scrim{position:absolute;inset:0;background:rgba(0,0,0,.28);z-index:39}
   .psheet{position:absolute;left:0;right:0;bottom:0;top:68px;background:#fff;border-radius:22px 22px 0 0;z-index:40;display:flex;flex-direction:column;box-shadow:0 -8px 30px rgba(0,0,0,.12);overflow:hidden}
   .ps-h{position:relative;padding:20px 16px 14px;text-align:center;font-size:18px;font-weight:700;letter-spacing:-.2px;color:#081021}
-  .ps-x{position:absolute;right:14px;top:14px;width:32px;height:32px;border-radius:50%;background:#EEF0F3;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .ps-x{position:absolute;right:14px;top:14px;width:32px;height:32px;border:0;padding:0;color:inherit;border-radius:50%;background:#EEF0F3;display:flex;align-items:center;justify-content:center;cursor:pointer}
   .ps-tabs{display:flex;padding:0 6px;border-bottom:.5px solid rgba(0,0,0,.08)}
   .ps-tab{flex:1;text-align:center;font-size:14px;letter-spacing:-.1px;padding:8px 2px 11px;color:rgba(0,0,0,.55);position:relative;white-space:nowrap;cursor:pointer}
   .ps-tab.on{color:var(--b);font-weight:600}
@@ -243,11 +248,11 @@
   .ps-list{flex:1;overflow-y:auto;padding:2px 16px 96px;scrollbar-width:none}
   .ps-list::-webkit-scrollbar{display:none}
   .ps-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:.5px solid rgba(0,0,0,.06);cursor:pointer}
-  .ps-ck{width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(0,0,0,.22);flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fff}
+  .ps-ck{width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(0,0,0,.22);flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fff}
   .ps-row.on .ps-ck{background:var(--b);border-color:var(--b)}
   .ps-ck svg{width:12px;height:12px;display:none}
   .ps-row.on .ps-ck svg{display:block}
-  .ps-row img{width:72px;height:72px;border-radius:10px;object-fit:cover;background:#F3F4F6;flex-shrink:0}
+  .ps-row img{width:68px;height:68px;border-radius:10px;object-fit:cover;background:#F3F4F6;flex-shrink:0}
   .ps-i{flex:1;min-width:0}
   .ps-t{font-size:15px;line-height:19px;color:#081021;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .ps-v{font-size:12.5px;line-height:16px;color:rgba(0,0,0,.45);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -256,15 +261,15 @@
   .ps-r{font-size:12.5px;line-height:16px;color:var(--b-tx);margin-top:4px;display:flex;align-items:flex-start;gap:3px}
   .ps-r .ais{margin-top:1.5px}
   .ps-empty{padding:48px 20px;text-align:center;font-size:14px;color:rgba(0,0,0,.4)}
-  .ps-f{position:absolute;left:0;right:0;bottom:0;padding:14px 16px 24px;background:linear-gradient(to top,#fff 72%,rgba(255,255,255,0))}
-  .ps-ok{height:52px;border-radius:14px;background:var(--b);color:#fff;font-size:16px;font-weight:600;display:flex;align-items:center;justify-content:center;cursor:pointer;letter-spacing:-.1px}
+  .ps-f{position:absolute;left:0;right:0;bottom:0;padding:14px 16px 22px;background:linear-gradient(to top,#fff 72%,rgba(255,255,255,0))}
+  .ps-ok{height:50px;border-radius:14px;background:var(--b);color:#fff;font-size:16px;font-weight:600;display:flex;align-items:center;justify-content:center;cursor:pointer;letter-spacing:-.1px}
   .ps-ok.off{background:#A9C8FF;cursor:default}
   .sl{background:#fff;border-radius:12px;padding:2px 12px;margin-top:10px}
   .sl-r{display:flex;align-items:center;gap:9px;padding:9px 0;border-top:.5px solid rgba(0,0,0,.06);font-size:13px;color:rgba(0,0,0,.55)}
   .sl-r:first-child{border-top:0}
   .sl-r img,.sl-r .ini{width:18px;height:18px;border-radius:50%;object-fit:contain;background:#fff;box-shadow:0 0 0 .5px rgba(0,0,0,.08);flex-shrink:0}
   .ini{display:inline-flex;align-items:center;justify-content:center;background:#EEF1F6;color:rgba(0,0,0,.5);font-size:10px;font-weight:600}
-  .sl-r .n{color:var(--text);font-weight:500;width:62px;flex-shrink:0}
+  .sl-r .n{color:var(--text);font-weight:500;width:94px;flex-shrink:0;overflow-wrap:anywhere}
   .sl-r .m{flex:1;min-width:0;font-size:11.5px;color:rgba(0,0,0,.4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .sl-r .p{font-size:15px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
   .sl-r.best .p{color:var(--b)}
@@ -313,6 +318,8 @@
   .cfocus.chatkb .cf-input{padding:13px 13px 6px}.cfocus.chatkb .cf-text{font-size:18px;line-height:1.3}.cfocus.chatkb .cf-row{margin-top:20px}.cfocus.chatkb .cf-send{width:33px;height:33px}
   .cf-text{font-size:16.5px;line-height:1.35;color:var(--text);min-height:22px;letter-spacing:-.2px;word-break:break-word}
   .cf-text.ph{color:rgba(0,0,0,.4)}
+  .cf-text[contenteditable]{outline:none;white-space:pre-wrap;caret-color:var(--b)}
+  .cf-text[contenteditable]:empty::before{content:attr(data-placeholder);color:rgba(0,0,0,.4);pointer-events:none}
   .cf-text .caret{display:inline-block;width:2px;height:18px;background:var(--b);vertical-align:-3px;margin-left:1px;animation:cfblink 1.1s step-end infinite}
   .cf-text .caret.lead{margin-left:0;margin-right:3px}
   @keyframes cfblink{50%{opacity:0}}
@@ -1062,8 +1069,8 @@
   .pdp-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.32);opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:25}
   .pdp-backdrop.show{opacity:1;pointer-events:auto}
   .pdp-overlay{position:absolute;left:0;right:0;bottom:0;top:10%;background:#fff;display:flex;flex-direction:column;overflow:hidden;border-radius:18px 18px 44px 44px;transform:translateY(102%);
-    transition:transform .38s cubic-bezier(.32,.72,0,1),top .32s cubic-bezier(.32,.72,0,1),border-radius .3s ease;z-index:26;box-shadow:0 -10px 34px rgba(0,0,0,.16)}
-  .pdp-overlay.open{transform:translateY(0)}
+    transition:transform .38s cubic-bezier(.32,.72,0,1),top .32s cubic-bezier(.32,.72,0,1),border-radius .3s ease;z-index:26;box-shadow:0 -10px 34px rgba(0,0,0,.16);pointer-events:none}
+  .pdp-overlay.open{transform:translateY(0);pointer-events:auto}
   .pdp-overlay.full{top:0;border-radius:44px}
   .pdp-overlay.dragging{transition:none}
   .sheet-grabber{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:40px;height:5px;border-radius:3px;background:rgba(255,255,255,.92);box-shadow:0 0 4px rgba(0,0,0,.35);z-index:25;cursor:grab;touch-action:none}
@@ -1073,7 +1080,7 @@
   .pdp-hero>img{width:100%;height:100%;object-fit:cover;display:block}
   .pdp-hero .indicator{position:absolute;right:12px;bottom:12px;background:rgba(0,0,0,.5);color:#fff;font-size:12px;padding:3px 9px;border-radius:100px}
   .pdp-close,.pdp-watch{position:absolute;top:71px;z-index:20;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,.12);cursor:pointer}
-  .pdp-close{left:16px}.pdp-watch{right:16px}
+  .pdp-close{left:16px;border:0;padding:0;color:inherit}.pdp-watch{right:16px}
   .pdp-atpill{position:absolute;left:12px;bottom:12px;z-index:20;height:26px;display:flex;align-items:center;gap:5px;padding:0 9px 0 8px;border-radius:13px;background:rgba(255,255,255,.94);box-shadow:0 1px 4px rgba(0,0,0,.12);font-size:12px;font-weight:510;color:var(--text);cursor:pointer}
   .pdp-atpill svg{color:rgba(0,0,0,.4)}
   .pdp-atpill .chv{color:rgba(0,0,0,.4)}
@@ -1098,12 +1105,14 @@
   .vchip.sel{background:#fff;border:1px solid var(--text);font-weight:510}
   .offers{padding:4px 0}
   .offer-row{display:flex;align-items:center;justify-content:space-between;padding:12px 16px}
-  .offer-left{display:flex;gap:8px;align-items:center}
+  .offer-left{display:flex;gap:8px;align-items:center;flex:1;min-width:0;margin-right:10px}
+  .offer-left>div:last-child{min-width:0}
   .offer-logo{width:36px;height:36px;border-radius:50%;flex-shrink:0;background:#fff;border:.5px solid rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center;overflow:hidden}
   .offer-logo img{max-width:26px;max-height:24px;object-fit:contain;display:block}
   .offer-price{font-size:14px;font-weight:590;color:var(--text);display:flex;align-items:center;gap:6px}
   .offer-price i{font-style:normal;font-size:11px;font-weight:590;color:var(--b);background:var(--btn-bg);border-radius:4px;padding:1px 5px}
-  .offer-sub{display:flex;align-items:center;gap:6px;margin-top:4px;font-size:12px;color:rgba(0,0,0,.65)}
+  .offer-sub{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:4px;font-size:12px;color:rgba(0,0,0,.65);overflow-wrap:anywhere}
+  .offer-row>.buy-btn{flex-shrink:0}
   .offer-sub .vbar{width:.5px;height:12px;background:#BDBDBD}
   .offer-sub .rating{display:inline-flex;align-items:center;gap:4px}
   .buy-btn{width:56px;height:32px;border-radius:8px;background:rgba(255,255,255,.87);border:1px solid rgba(0,0,0,.09);font-size:14px;font-weight:510;color:#000;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
@@ -1401,11 +1410,14 @@
 .ptside{width:240px;flex-shrink:0;margin-top:24px;font-family:var(--sf)}
 .ptsw{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin:0 0 12px;font-family:var(--sf)}
 .ptsw .lb{font-size:12.5px;color:#9ca3af;margin:0 0 2px}
-.ptsw [data-tp],.ptsw [data-sc],.ptsw [data-nt]{font-size:12.5px;color:#6b7280;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:5px 12px;cursor:pointer}
-.ptsw [data-tp].on,.ptsw [data-sc].on,.ptsw [data-nt].on{background:#111;color:#fff;border-color:#111}
-.ptsw-d{text-align:left;font-size:12px;line-height:1.55;color:#6b7280;font-family:var(--sf)}
-.ptsw-d .go{display:block;color:#007AFF;cursor:pointer;margin-top:6px}
-.ptsw-d .tip{display:block;color:#9ca3af;margin-top:12px;padding-top:12px;border-top:1px solid #e5e7eb}
+.ptsw [data-sc]{font-size:12.5px;color:#6b7280;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:5px 12px;cursor:pointer}
+.ptsw [data-sc].on{background:#111;color:#fff;border-color:#111}
+.ptquick{display:flex;flex-direction:column;gap:12px}
+.ptquick button{display:flex;flex-direction:column;gap:4px;width:100%;padding:0;border:0;background:none;text-align:left;color:#007AFF;font:500 12.5px/1.5 var(--sf);cursor:pointer}
+.ptquick button small{color:#9ca3af;font-size:11.5px;font-weight:400}
+.ptquick button:hover{color:#005AC1}
+.ptquick button:focus-visible{outline:2px solid #007AFF;outline-offset:4px;border-radius:4px}
+.ptk-hl-chair{box-shadow:0 0 0 2px #007AFF!important;transition:box-shadow .3s}
 .ptk-hl{box-shadow:0 0 0 2px #007AFF!important;border-radius:6px;transition:box-shadow .3s}
 .ptk-wrap{position:absolute;inset:0;z-index:33;font-family:var(--sf);color:#111}
 .ptk-scrim{position:absolute;inset:0;background:rgba(0,0,0,.4);opacity:0;transition:opacity .28s}
@@ -1423,6 +1435,11 @@
 .ptk-pr .cp{font-size:17px;line-height:22px;font-weight:600;color:#007AFF;margin-top:4px;letter-spacing:-.2px}
 .ptk-lb{font-size:15px;line-height:20px;color:#6E6E73;margin:16px 0 10px}
 .ptk-lb.q{margin-top:10px}
+.ptk-hintrow{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:16px;margin-top:6px}
+.ptk-hintrow .ptk-hint{flex:1;min-width:0;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ptk-low{flex:none;border:0;padding:0;background:none;color:#007AFF;font:inherit;font-size:12px;font-weight:500;white-space:nowrap;cursor:pointer}
+.ptk-low[hidden]{display:none}
+.ptk-low:active{opacity:.65}
 .ptk-in{display:flex;align-items:center;height:48px;border-radius:12px;background:#F2F2F7;padding:0 12px 0 14px;gap:4px}
 .ptk-in .cur{font-size:17px;color:#111}
 .ptk-in input{flex:1;min-width:0;border:0;outline:0;background:none;font-size:17px;line-height:22px;font-family:inherit;color:#111;padding:0;caret-color:#007AFF}
@@ -1459,6 +1476,8 @@
 .ptk-rc .h{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#1A9E4B;margin-bottom:10px}
 .ptk-rc .h .dot{width:7px;height:7px;border-radius:50%;background:#34C759}
 .ptk-rc .pr{display:flex;gap:10px;align-items:center;padding-bottom:10px;border-bottom:.5px solid rgba(0,0,0,.08);margin-bottom:6px}
+.ptk-rc .pr[data-atmpdp]{cursor:pointer}
+.ptk-rc .pr[data-atmpdp]:focus-visible{outline:2px solid #007AFF;outline-offset:3px;border-radius:8px}
 .ptk-rc .pr img{width:44px;height:44px;border-radius:8px;object-fit:cover;flex:none}
 .ptk-rc .pr>div{min-width:0}
 .ptk-rc .n{font-size:14px;color:#111;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -1551,12 +1570,15 @@
 .rby-qty .l{font-size:15px;color:#6E6E73}
 .ptk-card .rby-qty{margin-top:14px}.ptk-card .rby-qty .l{font-size:14px}
 .rby-qty .st{display:flex;align-items:center;height:32px;border-radius:9px;background:#F2F2F7}
-.rby-qty .st b{width:34px;text-align:center;font-size:18px;font-weight:500;cursor:pointer;user-select:none}
-.rby-qty .st em{min-width:22px;text-align:center;font-style:normal;font-size:15px;font-weight:600}
-.rby-hint{margin-top:12px}
+  .rby-qty .st b{width:34px;text-align:center;font-size:18px;font-weight:500;cursor:pointer;user-select:none}
+  .rby-qty .st em{min-width:22px;text-align:center;font-style:normal;font-size:15px;font-weight:600}
+  .rby-copy{display:flex;flex-direction:column;gap:3px;margin:12px 0 14px;padding:9px 11px;border:1px solid #E4ECFA;border-radius:10px;background:#F7FAFF}
+  .rby-copy small{font-size:11px;line-height:14px;color:#73839A}
+  .rby-copy span{font-size:12.5px;line-height:17px;color:#294A76}
+  .rby-hint{margin-top:12px}
 .rby-acts{display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:4px 0 6px}
 .rby-acts span{font-size:15px;line-height:20px;color:#1a1a1a;background:#fff;box-shadow:inset 0 0 0 1px #E3E3E3;border-radius:10px;padding:8px 13px;cursor:pointer;font-family:var(--sf)}
-.rby-acts span.buy{background:#EE4D2D;color:#fff;box-shadow:none;font-weight:600}
+.rby-acts span.buy{background:#007AFF;color:#fff;box-shadow:none;font-weight:600}
 .rby-acts.used{display:none}
 .rby-sys{text-align:center;font-size:12px;color:#8E8E93;padding:10px 0 4px}
 .ptside .grp{margin-bottom:18px}
@@ -1566,31 +1588,58 @@
 .atmv.show{display:flex}
 .atmv.in .atm-body{animation:tpdin .32s cubic-bezier(.2,.8,.2,1) both}
 .atmv .sb{background:#fff}
-.atm-body{flex:1;overflow-y:auto;padding:16px 16px 24px;display:flex;flex-direction:column;gap:13px;scrollbar-width:none}
+.atm-body{flex:1;overflow-y:auto;padding:16px 16px 24px;display:flex;flex-direction:column;gap:13px;scrollbar-width:none;background:#F5F7FC}
 .atm-body::-webkit-scrollbar{display:none}
-.atm-c{border-radius:16px;box-shadow:inset 0 0 0 1px #EBEBEF;padding:0 16px 16px;flex-shrink:0}
-.atm-c .hd{font-size:15px;color:rgba(0,0,0,.7);padding:14px 0 12px;border-bottom:1px solid #EEEEF1}
-.atm-c .tl{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
-.atm-c .tl .t{display:flex;align-items:center;gap:4px;font-size:15px;font-weight:600;cursor:pointer}
-.atm-c .tl .t svg{width:16px;height:16px}
+.atm-c{border-radius:16px;background:#fff;box-shadow:inset 0 0 0 1px #E4EBF5,0 3px 12px rgba(35,73,130,.045);padding:0 14px 14px;flex-shrink:0}
+.atm-c .atm-head{display:flex;align-items:center;justify-content:space-between;padding:12px 0 10px;border-bottom:1px solid #E9EFF7}
+.atm-c .atm-source{display:flex;align-items:center;gap:7px;min-width:0}
+.atm-c .atm-source small{font-size:11px;color:#7D8AA0;white-space:nowrap}
 .atm-c .sw{width:44px;height:26px;border-radius:13px;background:#E5E5EA;position:relative;cursor:pointer;transition:background .2s;flex:none}
 .atm-c .sw i{position:absolute;left:2px;top:2px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.18);transition:transform .2s}
 .atm-c .sw.on{background:#007AFF}.atm-c .sw.on i{transform:translateX(18px)}
-.atm-c .ds{font-size:13px;color:rgba(0,0,0,.6);margin-top:8px}
-.atm-c .th{display:inline-flex;gap:6px;margin-top:10px;padding:4px 40px 4px 4px;border-radius:8px;background:#F7F8FA}
-.atm-c .th img{width:32px;height:32px;border-radius:6px;object-fit:cover}
-.atm-c .nv{font-size:12px;color:rgba(0,0,0,.4);margin-top:10px}
-.atm-c .adj{margin-top:12px;height:32px;border-radius:8px;box-shadow:inset 0 0 0 1px #007AFF;color:#007AFF;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;cursor:pointer}
-.atm-c.off .th img{filter:grayscale(1);opacity:.6}
-.atm-c.off .ds{color:rgba(0,0,0,.4)}
-.atm-app{align-self:center;font-size:13px;color:#007AFF;text-decoration:underline;cursor:pointer;margin-top:4px;padding:4px}
+.atm-c .atm-product{display:flex;align-items:center;gap:11px;margin-top:12px;min-width:0;cursor:pointer}
+.atm-c .atm-product>img{width:54px;height:54px;border-radius:12px;object-fit:cover;flex:none;background:#F1F5FA;box-shadow:0 0 0 1px rgba(0,0,0,.05)}
+.atm-c .atm-info{min-width:0;flex:1}
+.atm-c .atm-name{display:flex;align-items:center;gap:3px;font-size:15px;line-height:19px;font-weight:600;color:#1B2534;cursor:pointer;min-width:0}
+.atm-c .atm-name span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.atm-c .atm-name svg{width:15px;height:15px;flex:none}
+.atm-c .atm-variant{font-size:12px;line-height:16px;color:#78859A;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.atm-c .atm-subrow{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0;margin-top:3px}
+.atm-c .atm-subrow .atm-variant{width:100%;min-width:0;margin-top:0}
+.atm-c .atm-current{font-size:15px;line-height:18px;font-weight:650;color:#243349;white-space:nowrap}
+.atm-c .atm-prices{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.atm-c .atm-prices.rby{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.atm-c .atm-prices>div{min-width:0;border-radius:11px;background:#F5F7FA;padding:8px 10px}
+.atm-c .atm-prices small{display:block;font-size:11px;line-height:14px;color:#7A8798}
+.atm-c .atm-prices b{display:block;margin-top:3px;font-size:14px;line-height:18px;font-weight:600;color:#243349;white-space:nowrap}
+.atm-c .atm-prices.rby>div:last-child b{font-size:13px;line-height:16px;white-space:normal;overflow-wrap:anywhere}
+.atm-c .atm-state{display:inline-flex;align-items:center;gap:5px;min-height:22px;margin-top:10px;padding:0 8px;border-radius:11px;background:#F2F2F4;color:#777;font-size:11.5px;font-weight:500}
+.atm-c .atm-state:before{content:'';width:6px;height:6px;border-radius:50%;background:#9B9BA0}
+.atm-c .atm-state.active,.atm-c .atm-state.watching{background:#EAF3FF;color:#1D64B5;font-weight:600}
+.atm-c .atm-state.active:before,.atm-c .atm-state.watching:before{background:#007AFF;box-shadow:0 0 0 2px rgba(0,122,255,.14)}
+.atm-c .atm-state.notice{display:block;min-height:0;margin-top:8px;padding:0;border-radius:0;background:none;box-shadow:none;color:#66758B;font-size:12px;line-height:16px;font-weight:400}
+.atm-c .atm-state.notice:before{display:none}
+.atm-c .adj{margin-top:10px;height:36px;border-radius:10px;background:#F0F6FF;color:#007AFF;font-size:13.5px;font-weight:600;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.atm-c .adj.buy{background:#007AFF;color:#fff}
+.atm-c .adj:active{opacity:.82}
+.atm-c .atm-actions{display:flex;align-items:center;gap:8px;margin-top:10px;position:relative}
+.atm-c .atm-actions .adj{flex:1;min-width:0;margin-top:0}
+.atm-more-wrap{position:relative;flex:none}
+.atm-more{width:36px;height:36px;border:1px solid #DCE5F2;border-radius:10px;background:#fff;color:#66758B;display:flex;align-items:center;justify-content:center;font:600 16px/1 var(--sf);letter-spacing:1px;cursor:pointer}
+.atm-more:active{background:#F5F8FC}
+.atm-menu{position:absolute;right:0;bottom:calc(100% + 7px);z-index:5;width:146px;padding:4px;border:1px solid #E6EBF2;border-radius:12px;background:#fff;box-shadow:0 8px 24px rgba(24,49,82,.16);display:none}
+.atm-menu.open{display:flex;flex-direction:column}
+.atm-menu button{height:38px;border:0;border-radius:8px;background:transparent;text-align:left;padding:0 10px;color:#26364B;font:500 13px/1 var(--sf);cursor:pointer}
+.atm-menu button+button{border-top:1px solid #EEF1F5;border-radius:0 0 8px 8px}
+.atm-menu button:active{background:#F3F7FC}
+.atm-menu button.delete{color:#C84343}
 .atm-emp{display:flex;flex-direction:column;gap:6px;text-align:center;padding:120px 30px 0;font-size:14px;color:#6E6E73}
 .atm-emp b{font-size:17px;color:#111}
 .atm-f{flex-shrink:0;padding:12px 16px 46px}
-.atm-f .ptk-go{height:48px;border-radius:12px;font-size:16px}
-/* Auto-Task list thumbnails · detail sheet · product page */
-.atm-c .th{display:flex;gap:8px;margin-top:10px;padding:0;background:none}
-.atm-c .th img{width:44px;height:44px;border-radius:10px;object-fit:cover;box-shadow:0 0 0 1px #EBEBEF;cursor:pointer;background:#fff}
+.atm-f .ptk-go{height:48px;border-radius:12px;font-size:16px;background:#EEF5FF;color:#007AFF;box-shadow:inset 0 0 0 1px #D6E7FF;gap:8px}
+.atm-f .atm-plus{width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.atm-f .atm-plus svg{display:block;width:18px;height:18px}
+/* Auto-Task list product tiles · detail sheet · product page */
 .atd-wrap{position:absolute;inset:0;z-index:32;font-family:var(--sf);color:#111}
 .atd-wrap.on .ptk-scrim{opacity:1}.atd-wrap.on .ptk-sheet{transform:none}
 .ptk-sheet.atd{top:96px;display:flex;flex-direction:column;padding:8px 0 8px}
@@ -1608,17 +1657,16 @@
 .atd-body::-webkit-scrollbar{display:none}
 .atd-ds{font-size:15px;line-height:22px;color:#6E6E73;margin-top:18px}
 .atd-lb{font-size:16px;font-weight:600;margin:22px 0 10px}
-.atd-p{width:100%;box-sizing:border-box;border:1px solid #E5E5EA;border-radius:16px;padding:14px 16px;font:15px/22px var(--sf);color:#111;resize:none;outline:0;min-height:150px;caret-color:#007AFF}
-.atd-p:focus{border-color:#9DC3FF}
+.atd-setting{min-height:64px;box-sizing:border-box;border:1px solid #EBEBEF;border-radius:14px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff}
+.atd-setting>div{min-width:0}
+.atd-setting b{display:block;font-size:16px;line-height:20px;font-weight:600;color:#111}
+.atd-setting small{display:block;margin-top:3px;font-size:13px;line-height:18px;color:#8E8E93}
+.atd-setting button{border:0;padding:6px 0 6px 8px;background:none;color:#007AFF;font:500 14px var(--sf);white-space:nowrap;cursor:pointer}
 .atd-as{display:flex;gap:10px;overflow-x:auto;margin:0 -20px;padding:2px 20px 4px;scrollbar-width:none}
 .atd-as::-webkit-scrollbar{display:none}
-.atd-a{position:relative;flex:none;width:200px;height:64px;box-sizing:border-box;border:1px solid #EBEBEF;border-radius:14px;display:flex;align-items:center;gap:10px;padding:0 30px 0 12px;cursor:pointer;background:#fff}
+.atd-a{position:relative;flex:none;width:200px;height:64px;box-sizing:border-box;border:1px solid #EBEBEF;border-radius:14px;display:flex;align-items:center;gap:10px;padding:0 12px;cursor:pointer;background:#fff}
 .atd-a img{width:40px;height:40px;border-radius:8px;object-fit:cover;flex:none}
 .atd-a span{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.atd-a i{position:absolute;right:7px;top:7px;width:18px;height:18px;border-radius:50%;background:#8E8E93;display:flex;align-items:center;justify-content:center}
-.atd-a i svg{width:9px;height:9px}
-.atd-add{flex:none;width:64px;height:64px;box-sizing:border-box;border:1px dashed #C7C7CC;border-radius:14px;display:flex;align-items:center;justify-content:center;cursor:pointer}
-.atd-add svg{width:22px;height:22px}
 .atd-nv{display:inline-block;font-size:15px;color:#007AFF;background:#EAF3FF;border-radius:18px;padding:7px 18px}
 .apdp{position:absolute;inset:0;z-index:35;background:#fff;display:flex;flex-direction:column;font-family:var(--sf);color:#111;transform:translateY(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
 .apdp.on{transform:none}
@@ -1661,18 +1709,18 @@
 .prow2.asking,.pbig.asking{box-shadow:0 0 0 1.5px rgba(0,122,255,.45)}
 .ptk-rc .ft2{margin-top:8px;padding-top:10px;border-top:.5px solid rgba(0,0,0,.08);color:#007AFF;cursor:pointer;text-align:center}
 /* push notification + checkout */
-.ntf{position:absolute;left:8px;right:8px;top:8px;z-index:45;display:flex;gap:10px;padding:11px 12px 12px;border-radius:22px;background:rgba(246,246,248,.86);-webkit-backdrop-filter:blur(24px) saturate(1.6);backdrop-filter:blur(24px) saturate(1.6);box-shadow:0 10px 30px rgba(0,0,0,.18);font-family:var(--sf);color:#111;cursor:pointer;transform:translateY(-130%);transition:transform .45s cubic-bezier(.2,.9,.25,1.05)}
+.ntf{position:absolute;left:12px;right:12px;top:52px;z-index:45;display:flex;align-items:center;gap:10px;padding:10px 14px;border:.5px solid rgba(0,0,0,.06);border-radius:23px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);font-family:var(--sf);color:#111;cursor:pointer;transform:translateY(-130%);transition:transform .45s cubic-bezier(.2,.9,.25,1.05)}
 .ntf.on{transform:none}
-.ntf .ic{width:38px;height:38px;flex:none;margin-top:2px}
-.ntf .ic svg{width:38px;height:38px;display:block}
+.ntf .ic{width:38px;height:38px;flex:none;display:flex;align-items:center;justify-content:center;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 1px #E8ECF6}
+.ntf .ic img{width:26px;height:26px;display:block}
 .ntf .tx{flex:1;min-width:0}
-.ntf .hd{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.ntf .hd{display:flex;justify-content:space-between;gap:8px;align-items:center}
 .ntf .hd b{font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-.2px}
-.ntf .hd span{font-size:13px;color:rgba(0,0,0,.45);flex:none}
-.ntf .bd{display:flex;gap:10px;align-items:flex-start;margin-top:1px}
-.ntf .bd span{flex:1;font-size:14.5px;line-height:19px;letter-spacing:-.2px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ntf .hd span{font-size:15px;color:#4D4D4D;flex:none}
+.ntf .bd{display:flex;gap:8px;align-items:center;margin-top:0}
+.ntf .bd span{flex:1;font-size:15px;line-height:18px;letter-spacing:-.23px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .ntf .bd img{width:38px;height:38px;border-radius:8px;object-fit:cover;flex:none}
-.ntf-buy{margin-top:10px;height:44px;border-radius:12px;background:#EE4D2D;color:#fff;font-size:16px;font-weight:600;display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:var(--sf)}
+.ntf-buy{margin-top:10px;height:44px;border-radius:12px;background:#007AFF;color:#fff;font-size:16px;font-weight:600;display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:var(--sf)}
 .ntf-buy:active{opacity:.85}
 .cko-wrap{z-index:38}
 .ptk-sheet.cko{top:110px;display:flex;flex-direction:column;padding:8px 0 8px}
@@ -1712,9 +1760,8 @@
 .cko-ok b{font-size:20px;font-weight:600}
 .cko-ok p{font-size:14px;line-height:20px;color:#6E6E73;margin:8px 0 0}
 .cko-ok p.s{color:#1A56D6;margin-top:14px}
-.ptside .ntb{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#fff;background:#EE4D2D;border-radius:14px;padding:6px 13px;cursor:pointer;margin-bottom:10px}
-.ptside .ntb.rbd{margin:12px 0 0;background:#111}
-.ptsw-d .tip.t2{border-top:0;margin-top:8px;padding-top:0}
+.ptside .ntb{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#fff;background:#007AFF;border-radius:18px;padding:6px 13px 6px 7px;cursor:pointer;margin-bottom:10px}
+.ptside .ntb img{display:block;width:22px;height:22px;box-sizing:border-box;padding:2px;object-fit:contain;background:#fff;border-radius:50%;flex-shrink:0}
 </style>
 </head>
 <body>
@@ -1725,7 +1772,18 @@
 <div class="usw csw" style="margin-top:-6px"><span data-c="1" class="on">授权 Option 1 · 发送前弹窗</span><span data-c="2">授权 Option 2 · 会话内引导卡</span></div>
 <div class="stage">
   <div class="fw"><div class="psw"><span data-np="1">Trigger · Out of points</span></div><div id="p1"></div></div>
-  <div class="ptside"><div class="grp"><div class="ptsw psc"><span class="lb">场景</span><span data-sc="1">场景一 · 追踪价格</span><span data-sc="2">场景二 · 复购商品</span></div></div><div class="grp"><div class="ptsw pst"><span class="lb">卡片样式</span><span data-tp="1">1 · Chat</span><span data-tp="2">2 · Sheet</span><span data-tp="3">3 · Hybrid</span></div><div class="ptsw-d" id="ptswD"></div></div><div class="grp"><div class="ptsw psn"><span class="lb">通知</span><span class="ntb" data-ntfire="1">🔔 推送 · 价格达成</span><span data-nt="1">落地 1 · PDP + 半屏 checkout</span><span data-nt="2">落地 2 · 对话 + Buy now</span></div><div class="ptsw-d" id="ntfD"></div></div></div>
+  <div class="ptside">
+    <div class="grp"><div class="ptsw psc"><span class="lb">场景</span><span data-sc="1">场景一 · 追踪价格</span><span data-sc="2">场景二 · 复购商品</span></div></div>
+    <div class="grp"><div class="ptsw"><span class="lb">创建入口</span></div><div class="ptquick">
+      <button type="button" data-ptswgo="1"><span>1 · 去 Shopee DD 卡片 ›</span><small>从商品卡创建提醒</small></button>
+      <button type="button" data-ptswforYou="1"><span>2 · 定位 Migoo 电商Tab 的推荐流 ›</span><small>打开商品详情 → Track price</small></button>
+      <button type="button" data-ptswatm="1"><span>3 · 去 Auto-Task 管理页 ›</span><small>通过 Add Auto-Task 创建</small></button>
+      <button type="button" data-ptswassistant="1"><span>4 · Assistant 找 Nike 运动鞋 ›</span><small>点击输入框 → 发送 → 降价提醒气泡</small></button>
+    </div></div>
+    <div class="grp"><div class="ptsw"><span class="lb">通知与购买</span><span class="ntb" data-ntfire="1"><img src="./img/migoo-logo.png" alt="">推送 · 价格达成</span></div><div class="ptquick">
+      <button type="button" data-ptswbuy="1"><span>Buy now · Realme GT8 ›</span><small>价格已达成 → Buy now → Checkout</small></button>
+    </div></div>
+  </div>
   <div class="panel min">
     <div class="ptog"><span class="po">方案开关</span><span class="pc2">收起 ×</span></div>
     <div class="quick"><div class="gt0">商品卡标题</div>
@@ -1800,9 +1858,6 @@ function sbBat(o={}){const id='sbb'+(++SBN),pct=o.pct;
   return `<svg class="sbi" width="28" height="13" viewBox="0 0 28 13"><defs><mask id="${id}"><rect width="28" height="13" fill="#fff"/>${t.replace('<text','<text fill="#000"')}</mask><clipPath id="${id}c"><rect width="25" height="13" rx="4.2"/></clipPath></defs><g mask="url(#${id})"><rect width="25" height="13" rx="4.2" opacity=".4"/><rect width="${(25*pct/100).toFixed(1)}" height="13" clip-path="url(#${id}c)"/><path d="M26 4.4v4.2c.8-.3 1.4-1.1 1.4-2.1s-.6-1.8-1.4-2.1Z" opacity=".4"/></g></svg>`}
 const sbIcons=o=>`<span class="sbr">${SB_SIG}${SB_WIFI}${sbBat(o)}</span>`;
 const IMG={
-'assets/brand-amazon.png':'./img/brand-amazon.png',
-'assets/brand-ebay.svg':'./img/brand-ebay.svg',
-'assets/brand-walmart.png':'./img/brand-walmart.png',
 'assets/figma/bag.png':'./img/bag.jpg',
 'assets/figma/chair-a.png':'./img/chair-a.jpg',
 'assets/figma/chair-b.png':'./img/chair-b.jpg',
@@ -1931,6 +1986,7 @@ function abil(mode){
   if(mode==='s2') return `<div class="abil-pill">${CHIPS.map(([t,,svg])=>`<div>${svg}${t}</div>`).join('')}</div>`;
   return `<div class="abil">${CHIPS.map(([t],i)=>`<div>${ICON3D[i]}${t}</div>`).join('')}</div>`;
 }
+const STORE_ICON='data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v10h16V10M3 10l2-6h14l2 6M3 10a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0M9 20v-6h6v6M9 4v6M15 4v6"/></svg>');
 const P={
   oneplus:{img:IMG['assets/shp-oneplus.jpg'],cur:'Rp',price:7895060,was:8120000,title:'Oneplus Ace 5 Racing 5G Dimty 9400e 120Hz 7100mAh 80W',ask:['Is this a good price?','Which storage should I get?'],
     tl:[['Oneplus Ace 5 Racing 5G, ',0],['cheapest at Oneplus Official Store',1],[', ',0],['free shipping',3]],deal:[['Cheapest of 5 sellers',2],[', Rp104.000 less than Gadget Mall',0]],attrs:['7100mAh','80W','120Hz']},
@@ -1942,9 +1998,9 @@ const P={
     title:'MATEYOYO Shoulder Bag, Pebbled Leather · Black', ai:[['MATEYOYO Shoulder Bag, ',0],['Pebbled Leather',1]],
     why:[['$1.82 cheaper',1],[' than your $10 target, cheapest in 90 days',0]], deal:[['$1.82 cheaper',2],[' than your $10 target, cheapest in 90 days',0]], whyBase:'cheaper than your $10 target', attrs:['Leather','Zip top','Fits 13" laptop'],
     ask:['Will it drop further?','Is the leather real?','Buy it for me at $8.18']},
-  samba:{img:IMG['assets/figma/sneaker.png'],tag:'Cheapest of all suppliers',price:'8.18',sup:'Walmart',
+  samba:{img:IMG['assets/figma/sneaker.png'],tag:'Cheapest of all suppliers',price:'8.18',sup:'Adidas Official Store',
     title:'Adidas Samba OG, Cream White / Core Black', ai:[['Adidas Samba OG, ',0],['Cream White',1]],
-    deal:[['Cheapest of 3 stores',2],[', $1.32 less than Amazon',0]],
+    deal:[['Cheapest of 3 stores',2],[', $1.32 less than Sneaker Studio',0]],
     attrs:['Leather','Gum sole','True to size'],
     ask:['Is this the real Samba OG?','Which size should I get?','Watch for a lower price']},
 };
@@ -1953,17 +2009,17 @@ Object.assign(P,{
     title:'Puff-Sleeve Maxi Dress, White Cotton', ai:[['Puff-Sleeve Maxi Dress, ',0],['White Cotton',1]],
     why:[['Price still ',0],['falling',1]], deal:[['Cheapest in 60 days',2],[', down 3 weeks in a row',0]], attrs:['Cotton','Puff sleeve','Maxi'],
     ask:['Should I wait for a lower price?','Is the fabric see-through?','Find similar under $15']},
-  skirt:{img:IMG['assets/figma/skirt.png'],price:'11.40',was:'19.00',sup:'Walmart',
+  skirt:{img:IMG['assets/figma/skirt.png'],price:'11.40',was:'19.00',sup:'Lovito Official Store',
     title:'Lovito Floral Maxi Skirt, High Waist', ai:[['Lovito Floral Maxi Skirt, ',0],['High Waist',1]],
-    deal:[['Cheapest of 3 stores',2],[', $2.10 less than Amazon',0]], attrs:['High waist','Floral','Maxi'],
+    deal:[['Cheapest of 3 stores',2],[', $2.10 less than Style Studio',0]], attrs:['High waist','Floral','Maxi'],
     ask:['Is $11.40 a good price?','Which size should I get?','Watch for a lower price']},
 });
 Object.entries({
   chair:[['Kantor Boucle Dining Chair, ',0],['cheapest in 30 days',1],[', ',0],['fits your small space',3]],
   bag:[['MATEYOYO Leather Bag, ',0],['$1.82 under your $10 target',1],[', ',0],['cheapest in 90 days',3]],   /* the card already wears the Tracking Price badge; the sentence just names the number */
-  samba:[['Adidas Samba OG, ',0],['cheapest at Walmart',1],[', ',0],['in your size US 9',3]],
+  samba:[['Adidas Samba OG, ',0],['cheapest at Adidas Official Store',1],[', ',0],['in your size US 9',3]],
   dress:[['Puff-Sleeve Maxi Dress, ',0],['cheapest in 60 days',1],[', ',0],['for your beach weekend',3]],
-  skirt:[['Lovito Floral Maxi Skirt, ',0],['cheapest at Walmart',1],[', ',0],['in your size M',3]],
+  skirt:[['Lovito Floral Maxi Skirt, ',0],['cheapest at Lovito Official Store',1],[', ',0],['in your size M',3]],
 }).forEach(([k,v])=>P[k].tl=v);
 const plain=segs=>segs.map(s=>s[0]).join('');
 let wi=0;
@@ -1975,7 +2031,7 @@ function pc(id,ai){
   const merged = ai && CFG.e==='e1';
   const tag=(o.tag && !merged)?`<span class="evtag">${I.bolt}${o.tag}</span>`:'';
   const whySeg = merged ? o.deal : o.why;
-  const tail=`${o.sup?`<div class="sup"><img src="${IMG['assets/brand-walmart.png']}" alt="">From ${o.sup}</div>`:''}${o.buy?`<div class="btn">Buy Now</div>`:''}`;
+  const tail=`${o.sup?`<div class="sup"><img src="${STORE_ICON}" alt="">From ${o.sup}</div>`:''}${o.buy?`<div class="btn">Buy Now</div>`:''}`;
   if(!ai){
     return `<div class="card pc" data-p="${id}"><div class="img"><img src="${o.img}" alt="">${chip}<span class="ask">${I.ask}</span></div>
       <div class="body"><div class="ttl">${o.title}</div>${tag}<div class="price"><b>$${o.price}</b><s>$33.00</s></div>${o.why?`<div class="why">${o.whyBase||plain(o.why)}</div>`:''}${tail}</div></div>`;
@@ -2058,42 +2114,49 @@ const QD={
   af1:{q:'I keep checking these AF1s. Tell me when the price drops.',att:[{img:IMG['assets/prod-sneaker2.jpg'],b:'Nike',n:'Air Force 1 Low, Ale Brown'}]},
   alert:{q:'Tell me when the Nike 249 red drops to $400',att:[{img:IMG['assets/prod-sneaker.jpg'],b:'Nike',n:'249 · water-resistant upper'}]},
 };
-/* Compare Prices as US shoppers read it: one item, many stores */
-const CP0={qs:['Where is the Samba OG cheapest right now?','Does anyone beat Walmart on the dining chair?','Is $469 a good price for the Doona?'],
+/* Compare prices for one item across shops. */
+const CP0={qs:['Where is the Samba OG cheapest right now?','Which shop has the best price for this chair?','Is $469 a good price for the Doona?'],
            aq:['Where is it cheapest right now?','Is it still the cheapest with shipping?','Is this a good price?']};
 const CP0_GUESS=v=>/samba/i.test(v)?'samba':/chair/i.test(v)?'chair':/doona/i.test(v)?'doona':null;
-const SHIP={Walmart:'Free shipping · 2 days',Amazon:'Free with Prime · tomorrow',Ebay:'$4.99 shipping · 5–8 days',Target:'Free over $35 · 3 days',Temu:'Free shipping · 7–12 days'};
-const offersFor=a=>{const o=a.pid&&PDPD[a.pid]&&PDPD[a.pid].offers; let rows=o?o.map(x=>({src:x.src,v:+x.price+(x.ship||0)})):[{src:'Walmart',v:a.pr},{src:'Amazon',v:a.pr*1.08},{src:'Target',v:a.pr*1.13},{src:'Ebay',v:a.pr*1.22}];
-  rows=rows.map(x=>({...x,v:Math.round(x.v*100)/100})).sort((x,y)=>x.v-y.v); if(rows.length<3) rows.push({src:'Target',v:Math.round(rows[rows.length-1].v*1.12*100)/100}); return rows;};
-const storeList=rows=>`<div class="sl">${rows.map((x,i)=>`<div class="sl-r${i?'':' best'}">${BRAND[x.src]?`<img src="${IMG['assets/'+BRAND[x.src]]}" alt="">`:`<span class="ini">${x.src[0]}</span>`}<span class="n">${x.src}</span><span class="m">${SHIP[x.src]||'Free shipping'}</span>${i?'':'<span class="tag">Lowest</span>'}<span class="p">$${money(x.v)}</span></div>`).join('')}</div>`;
+const SHIP={'Everyday Deals':'Free shipping · 2 days','Smart Choice Store':'Free shipping · tomorrow','Happy Cart':'$4.99 shipping · 5–8 days','Value Corner':'Free over $35 · 3 days'};
+const offersFor=a=>{const o=a.pid&&PDPD[a.pid]&&PDPD[a.pid].offers, shop=a.st||Object.values(PKI).find(x=>x.img===a.img)?.st||'Everyday Deals'; let rows=o?o.map(x=>({src:x.src,v:+x.price+(x.ship||0)})):[{src:shop,v:a.pr},{src:'Smart Choice Store',v:a.pr*1.08},{src:'Value Corner',v:a.pr*1.13},{src:'Happy Cart',v:a.pr*1.22}];
+  rows=rows.map(x=>({...x,v:Math.round(x.v*100)/100})).sort((x,y)=>x.v-y.v); if(rows.length<3) rows.push({src:'Value Corner',v:Math.round(rows[rows.length-1].v*1.12*100)/100}); return rows;};
+const storeList=rows=>`<div class="sl">${rows.map((x,i)=>`<div class="sl-r${i?'':' best'}"><img src="${STORE_ICON}" alt=""><span class="n">${x.src}</span><span class="m">${SHIP[x.src]||'Free shipping'}</span>${i?'':'<span class="tag">Lowest</span>'}<span class="p">$${money(x.v)}</span></div>`).join('')}</div>`;
 const crossStore=a=>{const rows=offersFor(a), b=rows[0], nx=rows[1];
   return [{t:`Cheapest at <b>${b.src}</b>, <code>$${money(b.v)}</code> — $${money(nx.v-b.v)} less than ${nx.src}. ${rows.length} stores checked, shipping included.`,
            rich:storeList(rows)+(a.pid&&P[a.pid]?pbig(a.pid):plist([row(a.img,`${a.b}, ${a.n}`,money(a.pr))]))}];};
 const quoteOf=id=>{const o=P[id],i=o.title.indexOf(', ');return {img:o.img,b:i>0?o.title.slice(0,i):o.title,n:i>0?o.title.slice(i+2):''};};
 let CF={ph:null,v:'',prod:null,cap:null,q:null,att:[]};
 function toast(ph,msg){const t=ph.querySelector('.toast');t.textContent=msg;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('on'),1700);}
+function pdpAlertToast(ph,pid,msg){let t=ph.querySelector('.pdp-alert-toast');if(!t){t=document.createElement('div');t.className='pdp-alert-toast';t.setAttribute('role','status');t.setAttribute('aria-live','polite');ph.appendChild(t);}t.replaceChildren();const s=document.createElement('span');s.textContent=msg;const b=document.createElement('button');b.type='button';b.dataset.pdpManage=pid;b.textContent='Manage';t.append(s,b);clearTimeout(t._h);requestAnimationFrame(()=>t.classList.add('on'));t._h=setTimeout(()=>t.classList.remove('on'),5000);}
+function pdpAlertToastHide(ph){const t=ph.querySelector('.pdp-alert-toast');if(!t)return;clearTimeout(t._h);t.classList.remove('on');}
 function cfRender(){
   const t=CF.ph&&CF.ph.querySelector('.cf-text'); if(!t) return;
   const c=CF.cap!=null?CAPS[CF.cap]:null;
   t.className='cf-text'+(CF.v?'':' ph');
-  t.innerHTML=CF.v?`${esc(CF.v)}<span class="caret"></span>`:`<span class="caret lead"></span>${CF.prod?(CF.watch?'When should I tell you?':'Ask about this…'):(c&&CF.att.length?'What do you want to know?':c?c.ph:CF.tpl?CF.tpl.hint:'Anything on your mind?')}`;
+  if(CF.editable) t.textContent=CF.v;
+  else t.innerHTML=CF.v?`${esc(CF.v)}<span class="caret"></span>`:`<span class="caret lead"></span>${CF.prod?(CF.watch?'When should I tell you?':'Ask about this…'):(c&&CF.att.length?'What do you want to know?':c?c.ph:CF.tpl?CF.tpl.hint:'Anything on your mind?')}`;
   CF.ph.querySelector('.cf-send').classList.toggle('off',!CF.v&&!CF.tpl);
 }
+function cfFocusEnd(){const t=CF.ph?.querySelector('.cf-text[contenteditable]'); if(!t) return; t.focus({preventScroll:true}); const r=document.createRange(); r.selectNodeContents(t); r.collapse(false); const s=window.getSelection(); s.removeAllRanges(); s.addRange(r);}
+document.addEventListener('input',e=>{if(e.target.matches('.cf-text[contenteditable]')){CF.v=e.target.textContent; e.target.classList.toggle('ph',!CF.v); CF.ph.querySelector('.cf-send').classList.toggle('off',!CF.v.trim());}});
 function openFocus(ph,o={}){
-  CF={ph,v:o.v||'',prod:o.prod||null,cap:o.cap!=null?o.cap:null,q:o.q||null,att:o.att||[],watch:!!o.watch,cmp:!!o.cmp,bare:!!o.bare,chat:!!o.chat,tpl:o.tpl||null,oi:o.oi||{}};
+  ptkFindTypeStop();
+  CF={ph,v:o.v||'',prod:o.prod||null,cap:o.cap!=null?o.cap:null,q:o.q||null,att:o.att||[],watch:!!o.watch,cmp:!!o.cmp,bare:!!o.bare,chat:!!o.chat,tpl:o.tpl||null,oi:o.oi||{},demo:o.demo||null,purchased:o.purchased||null,pricePick:o.pricePick||null,editable:!!(o.editable||o.purchased||o.pricePick)};
   const c=CF.cap!=null?CAPS[CF.cap]:null, p=CF.prod?quoteOf(CF.prod):null;
+  const pickedCurrency=PKI[CF.purchased?.pick||CF.pricePick]?.ccy||'$';
   const sug=list=>`<div class="cf-sugs">${list.map(x=>`<div class="cf-sug"${x.cmp?' data-cmp="1"':''} data-t="${esc(x.v||x)}"><span class="st">${x.t||x}</span><span class="sa">${IC_INS}</span></div>`).join('')}</div>`;
-  const top=(CF.q||o.bare)?'':c?sug(CF.cap===0&&CFG.cp==='cp0'?(CF.att.length?CP0.aq:CP0.qs):(c.aq&&CF.att.length?c.aq:c.qs)):p?sug(CF.watch?watchChips(CF.prod):[(ph.classList.contains('ai')&&TRACK_AS_SUG())?trackSay(CF.prod):{t:'Remind me when…',v:'Remind me when '},...((CFG.pw==='pw5'&&topCand(CF.prod))?[{t:`Compare with the ${topCand(CF.prod).s} I looked at`,v:cmpSay(CF.prod),cmp:1}]:[]),...P[CF.prod].ask])
+  const top=CF.purchased?sug([purchasedPreset(CF.purchased.pick),'Tell me when the price drops',{t:`Tell me if it drops below ${pickedCurrency}…`,v:`Tell me if it drops below ${pickedCurrency}`} ]):CF.pricePick?sug(['Tell me when the price drops',{t:`Tell me if it drops below ${pickedCurrency}…`,v:`Tell me if it drops below ${pickedCurrency}`},'Alert me on any drop']):(CF.q||o.bare)?'':c?sug(CF.cap===0&&CFG.cp==='cp0'?(CF.att.length?CP0.aq:CP0.qs):(c.aq&&CF.att.length?c.aq:c.qs)):p?sug(CF.watch?watchChips(CF.prod):[(ph.classList.contains('ai')&&TRACK_AS_SUG())?trackSay(CF.prod):{t:'Remind me when…',v:'Remind me when '},...((CFG.pw==='pw5'&&topCand(CF.prod))?[{t:`Compare with the ${topCand(CF.prod).s} I looked at`,v:cmpSay(CF.prod),cmp:1}]:[]),...P[CF.prod].ask])
     :'';   /* no quick-entry cards over the keyboard */
   ph.querySelector('.cfocus').innerHTML=`
     <div class="cf-scrim"></div>
     <div class="cf-dock${(c||p)&&!CF.q?' fade':''}">${top}
       <div class="cf-input">
         ${CF.att.length?`<div class="cf-qatt">${CF.att.map((a,i)=>`<div class="qit"><img src="${a.img}" alt=""><div class="qi"><div class="qb">${a.b}</div><div class="qn">${a.n}</div></div><span class="qx" data-att="${i}">${IC_X}</span></div>`).join('')}</div>`:''}
-        ${c?`<div class="cf-tag"><span class="ci">${CHIPS[CF.cap][2]}</span>${c.t}<span class="tx" data-drop="cap">${IC_X}</span></div>`:''}
+        ${c&&CF.cap!==1&&!CF.purchased?`<div class="cf-tag"><span class="ci">${CHIPS[CF.cap][2]}</span>${c.t}<span class="tx" data-drop="cap">${IC_X}</span></div>`:''}
         ${CF.tpl?`<div class="cf-tplrow"><div class="cf-tpl"><img src="${CF.tpl.img}" alt=""><div><div class="tpt">${CF.tpl.t}</div><div class="tps">${CF.tpl.sub}</div></div><span class="qx" data-drop="tpl">${IC_X}</span></div>${CF.tpl.kind!=='slide'?'<div class="cf-add" data-add="1">+</div>':''}</div>`:''}
         ${p?`<div class="cf-quote"><img src="${p.img}" alt=""><div class="qi"><div class="qb">${p.b}</div><div class="qn">${p.n}</div></div><span class="qx" data-drop="prod">${IC_X}</span></div>`:''}
-        <div class="cf-text ph"></div>
+        <div class="cf-text ph"${CF.editable?' contenteditable="plaintext-only" role="textbox" aria-label="Message" aria-multiline="true" data-placeholder="Anything on your mind?"':''}></div>
         <div class="cf-row"><span class="ic">${I.plus}</span>${CF.tpl&&CF.tpl.opts?`<span class="cf-opts">${Object.keys(CF.tpl.opts).map(k=>`<span class="cf-opt" data-oi="${k}">${CF.tpl.opts[k][CF.oi[k]||0]}</span>`).join('')}</span>`:''}<span class="sp3"></span><span class="ic">${I.mic}</span><span class="cf-send off">${IC_UP}</span></div>
       </div>
     </div>`;
@@ -2102,51 +2165,143 @@ function openFocus(ph,o={}){
   ph.querySelector('.kbd').classList.add('show');
   if(o.chat){const cv=ph.querySelector('.chatv');cv.classList.add('kb');const b=cv.querySelector('.cbody');if(b) requestAnimationFrame(()=>{b.scrollTop=b.scrollHeight;});}
   cfRender();
+  if(CF.editable) requestAnimationFrame(cfFocusEnd);
 }
-function closeFocus(){ if(!CF.ph) return; CF.ph.querySelector('.cfocus').classList.remove('show','chatkb'); CF.ph.querySelector('.kbd').classList.remove('show'); CF.ph.querySelector('.chatv')?.classList.remove('kb'); }
+function closeFocus(){ ptkFindTypeStop(); if(!CF.ph) return; CF.ph.querySelector('.cfocus').classList.remove('show','chatkb'); CF.ph.querySelector('.kbd').classList.remove('show'); CF.ph.querySelector('.chatv')?.classList.remove('kb'); }
 /* ---------- product picker for Compare / Track ----------
    every item: what the composer quotes (b, n, img, pr, pid) + where it lives (recent / likes / cart)
    + the one-line reason Migoo gives when it puts the item in the scene's own tab */
 const PKI={
-  vacA:{img:IMG['assets/figma/vac-a.png'],b:'Philips',n:'DB300 Robot Vacuum',v:'White · 2200 Pa',pr:149,st:'Amazon',in:['recent'],cmp:'You asked which is better for pet hair',cmp1:'Prices differ by $30 across 4 stores'},
-  vacB:{img:IMG['assets/figma/vac-b.png'],b:'Xiaomi',n:'Robot Vacuum S20',v:'White · 5000 Pa',pr:189,st:'Walmart',in:['recent'],cmp:'Viewed right after the Philips'},
-  samba:{img:IMG['assets/figma/sneaker.png'],b:'Adidas',n:'Samba OG',v:'Cream White · US 9',pr:8.18,st:'Walmart',in:['recent','likes'],pid:'samba',cmp:'Viewed back to back with the AF1',cmp1:'Walmart is $1.32 under Amazon right now',trk:'Hit a 90-day low today'},
+  vacA:{img:IMG['assets/figma/vac-a.png'],b:'Philips',n:'DB300 Robot Vacuum',v:'White · 2200 Pa',pr:149,st:'Philips Home Store',in:['recent'],cmp:'You asked which is better for pet hair',cmp1:'Prices differ by $30 across 4 stores'},
+  vacB:{img:IMG['assets/figma/vac-b.png'],b:'Xiaomi',n:'Robot Vacuum S20',v:'White · 5000 Pa',pr:189,st:'Xiaomi Home Store',in:['recent'],cmp:'Viewed right after the Philips'},
+  samba:{img:IMG['assets/figma/sneaker.png'],b:'Adidas',n:'Samba OG',v:'Cream White · US 9',pr:8.18,st:'Adidas Official Store',in:['recent','likes'],pid:'samba',cmp:'Viewed back to back with the AF1',cmp1:'This shop is $1.32 under the next seller',trk:'Hit a 90-day low today'},
   af1:{img:IMG['assets/prod-sneaker2.jpg'],b:'Nike',n:'Air Force 1 Low',v:'Ale Brown · US 9',pr:115,st:'Nike',in:['recent'],cmp:'Viewed back to back with the Samba',cmp1:'Nike vs 3 resellers, $115–$140',trk:'Viewed 4 times, price hasn’t moved'},
-  chair:{img:IMG['assets/figma/chair.png'],b:'Kantor',n:'Boucle Dining Chair',v:'Cream · Oak legs',pr:8.18,st:'Amazon',in:['recent','likes'],pid:'chair',cmp:'One of 3 dining chairs you looked at this week',cmp1:'Sold at 6 stores, $8.18–$12.89',trk:'Cheapest in 30 days'},
+  chair:{img:IMG['assets/figma/chair.png'],b:'Kantor',n:'Boucle Dining Chair',v:'Cream · Oak legs',pr:8.18,st:'Kantor Living Store',in:['recent','likes'],pid:'chair',cmp:'One of 3 dining chairs you looked at this week',cmp1:'Sold at 6 stores, $8.18–$12.89',trk:'Cheapest in 30 days'},
   doona:{img:IMG['assets/prod-stroller-doona.jpg'],b:'Doona',n:'Car Seat & Stroller',v:'Nitro Black',pr:469,st:'Doona',in:['likes'],cmp1:'Same price at most stores, one is lower',trk:'At a 90-day low; you asked whether to wait'},
-  dress:{img:IMG['assets/figma/dress.png'],b:'Puff-Sleeve',n:'Maxi Dress',v:'Sage · Size M',pr:14.9,st:'Walmart',in:['recent','cart'],pid:'dress',trk:'Dropped twice this month'},
-  skirt:{img:IMG['assets/figma/skirt.png'],b:'Lovito',n:'Floral Maxi Skirt',v:'Size M',pr:11.4,st:'Walmart',in:['cart'],pid:'skirt',cmp1:'Walmart is $2.10 under the next store'},
-  bag:{img:IMG['assets/figma/bag.png'],b:'MATEYOYO',n:'Shoulder Bag',v:'Pebbled Leather · Black',pr:8.18,st:'Walmart',in:['likes'],pid:'bag',cmp:'In your likes, with 2 similar bags viewed'},
+  dress:{img:IMG['assets/figma/dress.png'],b:'Puff-Sleeve',n:'Maxi Dress',v:'Sage · Size M',pr:14.9,st:'Cotton Lane Boutique',in:['recent','cart'],pid:'dress',trk:'Dropped twice this month'},
+  skirt:{img:IMG['assets/figma/skirt.png'],b:'Lovito',n:'Floral Maxi Skirt',v:'Size M',pr:11.4,st:'Lovito Official Store',in:['cart'],pid:'skirt',cmp1:'This shop is $2.10 under the next seller'},
+  bag:{img:IMG['assets/figma/bag.png'],b:'MATEYOYO',n:'Shoulder Bag',v:'Pebbled Leather · Black',pr:8.18,st:'MATEYOYO Official Store',in:['likes'],pid:'bag',cmp:'In your likes, with 2 similar bags viewed'},
   nike249:{img:IMG['assets/prod-sneaker.jpg'],b:'Nike',n:'249',v:'Red · water-resistant upper',pr:460,st:'Nike',in:['likes']},
   pods:{img:IMG['assets/prod-headphones.jpg'],b:'AirPods Max',n:'Over-Ear Headphones',v:'Silver',pr:549,st:'Apple',in:['likes'],trk:'In your likes for 3 weeks'},
-  watch:{img:IMG['assets/prod-watch.jpg'],b:'Casio',n:'Vintage Digital Watch',v:'Gold',pr:59,st:'Amazon',in:['recent']},
-  speaker:{img:IMG['assets/prod-speaker.jpg'],b:'Marshall',n:'Emberton II',v:'Black & Brass',pr:129,st:'Walmart',in:['cart']},
+  watch:{img:IMG['assets/prod-watch.jpg'],b:'Casio',n:'Vintage Digital Watch',v:'Gold',pr:59,st:'Casio Official Store',in:['recent']},
+  speaker:{img:IMG['assets/prod-speaker.jpg'],b:'Marshall',n:'Emberton II',v:'Black & Brass',pr:129,st:'Marshall Official Store',in:['cart']},
+  milk:{img:'./img/milk-pack.png',b:'Full Cream',n:'UHT Milk · 1 L × 6',v:'Original · 6 cartons',pr:108000,ccy:'Rp',displayPrice:'Rp108.000',st:'Daily Dairy Store',in:[],rb:'milk',rebuy:'Bought 15 Oct · Suggested weekly restock'},
+  tp:{img:'./img/tp-rolls.jpg',b:'Soft',n:'Toilet Tissue · 12 Rolls',v:'3-Ply · Unscented',pr:12.99,displayPrice:'$12.99',st:'Soft Home Store',in:['recent','cart'],rb:'tp',rebuy:'Bought 28 Sep · usually lasts about a month'},
+  rbSunscreen:{img:IMG['assets/u-sunscreen.jpg'],b:'Sunscreen',n:'SPF50+ Reef Safe Spray',v:'200ml · Waterproof',pr:17.99,displayPrice:'$17.99',st:'SunCare Store',in:['recent','likes'],rb:'rb-sunscreen',rebuy:'Bought 4 Oct · Suggested restock in 60 days'},
+  rbCoffee:{img:IMG['assets/prod-coffeecup.jpg'],b:'Ground Coffee',n:'Medium Roast · 12 oz',v:'12 oz · Medium roast',pr:14.99,displayPrice:'$14.99',st:'Daily Brew Coffee',in:['recent'],rb:'rb-coffee',rebuy:'Bought 3 Oct · Suggested restock in 2 weeks'},
 };
-const PKT0={cp1:{sug:'Worth comparing',key:'cmp',ok:n=>n===2?'Compare 2 items':n===1?'Pick one more to compare':'Pick 2 items to compare',min:2,max:2},
-            cp0:{sug:'Worth comparing',key:'cmp1',ok:n=>n?'Compare prices':'Pick an item',min:1,max:1}};
+const PKT0={cp1:{sug:'Worth comparing',key:'cmp',ok:()=>'Confirm',min:2,max:2},
+            cp0:{sug:'Worth comparing',key:'cmp1',ok:()=>'Confirm',min:1,max:1}};
 const PKT={get 0(){return PKT0[CFG.cp];},
-           1:{sug:'Worth tracking',key:'trk',ok:n=>n?`Track ${n} item${n>1?'s':''}`:'Pick items to track',min:1,max:9}};
-let PK={cap:0,tab:'sug',sel:[]};
+           1:{sug:'Purchased',key:'rebuy',ok:()=>'Confirm',min:1,max:1}};
+let PK={cap:0,tab:'sug',sel:[],intent:null};
+const pkType=()=>PK.intent?{...PKT[PK.cap],min:1,max:1}:PKT[PK.cap];
+const pkTaskIntent=()=>PK.cap===1&&PK.tab==='sug'?'repurchase':'price-drop';
 const pkItems=()=>Object.entries(PKI).filter(([id,o])=>PK.tab==='sug'?!!o[PKT[PK.cap].key]:o.in.includes(PK.tab));
 function sheetHTML(){
-  const T=PKT[PK.cap], tabs=[['sug',T.sug],['recent','Recently viewed'],['likes','Likes'],['cart','Cart']], items=pkItems(), n=PK.sel.length;
+  const T=pkType(), tabs=[['sug',T.sug],['recent','Recently viewed'],['cart','Cart']], items=pkItems(), n=PK.sel.length, rebuy=PK.cap===1&&PK.tab==='sug';
   return `<div class="ps-scrim"></div><div class="psheet">
-    <div class="ps-h">Select products<span class="ps-x">${IC_X}</span></div>
+    <div class="ps-h">${T.max===1?'Select a product':'Select products'}<button type="button" class="ps-x" aria-label="Close product picker">${IC_X}</button></div>
     <div class="ps-tabs">${tabs.map(([k,t])=>`<div class="ps-tab${PK.tab===k?' on':''}" data-t="${k}">${t}</div>`).join('')}</div>
-    <div class="ps-list">${items.length?items.map(([id,o])=>`<div class="ps-row${PK.sel.includes(id)?' on':''}" data-id="${id}"><span class="ps-ck"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.3l2.4 2.4 4.6-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><img src="${o.img}" alt=""><div class="ps-i"><div class="ps-t">${o.b} ${o.n}</div><div class="ps-v">${o.v} ›</div><div class="ps-p">$${o.pr}</div><div class="ps-s">${o.st}</div>${PK.tab==='sug'?`<div class="ps-r">${AIS}<span>${o[T.key]}</span></div>`:''}</div></div>`).join(''):`<div class="ps-empty">Nothing here yet</div>`}</div>
+    <div class="ps-list">${items.length?items.map(([id,o])=>`<div class="ps-row${PK.sel.includes(id)?' on':''}" data-id="${id}"><span class="ps-ck"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.3l2.4 2.4 4.6-5" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><img src="${o.img}" alt=""><div class="ps-i"><div class="ps-t">${o.b} ${o.n}</div><div class="ps-v">${o.v} ›</div><div class="ps-p">${o.displayPrice||`$${o.pr}`}</div><div class="ps-s">${o.st}</div>${PK.tab==='sug'?`<div class="ps-r">${rebuy?'':AIS}<span>${o[T.key]}</span></div>`:''}</div></div>`).join(''):`<div class="ps-empty">Nothing here yet</div>`}</div>
     <div class="ps-f"><div class="ps-ok${n>=T.min?'':' off'}">${T.ok(n)}</div></div></div>`;
 }
-function sheetRender(){const w=CF.ph&&CF.ph.querySelector('.cfocus .ps-wrap'); if(w) w.innerHTML=sheetHTML();}
-function openSheet(ph,cap){
-  PK={cap,tab:'sug',sel:[]};
+function sheetRender(){const w=CF.ph&&CF.ph.querySelector('.cfocus .ps-wrap'); if(!w) return; w.innerHTML=sheetHTML();
+  const tabs=w.querySelector('.ps-tabs'), active=tabs.querySelector('.on'); if(active) tabs.scrollLeft=Math.max(0,active.offsetLeft-tabs.offsetLeft-12);}
+function openSheet(ph,cap,options={}){
+  PK={cap,tab:options.tab||'sug',sel:[],intent:options.intent||null};
+  ph.querySelectorAll('.cfocus .ps-wrap').forEach(w=>w.remove());
   const w=document.createElement('div'); w.className='ps-wrap'; ph.querySelector('.cfocus').appendChild(w);
   ph.querySelector('.kbd').classList.remove('show');            /* the sheet covers the keyboard; it comes back with the composer */
   sheetRender();
 }
-function closeSheet(){const w=CF.ph&&CF.ph.querySelector('.cfocus .ps-wrap'); if(w) w.remove(); CF.ph&&CF.ph.querySelector('.kbd').classList.add('show');}
+function closeSheet(ph=CF.ph){if(!ph) return; ph.querySelectorAll('.cfocus .ps-wrap').forEach(w=>w.remove());
+  if(PK.intent){PK.intent=null; PK.sel=[]; closeFocus(); return;}
+  ph.querySelector('.kbd').classList.add('show');}
+/* Assistant task chips: pick one product and send its setup request immediately. */
+function chatTaskStart(ph,intent){
+  delete ph.dataset.ptkFind;
+  ph.querySelectorAll('.chatv .cchip').forEach(x=>x.classList.remove('on'));
+  const placeholder=ph.querySelector('.chatv .cdock .sp2'); if(placeholder) placeholder.textContent='Anything on your mind?';
+  openFocus(ph,{bare:true,chat:true});
+  openSheet(ph,1,{intent,tab:intent==='price-drop'?'cart':'sug'});
+}
+function chatTaskConfirm(ph){
+  const intent=pkTaskIntent(), key=PK.sel[0], item=PKI[key];
+  if(!PK.intent||PK.sel.length!==1||!item) return;
+  if(intent==='repurchase'&&(!item.rb||!RB[item.rb])) return;
+  const atts=[{img:item.img,b:item.b,n:item.n}], name=`${item.b} ${item.n}`;
+  closeSheet();
+  if(intent==='repurchase'){
+    const id=item.rb, r=RB[id], saved=RTASK[id]||{};
+    const draft={...saved,every:saved.every&&saved.every!=='once'?saved.every:r.defaultEvery||'1m',time:saved.time||'09:00',qty:saved.qty||1,fromToday:true};
+    const when=draft.every==='once'?`in ${draft.days||30} days`:RB_EVERY[draft.every].t.toLowerCase();
+    return ptkToChat(ph,bubbleU(`Remind me to rebuy ${r.name} ${when}.`,atts),[{t:'Sure. Choose when to remind you below.',after:`<div class="ptk-card">${rbyForm(id,'card',draft)}</div>`}]);
+  }
+  return pickerPriceRequest(ph,key,`Set a price drop alert for ${name}.`,atts);
+}
+function purchasedPreset(key){
+  const days=RB[PKI[key]?.rb]?.defaultDays||30, when=days===7?'1 week':days===14?'2 weeks':`${days} days`;
+  return `Remind me to rebuy this in ${when}`;
+}
 function sheetConfirm(ph){
+  if(PK.cap===1){
+    const id=PK.sel[0], item=PKI[id]; if(PK.sel.length!==1||!item) return;
+    const att=[{img:item.img,b:item.b,n:item.n,pr:item.pr,pid:item.pid||null}];
+    if(pkTaskIntent()==='repurchase'){
+      if(!item.rb) return;
+      return openFocus(ph,{cap:1,att,purchased:{id:item.rb,pick:id},v:purchasedPreset(id)+'.'});
+    }
+    return openFocus(ph,{cap:1,att,pricePick:id,v:`Set a price drop alert for ${item.b} ${item.n}.`});
+  }
   const atts=PK.sel.map(id=>{const o=PKI[id];return {img:o.img,b:o.b,n:o.n,pr:o.pr,pid:o.pid||null};});
   openFocus(ph,{cap:PK.cap,att:atts,cmp:PK.cap===0&&CFG.cp==='cp1'});          /* the items land in the box; the sentence is still the user's */
+}
+/* All non-Purchased selections use the existing price setup card. */
+function pickerPriceRequest(ph,key,message,atts){
+  const item=PKI[key]; if(!item) return;
+  const name=`${item.b} ${item.n}`, id=item.rb?'purchased-'+item.rb:'pk-'+name.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+  if(!TK[id]) TK[id]={img:item.img,name,v:item.v,cur:item.pr,ccy:item.ccy||'$',source:'migoo',why:'selected in product picker'};
+  const match=message.match(/(?:below|to|at)\s*(?:Rp|\$)\s*([\d.,]+)/i), target=match?ptkParse(id,match[1]):undefined;
+  return ptkToChat(ph,bubbleU(message,atts),[{t:'Sure. Set your target price below.',after:`<div class="ptk-card">${ptkForm(id,'card',target)}</div>`}]);
+}
+function pickerPriceSend(){
+  const ph=CF.ph, key=CF.pricePick, v=CF.v.trim(), atts=CF.att;
+  if(!v) return;
+  CF.pricePick=null;
+  if(/(?:don't|do not|cancel|stop|不要|取消).*(?:remind|alert|track|watch|提醒|追踪)/i.test(v))
+    return ptkToChat(ph,bubbleU(v,atts),[{t:'Okay, I won’t create a price alert.'}]);
+  if(/price|drops?|below|cheaper|alert|notify|track|watch|降价|低于|价格/i.test(v))
+    return pickerPriceRequest(ph,key,v,atts);
+  return ptkToChat(ph,bubbleU(v,atts),replyFor(v,{att:atts,cap:null}));
+}
+/* Purchased items return to the composer; the user's final message chooses the task type. */
+function purchasedSend(){const ph=CF.ph, picked=CF.purchased, v=CF.v.trim(), atts=CF.att;
+  if(!v) return;
+  const item=PKI[picked.pick], r=RB[picked.id], user=bubbleU(v,atts), low=v.toLowerCase();
+  if(/(?:don't|do not|cancel|stop|不要|取消).*(?:remind|rebuy|restock|提醒|回购|复购)/i.test(v)){
+    CF.purchased=null; return ptkToChat(ph,user,[{t:'Okay, I won’t create a reminder.'}]);}
+  if(/rebuy|restock|buy.*again|回购|复购|补货/i.test(v)||(/remind|提醒/i.test(v)&&!/price|drop|below|降价|价格/i.test(v))){
+    const delay=low.match(/\b(?:in|after)\s+(\d+)\s*(day|week|month)s?\b/), zh=v.match(/(\d+)\s*天/), repeat=low.match(/\b(?:every|each)\s+(?:(\d+)\s+)?(day|week|month)s?\b/);
+    const days=delay?+delay[1]*(delay[2]==='week'?7:delay[2]==='month'?30:1):zh?+zh[1]:(r.defaultDays||30);
+    if(days<1||days>3650) return toast(ph,'Choose a reminder between 1 and 3,650 days from now');
+    let every='once';
+    if(repeat){const n=+(repeat[1]||1), unit=repeat[2]; if(n<1||n>120) return toast(ph,'Enter a valid reminder interval');
+      every=unit==='week'&&n<=2?n+'w':unit==='month'&&n<=2?n+'m':`purchased-${n}${unit}`;
+      if(!RB_EVERY[every]) RB_EVERY[every]={t:`Every ${n===1?'':n+' '}${unit}${n===1?'':'s'}`,s:`${n} ${unit}${n===1?'':'s'}`,...(unit==='month'?{m:n}:{d:n*(unit==='week'?7:1)})};}
+    const time=/\b12(?::00)?\s*pm\b/i.test(v)?'12:00':/\b8(?::00)?\s*pm\b/i.test(v)?'20:00':'09:00', draft={every,days,time,fromToday:true};
+    CF.purchased=null;
+    return ptkToChat(ph,user,[{t:every==='once'?`Sure. I can remind you to rebuy this in ${days} days, on <code>${rbDate(rbNext(picked.id,every,draft))}</code>. Confirm the time below.`:`Sure. Confirm your reminder for ${RB_EVERY[every].t.toLowerCase()} below.`,after:`<div class="ptk-card">${rbyForm(picked.id,'card',draft)}</div>`}]);
+  }
+  if(/price|drops?|below|cheaper|alert|notify|track|watch|降价|低于|价格/i.test(v)){
+    const id='purchased-'+picked.id;
+    if(!TK[id]) TK[id]={img:item.img,name:r.name,v:item.v,cur:item.pr,ccy:item.ccy||'$',source:'migoo',why:'selected from Purchased'};
+    const match=v.match(/(?:below|to|at)\s*(?:Rp|\$)\s*([\d.,]+)/i), target=match?ptkParse(id,match[1]):undefined;
+    CF.purchased=null;
+    return ptkToChat(ph,user,[{t:`Sure. It’s <code>${fmc(id,TK[id].cur)}</code> today. Set the price you want me to watch for.`,after:`<div class="ptk-card">${ptkForm(id,'card',target)}</div>`}]);
+  }
+  CF.purchased=null;
+  return ptkToChat(ph,user,replyFor(v,{att:atts,cap:null}));
 }
 const TAB={tasks:`<svg class="tabfill" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 8.27726C1.5 5.11417 4.06419 2.54999 7.22727 2.54999H16.7727C19.9358 2.54999 22.5 5.11418 22.5 8.27726V15.7227C22.5 18.8858 19.9358 21.45 16.7727 21.45H7.22727C4.06419 21.45 1.5 18.8858 1.5 15.7227V8.27726Z" fill="currentColor"/><path d="M7.6 12.3l3 3 5.8-6.1" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,agents:`<svg class="tabfill" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.5 8.27726C1.5 5.11417 4.06419 2.54999 7.22727 2.54999H16.7727C19.9358 2.54999 22.5 5.11418 22.5 8.27726V15.7227C22.5 18.8858 19.9358 21.45 16.7727 21.45H7.22727C4.06419 21.45 1.5 18.8858 1.5 15.7227V8.27726Z" fill="currentColor"/><path d="M15.7158 8.16773C16.2302 7.84549 16.9096 8.00031 17.2324 8.51441C17.5548 9.02873 17.3987 9.70804 16.8848 10.031L13.9863 11.8494L16.8848 13.6677C17.3987 13.9907 17.5548 14.67 17.2324 15.1843C16.9096 15.6986 16.2303 15.8534 15.7158 15.531L12.4766 13.4988C11.2607 12.7355 11.2606 10.9632 12.4766 10.2L15.7158 8.16773ZM8.59961 8.54956C9.207 8.54963 9.6991 9.0418 9.69922 9.64917V14.0496C9.69901 14.6569 9.20694 15.1491 8.59961 15.1492C7.99232 15.1491 7.50021 14.6568 7.5 14.0496V9.64917C7.50012 9.04183 7.99227 8.54968 8.59961 8.54956Z" fill="white"/></svg>`,shop:`<svg class="tabfill" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.5A4.5 4.5 0 007.5 6v1.05H5.31a1.8 1.8 0 00-1.79 1.62l-1 10A2.5 2.5 0 005.01 21.45h13.98a2.5 2.5 0 002.49-2.78l-1-10a1.8 1.8 0 00-1.79-1.62H16.5V6A4.5 4.5 0 0012 1.5zm-2.5 5.55V6a2.5 2.5 0 015 0v1.05h-5z" fill="currentColor"/></svg>`,me:`<svg class="tabfill" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.6364 14H10.3636C6.29681 14 3 16.9305 3 20.5455C3 21.3488 3.65193 22 4.45525 22C11.0836 22 15.5353 22 19.5458 22C20.3492 22 21 21.3488 21 20.5455C21 16.9305 17.7032 14 13.6364 14Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 7C6.5 3.96243 8.96243 1.5 12 1.5C15.0376 1.5 17.5 3.96243 17.5 7C17.5 10.0376 15.0376 12.5 12 12.5C8.96243 12.5 6.5 10.0376 6.5 7Z" fill="currentColor"/></svg>`,doc:`<svg width="21" height="21" viewBox="0 0 24 24" fill="none"><rect x="5" y="3.5" width="14" height="17" rx="2.6" stroke="#1C1C1E" stroke-width="1.6"/><path d="M8.6 8.4h6.8M8.6 12h6.8M8.6 15.6h4" stroke="#1C1C1E" stroke-width="1.6" stroke-linecap="round"/></svg>`,bell:`<svg width="10" height="10.5" viewBox="0 0 20 20" fill="none"><path d="M10 2.6a4.9 4.9 0 00-4.9 4.9c0 4-1.4 5.2-1.4 5.2h12.6s-1.4-1.2-1.4-5.2A4.9 4.9 0 0010 2.6zM8.4 15.6a1.8 1.8 0 003.2 0" fill="currentColor"/></svg>`};
 const SP={
@@ -2176,7 +2331,7 @@ const chatText=(id,n)=>{
   if(o&&o.tl&&CFG.tt==='tt2') return `<div class="pn pnb">${o.tl[0][0].replace(/,\s*$/,'')}</div><div class="pn ttl-r rsn">${AIS}${o.tl.slice(1).map(seg).join('')}</div>`;
   return `<div class="pn${CFG.tt==='tt2'&&o&&o.deal?' pnb':''}">${o?o.title:n}</div>${o&&o.deal?`<div class="why">${AIS}${o.deal.map(([t,k])=>k===2?`<em class="deal">${t}</em>`:t).join('')}</div>`:''}`;
 };
-const row=(img,n,pr,id)=>`<div class="prow2"${id?` data-p="${id}"`:''}><img src="${img}" alt=""><div class="pt"><div class="ptx">${chatText(id,n)}</div><div class="pp">${/^[A-Za-z]/.test(String(pr))?pr:"$"+pr}${id&&P[id].was?`<s>${fm(id,P[id].was)}</s>`:id?'<s>$33.00</s>':''}</div></div></div>`;
+const row=(img,n,pr,id,reason='')=>`<div class="prow2"${id?` data-p="${id}"`:''}><img src="${img}" alt=""><div class="pt"><div class="ptx">${chatText(id,n)}${reason}</div><div class="pp">${/^[A-Za-z]/.test(String(pr))?pr:"$"+pr}${id&&P[id].was?`<s>${fm(id,P[id].was)}</s>`:id?'<s>$33.00</s>':''}</div></div></div>`;
 const prow=id=>row(P[id].img,P[id].title,P[id].cur?fm(id,P[id].price):P[id].price,id);
 /* one product on its own: image on top, then the same text, a dashed line and where to buy */
 const pbig=id=>{const o=P[id],d=PDPD[id];return `<div class="pbig" data-p="${id}"><img src="${o.img}" alt=""><div class="pb">${chatText(id)}<div class="pp">$${o.price}<s>$${o.was||'33.00'}</s></div><div class="pbuy">Buy at ${d.offers[0].src} ${PI.ur}</div></div></div>`;};
@@ -2221,10 +2376,11 @@ function replyFor(v,ctx){
   return [{t:`On it. From what you’ve told me before, here’s where I’d start:`,rich:plist([prow('chair'),prow('samba')])}];
 }
 const CCI=()=>({video:AI.ln('<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/>'),listing:AI.ln('<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/>'),model:AI.ln('<circle cx="12" cy="7" r="3.5"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/>'),deck:AI.ln('<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M12 17v4M8 21h8"/>')});
-const SCH=[['shop','Shopping','<path d="M5.5 8h13l-1 12.5h-11z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/>','What are you shopping for?'],
+const SCH=[['price-drop','Price drop alert',null,'Choose a product to track'],
+  ['repurchase','Repurchase',null,'Choose a product to buy again'],
   ['voucher','Voucher','<path d="M3.5 6.5h17v3.5a2 2 0 0 0 0 4v3.5h-17V14a2 2 0 0 0 0-4z"/><path d="M14 7v2M14 11v2M14 15v2"/>','Which shop or item?'],
   ['orders','Orders','<rect x="5" y="4.5" width="14" height="16" rx="2"/><path d="M9 3.5h6v3H9zM8.5 11h7M8.5 15h5"/>','Which order?']];
-const cchips=()=>`<div class="cchips">${SCH.map(([k,t,d])=>`<span class="cchip" data-cchip="${k}">${AI.ln(d)}${t}</span>`).join('')}</div>`;
+const cchips=()=>`<div class="cchips">${SCH.map(([k,t,d])=>`<span class="cchip" data-cchip="${k}">${d?AI.ln(d):SI.auto}${t}</span>`).join('')}</div>`;
 function chatShell(ph,body){
   const el=ph.querySelector('.chatv');
   el.innerHTML=`<div class="sb"><span>9:41</span>${sbIcons()}</div><div class="chead">${topNav('migoo')}</div>
@@ -2269,6 +2425,9 @@ function chatFlow(ph,userHTML,segs){
 }
 function cfSend(){                                      /* the user taps send → jump to tab 1 */
   if(!CF.v&&!CF.tpl) return;
+  if(CF.purchased) return purchasedSend();
+  if(CF.pricePick) return pickerPriceSend();
+  if(PTK_FIND_QUERIES[CF.demo]) return ptkFindSend();
   if(!MU.known&&MU.copt==='2'&&CF.ph.querySelector('.authc')){const snap={...CF,att:[...CF.att],oi:{...CF.oi}},ph=CF.ph;closeFocus();MU.pending=null;return openConsent(ph,()=>{CF=snap;cfSend();});}
   if(CF.tpl){const ph=CF.ph,tp=CF.tpl,w=WK[tp.k],v=CF.v,u=bubbleU(v,[{img:tp.img,b:tp.t,n:'· '+tp.sub}]),sg=()=>{if(WKFLOW==='web') return deliverSegs(tp.k); if(MU.nopts){MU.nopts=false;pswSync();return paySegs(tp.k);} return deliverSegs(tp.k);},go=()=>setTimeout(()=>chatFlow(ph,u,sg()),120);closeFocus();
     if(!MU.known&&MU.copt==='2') return askAuth(ph,u,sg);
@@ -2821,7 +2980,6 @@ const PI={
   bell:`<svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M10 2.6a4.9 4.9 0 00-4.9 4.9c0 4-1.4 5.2-1.4 5.2h12.6s-1.4-1.2-1.4-5.2A4.9 4.9 0 0010 2.6z" stroke="#54545C" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.4 15.6a1.8 1.8 0 003.2 0" stroke="#54545C" stroke-width="1.6" stroke-linecap="round"/></svg>`,
   ur:`<span style="font-size:13px;line-height:1">↗</span>`,
 };
-const BRAND={Walmart:'brand-walmart.png',Amazon:'brand-amazon.png',Ebay:'brand-ebay.svg'};
 /* offers are sorted cheapest first; the first one is the price shown on the card */
 const PDPD={
   oneplus:{gallery:6,sub:'Oneplus Official Store · Free shipping',
@@ -2835,36 +2993,36 @@ const PDPD={
   chair:{gallery:8,sub:'Authenticated · Free Shipping',
     bullets:['Boucle seat and curved back, soft to the touch and easy to wipe clean','Solid oak legs with floor protectors, holds up to 260 lb','Stackable, so two extra seats take no floor space'],
     variants:[{label:'Color: Cream',options:[{t:'Cream',sel:1},{t:'Sand'},{t:'Charcoal'}]},{label:'Set: Single',options:[{t:'Single',sel:1},{t:'Set of 2'},{t:'Set of 4'}]}],
-    offers:[{price:'8.18',src:'Amazon',rating:'4.6'},{price:'9.40',src:'Walmart',rating:'4.5'}],
-    reviews:[{name:'Maya T',src:'Amazon',full:5,text:'Sturdier than it looks and the boucle hasn’t pilled after two months of daily use.',media:1},{name:'Chris L',src:'Walmart',full:4,text:'Took ten minutes to put together. Seat is a little firm, which I like.'}],
+    offers:[{price:'8.18',src:'Kantor Living Store',rating:'4.6'},{price:'9.40',src:'Urban Home Store',rating:'4.5'}],
+    reviews:[{name:'Maya T',src:'Kantor Living Store',full:5,text:'Sturdier than it looks and the boucle hasn’t pilled after two months of daily use.',media:1},{name:'Chris L',src:'Urban Home Store',full:4,text:'Took ten minutes to put together. Seat is a little firm, which I like.'}],
     details:[['Seat height','18 in'],['Material','Boucle, solid oak'],['Weight limit','260 lb'],['Assembly','4 screws, tool included']],
     desc:'A compact dining chair with a curved boucle back and oak legs, sized for small tables.'},
   bag:{gallery:6,sub:'Authenticated · Free Shipping',task:'below $10',
     bullets:['Pebbled leather that hides scratches and softens with wear','Zip top with one inner pocket, fits a 13" laptop flat','Shoulder drop of 9.5", sits under the arm without slipping'],
     variants:[{label:'Color: Black',options:[{t:'Black',sel:1},{t:'Tan'},{t:'Olive'}]}],
-    offers:[{price:'8.18',src:'Amazon',rating:'4.4'},{price:'8.90',src:'Ebay',rating:'4.3'}],
-    reviews:[{name:'Dana K',src:'Amazon',full:5,text:'Looks far more expensive than it is. The zip runs smoothly and the strap doesn’t dig in.',media:1},{name:'Priya S',src:'Ebay',full:4,text:'Good everyday bag. Smelled of leather for the first few days.'}],
+    offers:[{price:'8.18',src:'MATEYOYO Official Store',rating:'4.4'},{price:'8.90',src:'Style Studio',rating:'4.3'}],
+    reviews:[{name:'Dana K',src:'MATEYOYO Official Store',full:5,text:'Looks far more expensive than it is. The zip runs smoothly and the strap doesn’t dig in.',media:1},{name:'Priya S',src:'Style Studio',full:4,text:'Good everyday bag. Smelled of leather for the first few days.'}],
     details:[['Size','13 × 9 × 4 in'],['Material','Pebbled leather'],['Closure','Zip top'],['Strap drop','9.5 in']],
     desc:'A soft shoulder bag in pebbled leather, big enough for a laptop and little else.'},
   samba:{gallery:9,sub:'Authenticated · Free Shipping',wear:true,
     bullets:['Full-grain leather upper with the suede T-toe overlay','Gum rubber outsole, grippy on wet pavement','Runs true to size; go half a size up for wide feet'],
     variants:[{label:'Color: Cream White',options:[{t:'Cream White',sel:1},{t:'Core Black'},{t:'Green'}]},{label:'Size: US 9',options:[{t:'US 8'},{t:'US 9',sel:1},{t:'US 10'},{t:'US 11'}]}],
-    offers:[{price:'8.18',src:'Walmart',rating:'4.7'},{price:'9.50',src:'Amazon',rating:'4.6'},{price:'9.90',src:'Ebay',rating:'4.5'}],
-    reviews:[{name:'Leo P',src:'Walmart',full:5,text:'True to size and comfortable out of the box. The gum sole looks even better in person.',media:1},{name:'Nina R',src:'Amazon',full:4,text:'Leather creases quickly but that’s the look. Great price.'}],
+    offers:[{price:'8.18',src:'Adidas Official Store',rating:'4.7'},{price:'9.50',src:'Sneaker Studio',rating:'4.6'},{price:'9.90',src:'Urban Kicks',rating:'4.5'}],
+    reviews:[{name:'Leo P',src:'Adidas Official Store',full:5,text:'True to size and comfortable out of the box. The gum sole looks even better in person.',media:1},{name:'Nina R',src:'Sneaker Studio',full:4,text:'Leather creases quickly but that’s the look. Great price.'}],
     details:[['Upper','Leather, suede overlay'],['Outsole','Gum rubber'],['Fit','True to size'],['Weight','~340 g (US 9)']],
     desc:'The indoor-football classic in cream leather with a gum sole.'},
   dress:{gallery:7,sub:'Authenticated · Free Shipping',wear:true,
     bullets:['Lined cotton poplin, not see-through in daylight','Puff sleeves with elastic cuffs that stay put','Tiered skirt hits the ankle at 5 ft 5 in'],
     variants:[{label:'Color: White',options:[{t:'White',sel:1},{t:'Sage'},{t:'Black'}]},{label:'Size: M',options:[{t:'S'},{t:'M',sel:1},{t:'L'},{t:'XL'}]}],
-    offers:[{price:'14.90',src:'Amazon',rating:'4.5'},{price:'16.50',src:'Walmart',rating:'4.4'}],
-    reviews:[{name:'Ava M',src:'Amazon',full:5,text:'Fully lined, which I didn’t expect at this price. Washed twice with no shrinking.',media:1},{name:'Sam W',src:'Walmart',full:4,text:'Runs slightly long. Lovely with a belt.'}],
+    offers:[{price:'14.90',src:'Cotton Lane Boutique',rating:'4.5'},{price:'16.50',src:'Everyday Style',rating:'4.4'}],
+    reviews:[{name:'Ava M',src:'Cotton Lane Boutique',full:5,text:'Fully lined, which I didn’t expect at this price. Washed twice with no shrinking.',media:1},{name:'Sam W',src:'Everyday Style',full:4,text:'Runs slightly long. Lovely with a belt.'}],
     details:[['Fabric','100% cotton poplin, lined'],['Length','Maxi, 52 in'],['Sleeve','Puff, elastic cuff'],['Care','Machine wash cold']],
     desc:'A white cotton maxi dress with puff sleeves and a tiered skirt.'},
   skirt:{gallery:6,sub:'Authenticated · Free Shipping',wear:true,
     bullets:['High waist with a hidden side zip and a tie belt','Printed crepe that drapes without clinging','Fully lined to the knee'],
     variants:[{label:'Print: Navy Floral',options:[{t:'Navy Floral',sel:1},{t:'Black Floral'}]},{label:'Size: M',options:[{t:'S'},{t:'M',sel:1},{t:'L'}]}],
-    offers:[{price:'11.40',src:'Walmart',rating:'4.5'},{price:'13.50',src:'Amazon',rating:'4.4'},{price:'14.20',src:'Ebay',rating:'4.3'}],
-    reviews:[{name:'Jo H',src:'Walmart',full:5,text:'The print is richer than the photos and the waist sits exactly where it should.',media:1},{name:'Rin O',src:'Amazon',full:4,text:'Nice weight to the fabric. I took the belt off.'}],
+    offers:[{price:'11.40',src:'Lovito Official Store',rating:'4.5'},{price:'13.50',src:'Style Studio',rating:'4.4'},{price:'14.20',src:'Everyday Style',rating:'4.3'}],
+    reviews:[{name:'Jo H',src:'Lovito Official Store',full:5,text:'The print is richer than the photos and the waist sits exactly where it should.',media:1},{name:'Rin O',src:'Style Studio',full:4,text:'Nice weight to the fabric. I took the belt off.'}],
     details:[['Fabric','Polyester crepe, lined'],['Length','Maxi, 36 in'],['Waist','High rise, side zip'],['Care','Machine wash cold']],
     desc:'A high-waist floral maxi skirt with a tie belt.'},
 };
@@ -2904,16 +3062,16 @@ Object.assign(PDPD,{
   doona:{gallery:9,sub:'Authenticated · Free Shipping',
     bullets:['Infant car seat that becomes a stroller in one move, no separate base to carry','FAA-approved, so it rolls straight onto the plane and clicks into the seat','Fits babies from 4 lb up to 35 lb, rear-facing with an anti-rebound bar'],
     variants:[{label:'Color: Nitro Black',options:[{t:'Nitro Black',sel:1},{t:'Royal Blue'},{t:'Desert Tan'}]},{label:'Kit: Seat only',options:[{t:'Seat only',sel:1},{t:'With ISOFIX base'}]}],
-    offers:[{price:'469',src:'Amazon',rating:'4.8'},{price:'479',src:'Walmart',rating:'4.7'},{price:'489.90',src:'Ebay',rating:'4.6'}],
-    reviews:[{name:'Hannah B',src:'Amazon',full:5,text:'Car to stroller in about five seconds. Worth it for the first year alone, especially with flights.',media:1},{name:'Marco D',src:'Walmart',full:4,text:'Heavy to lift into the car at 16 lb, but nothing else is this convenient.'}],
+    offers:[{price:'469',src:'Doona Official Store',rating:'4.8'},{price:'479',src:'Baby Comfort Store',rating:'4.7'},{price:'489.90',src:'Little Steps Store',rating:'4.6'}],
+    reviews:[{name:'Hannah B',src:'Doona Official Store',full:5,text:'Car to stroller in about five seconds. Worth it for the first year alone, especially with flights.',media:1},{name:'Marco D',src:'Baby Comfort Store',full:4,text:'Heavy to lift into the car at 16 lb, but nothing else is this convenient.'}],
     details:[['Weight','16.5 lb'],['Child weight','4–35 lb'],['Folded size','26 × 17 × 23 in'],['Warranty','1 year, official']],
     desc:'The Doona infant car seat with built-in wheels, so the seat and the stroller are the same thing.',
     hist:[549,549,529,539,519,529,509,499,499,489,489,479,469],adv:['buy','Lowest in 90 days, and this model usually climbs back within two weeks.'],cmp:[]},
   tp:{gallery:5,sub:'Authenticated · Free Shipping',
     bullets:['3-ply and soft, strong enough that one sheet does the job','12 double rolls, about four weeks for a household of two','Plastic-free paper wrap and FSC-certified pulp'],
     variants:[{label:'Pack: 12 Rolls',options:[{t:'6 Rolls'},{t:'12 Rolls',sel:1},{t:'24 Rolls'}]},{label:'Scent: Unscented',options:[{t:'Unscented',sel:1},{t:'Aloe'}]}],
-    offers:[{price:'12.99',src:'Walmart',rating:'4.8'},{price:'13.49',src:'Amazon',rating:'4.7'},{price:'14.20',src:'Ebay',rating:'4.5'}],
-    reviews:[{name:'Grace L',src:'Walmart',full:5,text:'Soft without falling apart, and the rolls really are double length. We buy it every month.',media:1},{name:'Tom R',src:'Amazon',full:4,text:'Good value at this price. The paper wrap is a nice touch.'}],
+    offers:[{price:'12.99',src:'Soft Home Store',rating:'4.8'},{price:'13.49',src:'Daily Essentials Store',rating:'4.7'},{price:'14.20',src:'Home Care Store',rating:'4.5'}],
+    reviews:[{name:'Grace L',src:'Soft Home Store',full:5,text:'Soft without falling apart, and the rolls really are double length. We buy it every month.',media:1},{name:'Tom R',src:'Daily Essentials Store',full:4,text:'Good value at this price. The paper wrap is a nice touch.'}],
     details:[['Ply','3-ply'],['Count','12 double rolls · 280 sheets each'],['Material','FSC-certified virgin pulp'],['Pack','Plastic-free paper wrap']],
     desc:'Everyday 3-ply toilet tissue in a 12 double-roll pack, wrapped in paper instead of plastic.',
     hist:[15.99,15.99,15.49,15.99,14.99,15.49,15.99,14.99,13.99,14.49,13.99,13.49,12.99],adv:['buy','Lowest in 90 days, and you’re about due for a refill.'],cmp:[]},
@@ -2922,7 +3080,7 @@ Object.assign(PDPD,{
 const ALERTS={bag:{target:10,hit:true,setAt:7}};
 const money=v=>(+v).toFixed(2).replace(/\.00$/,'');
 const fm=(id,v)=>(P[id]&&P[id].cur==='Rp')?'Rp'+Math.round(+v).toLocaleString('id-ID'):'$'+money(v);
-const slogo=x=>BRAND[x.src]?`<img src="${IMG['assets/'+BRAND[x.src]]}" alt="${x.src}">`:`<b style="color:#EE4D2D;font-weight:800;font-size:15px">S</b>`;
+const slogo=x=>`<img src="${STORE_ICON}" alt="">`;
 const BELL=on=>`<svg viewBox="0 0 20 20" fill="none"><path d="M10 2.6a4.9 4.9 0 00-4.9 4.9c0 4-1.4 5.2-1.4 5.2h12.6s-1.4-1.2-1.4-5.2A4.9 4.9 0 0010 2.6z" fill="${on?'currentColor':'none'}" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.4 15.6a1.8 1.8 0 003.2 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>`;
 /* default target: the 90-day low when there is one below today's price, otherwise 10% under */
 /* the default target is never an invented number: it is the 90-day low the chart shows.
@@ -3035,7 +3193,7 @@ function pdpHTML(id,ai){
   const o=P[id], d=PDPD[id], why=(o.deal||o.why||[]).map(([t,k])=>k===2?`<em>${t}</em>`:t).join('');
   return `<div class="pdp-body">
       <div class="pdp-hero"><div class="sheet-grabber"></div>
-        <div class="pdp-close">${PI.close}</div>
+        <button type="button" class="pdp-close" aria-label="Close product details">${PI.close}</button>
         <div class="pdp-watch">${PI.heart(SAVED.has(id))}</div>
         <img src="${o.img}" alt=""><div class="indicator">1/${d.gallery}</div></div>
       <div style="height:16px"></div>
@@ -3061,24 +3219,37 @@ function pdpHTML(id,ai){
 <div class="home-indicator"></div>`;
 }
 let sheetDrag=null;
+function resetPDPDrag(ov){
+  ov.classList.remove('dragging'); ov.style.top=''; ov.style.transform='';
+  if(sheetDrag&&sheetDrag.ov===ov){
+    sheetDrag=null;
+    window.removeEventListener('pointermove',sheetMove); window.removeEventListener('pointerup',sheetUp);
+    window.removeEventListener('pointercancel',sheetCancel); window.removeEventListener('blur',sheetCancel);
+  }
+}
+function sheetCancel(){if(sheetDrag) resetPDPDrag(sheetDrag.ov);}
 function wirePDP(ph,ov){
   /* half → full: drag the hero up, or just start scrolling */
-  ['.sheet-grabber','.pdp-hero'].forEach(sel=>ov.querySelector(sel).addEventListener('pointerdown',e=>{
-    if(e.target.closest('.pdp-close,.pdp-watch,.pdp-atpill')) return;
+  ov.querySelector('.pdp-hero').addEventListener('pointerdown',e=>{
+    if(e.button!==0||e.isPrimary===false||e.target.closest('.pdp-close,.pdp-watch,.pdp-atpill')) return;
+    sheetCancel();
     sheetDrag={ov,ph,y:e.clientY,halfTop:Math.round(ph.clientHeight*.10),full:ov.classList.contains('full')};
     ov.classList.add('dragging');
     window.addEventListener('pointermove',sheetMove); window.addEventListener('pointerup',sheetUp);
-  }));
+    window.addEventListener('pointercancel',sheetCancel); window.addEventListener('blur',sheetCancel);
+  });
   const body=ov.querySelector('.pdp-body');
-  body.addEventListener('scroll',()=>{if(!ov.classList.contains('full')&&body.scrollTop>6) ov.classList.add('full');},{passive:true});
+  body.addEventListener('scroll',()=>{if(ov.classList.contains('open')&&!ov.classList.contains('full')&&body.scrollTop>6) ov.classList.add('full');},{passive:true});
 }
 function openPDP(ph,id,keep){
   if(!PDPD[id]) return;
-  const ov=ph.querySelector('.pdp-overlay'); ov.dataset.id=id; ov.innerHTML=pdpHTML(id,ph.classList.contains('ai'));
+  const ov=ph.querySelector('.pdp-overlay');
+  clearTimeout(ov._openTimer); clearTimeout(ov._settleTimer); resetPDPDrag(ov);
+  ov.dataset.id=id; ov.innerHTML=pdpHTML(id,ph.classList.contains('ai'));
   ph.querySelector('.pdp-backdrop').classList.add('show');
   wirePDP(ph,ov);
-  if(keep){ov.classList.add('dragging','open');ov.classList.toggle('full',keep.full);ov.querySelector('.pdp-body').scrollTop=keep.y;setTimeout(()=>ov.classList.remove('dragging'),30);}
-  else{ov.classList.add('full');setTimeout(()=>ov.classList.add('open'),20);}   /* opens full-screen; drag the hero down to go half, again to close */
+  if(keep){ov.classList.add('dragging','open');ov.classList.toggle('full',keep.full);ov.querySelector('.pdp-body').scrollTop=keep.y;ov._settleTimer=setTimeout(()=>ov.classList.remove('dragging'),30);}
+  else{ov.classList.add('full');ov._openTimer=setTimeout(()=>ov.classList.add('open'),20);}   /* opens full-screen; drag the hero down to go half, again to close */
 }
 /* re-render the open product page in place (after an alert is set, or a panel switch) */
 const pdpState=ph=>{const ov=ph&&ph.querySelector('.pdp-overlay');return ov&&ov.classList.contains('open')?{id:ov.dataset.id,full:ov.classList.contains('full'),y:ov.querySelector('.pdp-body').scrollTop}:null;};
@@ -3090,17 +3261,22 @@ function sheetMove(e){
 }
 function sheetUp(e){
   if(!sheetDrag) return; const {ov,ph,y,full}=sheetDrag, dy=e.clientY-y;
-  ov.classList.remove('dragging'); ov.style.top=''; ov.style.transform='';
+  resetPDPDrag(ov);
   if(!full){ if(dy<-40) ov.classList.add('full'); else if(dy>70) closePDP(ph); } else if(dy>60) ov.classList.remove('full');
-  sheetDrag=null; window.removeEventListener('pointermove',sheetMove); window.removeEventListener('pointerup',sheetUp);
 }
 /* a card in the feed shows the alert set on its product page */
 function syncFeed(ph){ph.querySelectorAll('.pc[data-p]').forEach(c=>{if(ALERTS[c.dataset.p]&&!c.querySelector('.chip')) c.querySelector('.img').insertAdjacentHTML('afterbegin',`<span class="chip">${I.clock}Tracking Price</span>`);});}
-function closePDP(ph){ph.querySelector('.pdp-overlay').classList.remove('open','full');ph.querySelector('.pdp-backdrop').classList.remove('show');syncFeed(ph);}
+function closePDP(ph){
+  const ov=ph.querySelector('.pdp-overlay');
+  clearTimeout(ov._openTimer); clearTimeout(ov._settleTimer); resetPDPDrag(ov);
+  ov.classList.remove('open','full'); ph.querySelector('.pdp-backdrop').classList.remove('show');
+  pdpAlertToastHide(ph); syncFeed(ph);
+}
 document.addEventListener('click',e=>{
   const ph=e.target.closest('.phone'); if(!ph) return;
   const on=sel=>e.target.closest(sel);
   let x;
+  if(x=on('[data-pdp-manage]')){const id=x.dataset.pdpManage;pdpAlertToastHide(ph);return ptkPdpOpen(ph,id);}
   if(ptkClick(ph,on)) return;                                       /* price tracker: Track Price Drops page, sheet, chat card */
   /* App Store purchase sheet over the paywall */
   if(on('.iap')){const s=on('.iap'); if(on('[data-iapx]')||(e.target===s&&!s.dataset.st)) return iapClose(ph); if(on('[data-apgo]')) return iapStep(ph,'side'); if(on('[data-apside]')&&s.dataset.st==='side') return iapStep(ph,'face'); return;}
@@ -3109,17 +3285,17 @@ document.addEventListener('click',e=>{
   if(x=on('.kbd .k')){const k=x.dataset.k; if(!k||!CF.ph) return; if(k==='go') return cfSend(); CF.v=k==='⌫'?CF.v.slice(0,-1):k==='⇧'?CF.v:CF.v+(k===' '?' ':k.toLowerCase()); return cfRender();}
   if(on('.cf-scrim')) return closeFocus();
   if(x=on('.cf-sug[data-cmp]')) return openFocus(ph,{v:x.dataset.t,att:[selfAtt(CF.prod),topCand(CF.prod)],cmp:true});   /* a comparison needs both items in the box */
-  if(x=on('.cf-sug')){CF.v=x.dataset.t; return cfRender();}                              /* sentence → typed in, not sent */
-  if(x=on('.ps-tab')){PK.tab=x.dataset.t; return sheetRender();}
-  if(x=on('.ps-row')){const id=x.dataset.id, i=PK.sel.indexOf(id), T=PKT[PK.cap]; if(i>-1) PK.sel.splice(i,1); else if(T.max===1) PK.sel=[id]; else {if(PK.sel.length>=T.max) return toast(ph,'Compare two at a time'); PK.sel.push(id);} return sheetRender();}
-  if(on('.ps-x')||on('.ps-scrim')) return closeSheet();
-  if(on('.ps-ok')) return PK.sel.length>=PKT[PK.cap].min?sheetConfirm(ph):null;
+  if(x=on('.cf-sug')){CF.v=x.dataset.t; cfRender(); if(CF.editable) cfFocusEnd(); return;}   /* sentence → typed in, not sent */
+  if(x=on('.ps-tab')){if(PK.cap===1&&PK.tab!==x.dataset.t) PK.sel=[]; PK.tab=x.dataset.t; return sheetRender();}
+  if(x=on('.ps-row')){const id=x.dataset.id, i=PK.sel.indexOf(id), T=pkType(); if(i>-1) PK.sel.splice(i,1); else if(T.max===1||(PK.cap===1&&PK.tab==='sug')) PK.sel=[id]; else {if(PK.sel.length>=T.max) return toast(ph,'Compare two at a time'); PK.sel.push(id);} return sheetRender();}
+  if(on('.ps-x')||on('.ps-scrim')) return closeSheet(ph);
+  if(on('.ps-ok')) return PK.sel.length>=pkType().min?sheetConfirm(ph):null;
   if(on('.psheet')) return;
   if(x=on('.cf-chip, .cf-abil>div')){const cap=+x.dataset.cap; openFocus(ph,{cap}); if(CFG.pk==='pk1'&&cap<2) openSheet(ph,cap); return;}
   if(x=on('.cf-opt')){const k=x.dataset.oi,n=CF.tpl.opts[k].length;CF.oi[k]=((CF.oi[k]||0)+1)%n;x.textContent=CF.tpl.opts[k][CF.oi[k]];return;}
   if(on('[data-add]')) return toast(ph,'Pick a photo (out of demo scope)');
-  if(x=on('[data-drop]')) return openFocus(ph,{v:CF.v,bare:CF.bare,chat:CF.chat});                                  /* drop the tag / the quote, keep what was typed */
-  if(x=on('.qit .qx')) return openFocus(ph,{v:CF.v,q:CF.q,cmp:CF.cmp,att:CF.att.filter((_,i)=>i!==+x.dataset.att)});
+  if(x=on('[data-drop]')) return openFocus(ph,{v:CF.v,bare:CF.bare,chat:CF.chat,editable:CF.editable,...(CF.purchased?{att:CF.att,purchased:CF.purchased}:{})}); /* drop the tag / the quote, keep what was typed */
+  if(x=on('.qit .qx')) return openFocus(ph,{v:CF.v,q:CF.q,cmp:CF.cmp,editable:CF.editable,att:CF.att.filter((_,i)=>i!==+x.dataset.att)});
   if(on('.cf-send')) return cfSend();
   if(on('.cfocus')) return;
   /* chat / product page */
@@ -3133,9 +3309,10 @@ document.addEventListener('click',e=>{
   if(x=on('[data-dfn]')) return toast(ph,`${x.dataset.dfn} (out of demo scope)`);
   if(on('.drawer')) return;
   if(x=on('[data-top]')){const t=x.dataset.top; if(x.classList.contains('on')) return; if(t==='task') return openTask(ph); closeTask(ph); return t==='migoo'?openAssistant(ph):closeChat(ph);}
-  if(x=on('.tab')){const t=x.dataset.tab; if(x.classList.contains('on')) return;
+  if(x=on('.tab')){const t=x.dataset.tab;
+    if(t==='migoo'){closeTask(ph);closeShopee(ph);return openAssistant(ph);}
+    if(x.classList.contains('on')) return;
     if(t==='Home') return ph.querySelector('.shopv').classList.contains('show')?null:openShopee(ph);
-    if(t==='migoo') return closeShopee(ph);
     return toast(ph,`→ Shopee ${t} (out of demo scope)`);}
   if(x=on('[data-authok]')){if(x.classList.contains('done')) return; const btn=x; return openConsent(ph,()=>{btn.classList.add('done'); toast(ph,'Shopee account connected'); const go=MU.pending; MU.pending=null; if(go) setTimeout(go,500);},'Confirm');}
   if(on('[data-csgo]')) return closeConsent(ph,true);
@@ -3165,10 +3342,10 @@ document.addEventListener('click',e=>{
   if(on('.shopv')) return;
   if(on('.pdp-close')||on('.pdp-backdrop')) return closePDP(ph);
   if(x=on('.pdp-overlay')){const id=x.dataset.id; let y;
-    if(on('[data-track]')) return ALERTS[id]?openFocus(ph,{prod:id,watch:true}):openFocus(ph,{prod:id,v:trackSay(id)});   /* suggestion → typed in; already set → change it */
-    if(y=on('[data-roll]')){const r=ROLL[+y.querySelector('.dk-roll').dataset.i]; return openFocus(ph,{prod:id,v:r[1]==='track'?trackSay(id):(r[1]||r[0])});}
+    if(on('[data-track]')) return ptkPdpOpen(ph,id);                                             /* set or change a price target */
+    if(y=on('[data-roll]')){const r=ROLL[+y.querySelector('.dk-roll').dataset.i]; return r[1]==='track'?ptkPdpOpen(ph,id):openFocus(ph,{prod:id,v:r[1]||r[0]});}
     if(y=on('.dk-chip[data-t]')) return openFocus(ph,{prod:id,v:y.dataset.t});                         /* a sentence: typed in, not sent */
-    if(y=on('[data-act]')) return openFocus(ph,{prod:id,watch:y.dataset.act==='set'});       /* Ask and Set are the same composer; Set only swaps the sentences */
+    if(y=on('[data-act]')) return y.dataset.act==='set'?ptkPdpOpen(ph,id):openFocus(ph,{prod:id});
     if(y=on('.pdp-watch')){const sv=!SAVED.has(id); sv?SAVED.add(id):SAVED.delete(id); y.innerHTML=PI.heart(sv); return toast(ph,sv?'Saved to Likes':'Removed from Likes');}
     if(on('.pdp-atpill')) return toast(ph,`Auto-task · tell me if it drops ${PDPD[id].task}`);
     if(y=on('.pk-btn')){ALERTS[id]=y.dataset.t?{target:+y.dataset.t}:{target:+P[id].price,any:true}; refreshPDP(ph); return toast(ph,y.dataset.t?`Price alert set · $${y.dataset.t}`:'Price alert set · any drop');}      /* one tap, no composer */
@@ -3219,7 +3396,8 @@ document.addEventListener('click',e=>{
   if(on('.tk-dock')) return toast(ph,'Task composer (out of demo scope)');
   if(on('.taskv')) return;
   if(on('.cdoc')) return toast(ph,'Chat history (out of demo scope)');
-  if(x=on('[data-cchip]')){const was=x.classList.contains('on');x.parentElement.querySelectorAll('.cchip').forEach(c=>c.classList.remove('on'));if(!was) x.classList.add('on');
+  if(x=on('[data-cchip]')){if(x.dataset.cchip==='price-drop'||x.dataset.cchip==='repurchase') return chatTaskStart(ph,x.dataset.cchip);
+    const was=x.classList.contains('on');x.parentElement.querySelectorAll('.cchip').forEach(c=>c.classList.remove('on'));if(!was) x.classList.add('on');
     const sp=ph.querySelector('.chatv .cdock .sp2');if(sp) sp.textContent=was?'Anything on your mind?':SCH.find(c=>c[0]===x.dataset.cchip)[3];return;}
   if(on('[data-tpx]')) return closeTpl(ph);
   if(x=on('[data-tptab]')){TPV.tab=+x.dataset.tptab;ph.querySelector('.tplv').innerHTML=tplHTML();return;}
@@ -3291,7 +3469,7 @@ const DP={
   pe0:'一店一条横条，长短 = 价格，最低一家排第一、渐变色。最直观，但三条横条占的高度和走势线差不多。',
   pe1:'一条价格轴，三个点落在各自价格的位置上，最低那个点放大、渐变色。一眼看出差距有多大，只占一行。',
   pe2:'三枚胶囊横排：店 logo + 店名 + 价格，最低一家实色。最轻，像标签；差距大小看不出来。',
-  pe3:'三行文字：店名、价格、和最低价的差额（+$1.32）。没有图形，差额直接写数，和理由句「$1.32 less than Amazon」对得上。',
+  pe3:'三行文字：店名、价格、和最低价的差额（+$1.32）。没有图形，差额直接写数，和理由句「$1.32 less than Sneaker Studio」对得上。',
   ts0:'主题渐变只在顶部。query 卡、商品页理由块还是纯蓝的浅底，字和按钮是品牌蓝。',
   ts1:'凡是「AI 在说话」的面都用同一个淡紫→淡蓝：query 卡、商品页理由块、输入框。字、线、按钮仍是品牌蓝。规则变成：面 = 主题渐变，墨 = 品牌蓝。',
   hh0:'白底、黑标题、灰副标题。',
@@ -3303,7 +3481,7 @@ const DP={
   cp0:'美国用户的 Compare Prices = 一件商品在不同店的价格。选品浮层单选，推荐 tab 的理由讲的是店与店的价差；回复 = 哪家最便宜 + 含运费的店列表 + 去买。',
   cp1:'Compare = 两件商品并排对比（之前的做法）。选品浮层选两件。',
   pk0:'点入口直接进输入框，上面是三句问法，商品靠用户自己说。',
-  pk1:'这两个能力都是对着具体商品的：点入口先拉起商品选择浮层，第一个 tab 是 Migoo 按场景挑出来的（Worth comparing / Worth tracking，每条带一句为什么），其余是 Recently viewed / Likes / Cart。选完商品键入输入框，问法行跟着换成针对这几件的。Compare 一次选两件，Track 可多选。',
+  pk1:'点入口先拉起商品选择浮层，第一个 tab 按能力展示 Worth comparing 或 Purchased，其余是 Recently viewed / Cart。Purchased 默认引导复购，Recently viewed / Cart 引导降价提醒。Auto-Task 一次选择一个商品，Compare 可选两件。',
   ha2:'两个价格能力放大做上排：标题 + 一句说明（Same item, every store / I’ll tell you when it falls）+ 3D 图标；Find Gifts 和 Shop by Occasion 缩成下排两枚胶囊。入口的主次和页面标题对上。',
   pv0:'每件商品都出走势线，下面带一键提醒按钮（Alert me at $X）。',
   pv1:'走势线只用来证明理由句里的那个低价：「Cheapest in 30 days」就画最近 30 天（椅子），「60 days」画 60 天（白裙），设了目标价的画目标线（包）。跨店最低（Samba、半身裙）画的是各店价格的横条，最低一家蓝色排第一，和走势线用同一个位置。不带提醒按钮，盯价全交给底栏的 Track price，句子也不带数字。',
@@ -3315,7 +3493,7 @@ const DP={
   pa0:'目标价默认填 90 天最低，有据可依。现价已经是 90 天最低时（包、Samba、白裙）没有更低的可填，自动退回九折。',
   pa1:'目标价一律是现价打九折。简单统一，但这个数没有来历，用户不知道它现不现实。',
   ps0:'0805 原样：各店标价加一个 Lowest 标。',
-  ps1:'列表顶上一句结论，每行换成含运费的到手价并写出差额，最低一行的 Buy 变主按钮（看 Samba：eBay 标价 $9.90，加运费 $12.89）。',
+  ps1:'列表顶上一句结论，每行换成含运费的到手价并写出差额，最低一行的 Buy 变主按钮（看 Samba：Urban Kicks 标价 $9.90，加运费 $12.89）。',
   pw0:'不出。跨商品比较只能自己去输入框说。',
   pw4:'评价上方一张问句卡：眉题只说状态（STILL DECIDING?），问句是用户自己会说的话，下面是两件商品。整卡点击 = 两件商品 + 这句话进输入框，结论和对比表在会话里给。和电商流里的 query 卡是同一种语言。',
   pw3:'AI 直接把结论写在页面上：一句判断 + 一张只列关键差异的对比表，赢的一格标蓝。最省事，但结论错了没有回旋余地，也更容易把人带去另一件商品。',
@@ -3404,6 +3582,7 @@ const TK={
   'low-watch':{img:LPS('low-watch'),name:'Apple Watch Series 10',v:'Aluminum · Midnight · 42mm',cur:329,was:399,why:'for everyday fitness'},
   'recent-sneaker':{img:LPS('recent-sneaker'),name:'adidas Samba OG',v:'Cloud White · Core Black',cur:100,was:110,why:'viewed 4 times this week'},
   realme:{img:IMG['assets/shp-realme.jpg'],name:'Realme GT8 5G 16GB 1TB',b:'Realme',n:'GT8 16GB 1TB',v:'Black · 16GB + 1TB',cur:11445449,was:12299000,ccy:'Rp',low30:10999000,lowOn:'9.9',q:'Track price drops for Realme GT8',why:'set from Shopee'},
+  'demo-nike':{img:IMG['assets/prod-sneaker2.jpg'],name:'Nike Air Force 1 Low',v:'Ale Brown · US 9',cur:399000,was:549000,ccy:'Rp',q:'Track price drops for these Nike sneakers',why:'found in Assistant'},
 };
 Object.entries(TPD_CATS).forEach(([c,o])=>o.items.forEach(x=>{if(!TK[x.k]) TK[x.k]={img:LPS(x.k),cat:c,...x};}));
 TK['recent-headphone'].why='in your likes for 3 weeks';
@@ -3436,44 +3615,49 @@ const PTK_I={
 };
 /* ---------- the price form: half sheet, or a card inside Migoo's reply ---------- */
 function ptkHintTxt(id,v){const o=TK[id]; if(!(v>0)) return ['',''];
+  if(o.low30&&Math.round(v*100)===Math.round(o.low30*100)) return [`Matches the 30-day low · ${fmc(id,o.low30)}`,''];
   if(v>=o.cur) return [`Set a price below today’s ${fmc(id,o.cur)}`,'bad'];
-  return [`${Math.round((1-v/o.cur)*100)}% below today${o.low30?` · 30-day low ${fmc(id,o.low30)}`:''}`,''];}
-function ptkForm(id,where){
-  const o=TK[id], t=PTASK[id], v=t&&!t.any?t.target:ptkPct(id,5), sel=PTK_PCT.find(p=>ptkPct(id,p)===v), [h,hc]=ptkHintTxt(id,v);
+  return [`${Math.round((1-v/o.cur)*100)}% below today`,''];}
+function ptkForm(id,where,draftTarget){
+  const o=TK[id], t=PTASK[id], v=draftTarget!=null?draftTarget:t&&!t.any?t.target:ptkPct(id,5), sel=PTK_PCT.find(p=>ptkPct(id,p)===v), [h,hc]=ptkHintTxt(id,v), atLow=!!o.low30&&Math.round(v*100)===Math.round(o.low30*100);
   return `<div class="ptk-f" data-ptkf="${id}">
     <div class="ptk-pr"><img src="${o.img}" alt=""><div><div class="n"><span>${o.name}</span>${PTK_I.chev}</div><div class="v">${o.v}</div><div class="cp">Current price: ${fmc(id,o.cur)}</div></div></div>
     <div class="ptk-lb">Set expected price</div>
     <div class="ptk-in"><span class="cur">${ccy(id)}</span><input type="text" inputmode="decimal" value="${fmIn(id,v)}" data-ptkin="1" aria-label="Expected price"><span class="x" data-ptkclr="1">${PTK_I.x}</span></div>
-    <div class="ptk-hint ${hc}">${h}</div>
+    <div class="ptk-hintrow"><div class="ptk-hint ${hc}">${h}</div>${o.low30?`<button type="button" class="ptk-low" data-ptklow="1" aria-label="Use the 30-day low of ${fmc(id,o.low30)}"${atLow?' hidden':''}>Use 30-day low · ${fmc(id,o.low30)}</button>`:''}</div>
     <div class="ptk-lb q">Quick input</div>
     <div class="ptk-chips">${PTK_PCT.map(p=>`<span class="ptk-chip${p===sel?' on':''}" data-ptkp="${p}">-${p}%</span>`).join('')}</div>
     <div class="ptk-acts"><div class="ptk-go" data-ptkgo="${where}">${t?'Update Price Tracker':'Set Price Tracker'}</div>${t&&where==='tpd'?`<div class="ptk-del" data-ptkdel="${id}">${PTK_I.del}</div>`:''}</div></div>`;}
-function ptkSync(f){const id=f.dataset.ptkf, v=ptkParse(id,f.querySelector('input').value), [h,hc]=ptkHintTxt(id,v), hi=f.querySelector('.ptk-hint');
+function ptkSync(f){const id=f.dataset.ptkf, v=ptkParse(id,f.querySelector('input').value), [h,hc]=ptkHintTxt(id,v), hi=f.querySelector('.ptk-hint'), low=f.querySelector('[data-ptklow]');
   hi.textContent=h; hi.className='ptk-hint '+hc;
+  if(low) low.hidden=Math.round(v*100)===Math.round(TK[id].low30*100);
   f.querySelectorAll('.ptk-chip').forEach(c=>c.classList.toggle('on',ptkPct(id,+c.dataset.ptkp)===v));}
-/* where: 'sheet' (Shopee option 2 → the chat), 'card' (option 3), 'tpd' (Track Price Drops page) */
+/* where: 'sheet' (Shopee option 2 → the chat), 'card' (option 3), 'tpd' (Track Price Drops), 'pdp' (save in place) */
 function ptkOpenSheet(ph,id,where){ph.querySelectorAll('.ptk-wrap').forEach(x=>x.remove());
   const w=document.createElement('div'); w.className='ptk-wrap'; w.innerHTML=`<div class="ptk-scrim" data-ptkx="1"></div><div class="ptk-sheet"><div class="grab"></div>${ptkForm(id,where)}<div class="hi2"></div></div>`;
   ph.appendChild(w); requestAnimationFrame(()=>requestAnimationFrame(()=>w.classList.add('on')));}
 function ptkCloseSheet(ph){const w=ph.querySelector('.ptk-wrap'); if(!w) return; w.classList.remove('on'); setTimeout(()=>w.remove(),300);}
+function ptkPdpOpen(ph,pid){if(!P[pid]||!PDPD[pid]) return; pdpAlertToastHide(ph);
+  const id=`pdp-${pid}`, p=P[pid], d=PDPD[pid], q=quoteOf(pid), variant=(d.variants||[]).map(v=>(v.options.find(x=>x.sel)||v.options[0]||{}).t).filter(Boolean).join(' · '), hist=d.hist?dense(d.hist).slice(-31):[], rawLow=hist.length?Math.min(...hist):null;
+  const low30=rawLow==null?undefined:p.cur==='Rp'?Math.floor(rawLow/1000)*1000:Math.floor(rawLow*100)/100;
+  TK[id]={...(TK[id]||{}),img:p.img,name:p.title,b:q.b,n:q.n,v:variant,cur:+p.price,was:+p.was||+p.price,ccy:p.cur==='Rp'?'Rp':'$',low30:low30<+p.price?low30:undefined,pdpId:pid};
+  if(ALERTS[pid]&&!PTASK[id]) PTASK[id]={target:ALERTS[pid].target||+p.price,any:!!ALERTS[pid].any,src:'migoo',t:++PTT};
+  return ptkOpenSheet(ph,id,'pdp');}
 /* ---------- the task card Migoo returns once a tracker is set ---------- */
 const PTK_DUR={30:'Next 30 days','11.11':'Until 11.11 ends','0':'Until you stop it'};
 function ptkReceipt(id){if(PTK_MODE===1) return '';   /* chat style: the confirmation is the text alone */
   const o=TK[id],t=PTASK[id];
   return `<div class="ptk-rc"><div class="h"><span class="dot"></span>Price Tracker · Active</div>
-    <div class="pr"><img src="${o.img}" alt=""><div><div class="n">${o.name}</div><div class="v">${o.v}</div></div></div>
+    <div class="pr" data-atmpdp="${id}" role="button" tabindex="0" aria-label="View ${esc(o.name)}"><img src="${o.img}" alt=""><div><div class="n">${o.name}</div><div class="v">${o.v}</div></div></div>
     <div class="kv"><span>Alert me at</span><b>${t.any?'Any drop':'≤ '+fmc(id,t.target)}</b></div>
     <div class="kv"><span>Price now</span><b>${fmc(id,o.cur)}</b></div>
     <div class="kv"><span>Watching</span><b>${PTK_DUR[t.dur]||PTK_DUR[30]}</b></div>
     <div class="ft"><span data-ptked="${id}">Edit</span><span data-atmopen="1">View your Auto-Tasks ›</span></div></div>`;}
 function ptkSave(id,target,any,src,dur){const old=PTASK[id]; PTASK[id]={...old,target,any:!!any,src:old?old.src:src,dur:dur!=null?dur:(old&&old.dur!=null?old.dur:30),t:++PTT}; tpdRefresh();}
-const ptkShort=id=>{const o=TK[id];return o.b?`${o.b} ${o.n.split(' ')[0]}`:o.name;};
-/* ---------- Shopee entry: three options ---------- */
-let PTK_MODE=(()=>{const m=new URLSearchParams(location.search).get('tp'); if(/^[123]$/.test(m||'')) return +m; try{const s=localStorage.getItem('ptk_mode'); if(/^[123]$/.test(s||'')) return +s;}catch(e){} return 1;})();
+const ptkShort=id=>{const o=TK[id];return o.pdpId?o.name:o.b?`${o.b} ${o.n.split(' ')[0]}`:o.name;};
+/* ---------- Shopee entry: Hybrid ---------- */
+const PTK_MODE=3;
 let PTK_SCENE=(()=>{const m=new URLSearchParams(location.search).get('sc'); if(/^[12]$/.test(m||'')) return +m; try{const s=localStorage.getItem('ptk_scene'); if(/^[12]$/.test(s||'')) return +s;}catch(e){} return 1;})();
-const PTK_DESC={1:'Tap sends the task. Migoo clarifies in turns — price, then how long — with quick replies.',
-                2:'Tap raises a half sheet over the Shopee page. Set Price Tracker sends it to the chat and Migoo confirms.',
-                3:'Tap sends the task. Migoo replies with the sheet as a card; Set Price Tracker sends it as a message.'};
 function ptkToChat(ph,userHTML,segs){ph.querySelector('.msheet')?.remove();ph.querySelector('.ms-scrim')?.remove();closeSearch(ph);closeResults(ph);closeShopee(ph);closeTask(ph);closePDP(ph);closeFocus();tpdClose(ph);atmClose(ph);
   setTimeout(()=>chatFlow(ph,userHTML,segs),120);}
 function ptkQR(id,step){const o=TK[id];
@@ -3498,17 +3682,18 @@ function ptkSubmit(ph,f,where){const id=f.dataset.ptkf, o=TK[id], v=ptkParse(id,
   if(!(v>0)) return toast(ph,'Enter an expected price');
   if(v>=o.cur) return toast(ph,`Set a price below ${fmc(id,o.cur)}`);
   const upd=!!PTASK[id], pct=Math.round((1-v/o.cur)*100);
-  ptkSave(id,v,false,where==='tpd'?'migoo':'shopee');
+  ptkSave(id,v,false,where==='tpd'||where==='pdp'||where==='assistant'?'migoo':where==='atd'?(PTASK[id]?.src||'migoo'):(o.source||'shopee'));
+  if(o.pdpId) ALERTS[o.pdpId]={target:v,any:false};
+  if(where==='atd'||where==='atm'||where==='receipt'){ptkCloseSheet(ph); if(where==='atd') atdRefresh(ph); else if(where==='atm') atmRefresh(); else ph.querySelectorAll('[data-ptked]').forEach(e=>{if(e.dataset.ptked===id){const r=e.closest('.ptk-rc'); if(r) r.outerHTML=ptkReceipt(id);}}); return toast(ph,`Updated · alert at ${fmc(id,v)}`);}
   if(where==='tpd'){ptkCloseSheet(ph); toast(ph,upd?`Updated · alert at ${fmc(id,v)}`:`Price tracker set · ${fmc(id,v)}`); return tpdShow(ph,'main',{flash:id});}
+  if(where==='pdp'){ptkCloseSheet(ph); refreshPDP(ph); pdpAlertToast(ph,o.pdpId,`${upd?'Price alert updated':'Price alert set'} · We’ll let you know when it drops to ${fmc(id,v)}.`); return;}
   const bot=[{tag:upd?'Auto-task updated':AT,t:upd?`Updated. I’ll tell you at <code>${fmc(id,v)}</code> or lower now, about ${pct}% under today. Still one task for this item.`
-    :`Done. I’ll message you here when the ${ptkShort(id)} hits <code>${fmc(id,v)}</code> or lower, about ${pct}% under today. I’m watching for the next 30 days and I’ll only tell you once.`,rich:ptkReceipt(id)}];
+    :`Done. I’ll notify you when the ${ptkShort(id)} hits <code>${fmc(id,v)}</code> or lower.`,rich:ptkReceipt(id)}];
+  if(where==='assistant'){ptkCloseSheet(ph); return chatFlow(ph,bubbleU(upd?`Change it to ${fmc(id,v)}`:`Alert me at ${fmc(id,v)}`,[]),bot);}
   if(where==='sheet'){const u=upd?`Change it to ${fmc(id,v)}`:`${o.q||`Track the price of the ${o.name}`} · alert me at ${fmc(id,v)}`; ptkCloseSheet(ph); return setTimeout(()=>ptkToChat(ph,bubbleU(u,upd?[]:ptkAtts(id)),bot),200);}
   f.classList.add('done'); f.querySelector('input').disabled=true; f.querySelector('.ptk-go').textContent=`Set · ${fmc(id,v)}`;
   chatFlow(ph,bubbleU(upd?`Change it to ${fmc(id,v)}`:`Alert me at ${fmc(id,v)}`,[]),bot);}
-function ptkEdit(ph,id){const o=TK[id], t=PTASK[id];
-  if(PTK_MODE===2||t.src==='migoo') return ptkOpenSheet(ph,id,t.src==='migoo'?'tpd':'sheet');
-  if(PTK_MODE===1) return chatFlow(ph,bubbleU('Change the price',[]),[{t:`Sure. It’s <code>${fmc(id,o.cur)}</code> now and I’m set to tell you ${t.any?'about any drop':`at <code>${fmc(id,t.target)}</code>`}. What’s the new price?`,after:ptkQR(id,'price')}]);
-  chatFlow(ph,bubbleU('Change the price',[]),[{t:'Sure. Set a new price:',after:`<div class="ptk-card">${ptkForm(id,'card')}</div>`}]);}
+function ptkEdit(ph,id){return ptkOpenSheet(ph,id,'receipt');}
 /* ---------- Migoo tab → Track Price Drops ---------- */
 let TPD={st:'main',q:'',res:[],from:null,pick:null};
 function tpdEl(ph){let el=ph.querySelector('.tpdv'); if(!el){el=document.createElement('div'); el.className='tpdv'; const hi=ph.querySelector(':scope>.homei'); if(hi) hi.before(el); else ph.appendChild(el);} return el;}
@@ -3558,15 +3743,16 @@ function tpdAutoType(i){if(i.value||TPD_TYPE.t) return; const q=TPD_SAMPLES[TPD_
     TPD_TYPE.t=k<q.length?setTimeout(step,60+Math.random()*70):null;};
   TPD_TYPE.t=setTimeout(step,220);}
 /* product picker for the page: recently viewed / likes / cart */
-const TPD_PICK={recent:['recent-headphone','recent-robot','recent-controller','chair-markus-gray'],likes:['recent-bag','bg-tote-tan','wt-se','sn-gazelle'],cart:['rb-eufy','sn-samba-red']};
+const TPD_PICK={recent:['recent-headphone','recent-robot','recent-controller','chair-markus-gray'],cart:['rb-eufy','sn-samba-red']};
 function tpdPickHTML(tab){return `<div class="ptk-scrim" data-ptkx="1"></div><div class="ptk-sheet tpd-pk"><div class="grab"></div><div class="tpd-pkh">Select a product</div>
-  <div class="tpd-pkt">${[['recent','Recently viewed'],['likes','Likes'],['cart','Cart']].map(([k,t])=>`<span class="${k===tab?'on':''}" data-tpdpt="${k}">${t}</span>`).join('')}</div>
+  <div class="tpd-pkt">${[['recent','Recently viewed'],['cart','Cart']].map(([k,t])=>`<span class="${k===tab?'on':''}" data-tpdpt="${k}">${t}</span>`).join('')}</div>
   <div class="tpd-pkl">${TPD_PICK[tab].map(id=>{const o=TK[id];return `<div class="tpd-pkr${TPD.pick===id?' on':''}" data-tpdpr="${id}"><img src="${o.img}" alt=""><div><div class="n">${o.name}</div><div class="v">${o.v}</div><div class="p">${fmc(id,o.cur)}</div></div><span class="ck"></span></div>`;}).join('')}</div>
   <div class="ptk-go${TPD.pick?'':' off'}" data-tpdpok="1">${TPD.pick?'Find prices':'Pick a product'}</div><div class="hi2"></div></div>`;}
 function tpdPick(ph,tab){let w=ph.querySelector('.ptk-wrap.tpk'); const fresh=!w; if(fresh){ph.querySelectorAll('.ptk-wrap').forEach(x=>x.remove()); w=document.createElement('div'); w.className='ptk-wrap tpk'; ph.appendChild(w);}
   w.dataset.tab=tab; w.innerHTML=tpdPickHTML(tab); if(fresh){requestAnimationFrame(()=>requestAnimationFrame(()=>w.classList.add('on'))); setTimeout(()=>w.classList.add('on'),40);} else w.classList.add('on');}
 /* ---------- taps ---------- */
 function ptkClick(ph,on){let x;
+  if(ptkFindClick(ph,on)) return true;
   if(rbfClick(ph,on)) return true;
   if(ntfClick(ph,on)) return true;
   if(askClick(ph,on)) return true;
@@ -3576,11 +3762,12 @@ function ptkClick(ph,on){let x;
   if((x=on('[class^="abil"]>div'))&&!x.closest('.cf-abil')&&[...x.parentNode.children].indexOf(x)===1){tpdOpen(ph); return true;}
   if(x=on('[data-ptk]')){ptkStart(ph,x.dataset.ptk); return true;}
   if(on('[data-ptkx]')){ptkCloseSheet(ph); return true;}
+  if(x=on('[data-ptklow]')){const f=x.closest('.ptk-f'); if(f.classList.contains('done')) return true; const id=f.dataset.ptkf; f.querySelector('input').value=fmIn(id,TK[id].low30); ptkSync(f); return true;}
   if(x=on('[data-ptkp]')){const f=x.closest('.ptk-f'); if(f.classList.contains('done')) return true; f.querySelector('input').value=fmIn(f.dataset.ptkf,ptkPct(f.dataset.ptkf,+x.dataset.ptkp)); ptkSync(f); return true;}
   if(x=on('[data-ptkclr]')){const f=x.closest('.ptk-f'); if(f.classList.contains('done')) return true; const i=f.querySelector('input'); i.value=''; ptkSync(f); i.focus({preventScroll:true}); return true;}
   if(x=on('[data-ptkgo]')){const f=x.closest('.ptk-f'); if(!f.classList.contains('done')) ptkSubmit(ph,f,x.dataset.ptkgo); return true;}
   if(x=on('[data-ptkdel]')){const id=x.dataset.ptkdel; delete PTASK[id]; ptkCloseSheet(ph); tpdRefresh(); if(TPD.st==='results') tpdShow(ph,'results',{anim:false}); toast(ph,'Stopped tracking'); return true;}
-  if(x=on('.ptk-qr span')){ptkQuick(ph,x); return true;}
+  if(x=on('.ptk-qr[data-ptkqr] span')){ptkQuick(ph,x); return true;}
   if(x=on('[data-ptked]')){ptkEdit(ph,x.dataset.ptked); return true;}
   if(on('[data-tpdopen]')){tpdOpen(ph); return true;}
   if(on('.ptk-pr .n')){toast(ph,'Product page · next step'); return true;}
@@ -3607,70 +3794,142 @@ document.addEventListener('input',e=>{const i=e.target;
 document.addEventListener('keydown',e=>{if(e.target.matches&&e.target.matches('[data-tpdin]')) tpdTypeStop(); if(e.key!=='Enter') return; const i=e.target; if(!i.matches) return; const ph=i.closest('.phone'); if(!ph) return;
   if(i.matches('[data-tpdin]')){e.preventDefault(); tpdSearch(ph,i.value);}
   else if(i.matches('[data-ptkin]')){e.preventDefault(); const f=i.closest('.ptk-f'); if(!f.classList.contains('done')) ptkSubmit(ph,f,f.querySelector('.ptk-go').dataset.ptkgo);}});
-/* ---------- the switch to the right of the phone: scene + card style ---------- */
-const PTK_DESC_ZH={1:{1:'点击直接发出任务，Migoo 用 follow-up 分两轮澄清：目标价 → 追踪多久。',2:'点击在 Shopee 页上弹半屏面板，Set Price Tracker 后进入 chat 发出，Migoo 确认。',3:'点击直接发出任务，Migoo 在回复里带面板卡片，设置后作为消息发出。'},
-  2:{1:'点击直接发出复购请求，Migoo 用 follow-up 分两轮澄清：多久一次 → 几点提醒。',2:'点击在 Shopee 页上弹半屏面板（频率 / 时间 / 数量），Set Restock Reminder 后进入 chat 发出。',3:'点击直接发出复购请求，Migoo 在回复里带设置卡片，设置后作为消息发出。'}};
-const PTK_TIP={1:'电商 tab → Track Price Drops：可搜 office chair、headphones、watch、sneakers，粘贴链接或选商品。',2:'入口：Shopee 首页防晒卡片「Remind Me to Rebuy」，或在 Assistant 里购买后的 follow-up。'};
-const ptkGo=(sc,tp)=>{try{localStorage.setItem('ptk_scene',sc);localStorage.setItem('ptk_mode',tp);}catch(_){} location.search=`?sc=${sc}&tp=${tp}&go=1`;};
+/* ---------- demo shortcuts: creation entry points and a concrete purchase flow ---------- */
+const ptkGo=sc=>{try{localStorage.setItem('ptk_scene',sc);}catch(_){} location.search=`?sc=${sc}&tp=3&go=1`;};
 (()=>{const side=document.querySelector('.ptside'); if(!side) return;
   side.querySelectorAll('[data-sc]').forEach(x=>x.classList.toggle('on',+x.dataset.sc===PTK_SCENE));
-  side.querySelectorAll('[data-tp]').forEach(x=>x.classList.toggle('on',+x.dataset.tp===PTK_MODE));
-  document.getElementById('ptswD').innerHTML=`${PTK_DESC_ZH[PTK_SCENE][PTK_MODE]}<span class="go" data-ptswgo="1">去 Shopee 卡片 ›</span><span class="tip">${PTK_TIP[PTK_SCENE]}</span>${PTK_SCENE===2?'<span class="ntb rbd" data-rbbuydemo="1">▶ 演示：在 Assistant 里购买</span><span class="tip t2">也可以在 Assistant 早报里点卫生纸 → 商品页 → Buy。买完后 Migoo 在 Assistant 里出复购提醒的 follow-up，点击进入复购 auto-task 设置（按上面的卡片样式）。商品卡右键（手机上长按）可「Ask this」引用。</span>':''}`;
+  if(PTK_SCENE===2){
+    side.querySelectorAll('[data-ptswgo],[data-ptswforYou]').forEach(x=>x.remove());
+    side.querySelector('[data-ptswatm]').innerHTML='<span>1 · 去 Auto-Task 管理页 ›</span><small>Add Auto-Task → Purchased → 复购提醒</small>';
+    side.querySelector('[data-ptswassistant]').innerHTML='<span>2 · Assistant 找回购牛奶 ›</span><small>点击输入框 → 发送 → 确认商品 → 复购提醒气泡</small>';
+    side.querySelector('[data-ntfire]').innerHTML='<img src="./img/migoo-logo.png" alt="">推送 · 牛奶该复购啦';
+    side.querySelector('[data-ptswbuy]').innerHTML='<span>Buy again · 牛奶 ›</span><small>牛奶复购商品卡 → Quick checkout</small>';
+  }
   side.addEventListener('click',e=>{let x;
-    if(x=e.target.closest('[data-sc]')) return ptkGo(+x.dataset.sc,PTK_MODE);
-    if(x=e.target.closest('[data-tp]')) return ptkGo(PTK_SCENE,+x.dataset.tp);
-    if(e.target.closest('[data-ptswgo]')) return ptkGo(PTK_SCENE,PTK_MODE);});})();
-function ptkGoCard(){const c=document.querySelector('#p1 [data-ptk],#p1 [data-rby]'); if(!c) return; const sc=c.closest('.sh-scroll'); if(!sc) return;
+    if(x=e.target.closest('[data-sc]')) return ptkGo(+x.dataset.sc);
+    if(e.target.closest('[data-ptswgo]')) return ptkGoCard();
+    if(e.target.closest('[data-ptswforYou]')) return ptkGoForYouCard();
+    if(e.target.closest('[data-ptswatm]')) return ptkGoAutoTasks();
+    if(e.target.closest('[data-ptswassistant]')) return ptkGoAssistant();
+    if(e.target.closest('[data-ptswbuy]')) return ptkGoBuyNow();});})();
+function ptkPrepareShortcut(ph){
+  flowStop(); closeFocus(); closeDrawer(ph); closeSearch(ph); closeResults(ph); closeTask(ph); closePDP(ph); closeChat(ph); closeShopee(ph); tpdClose(ph); atmClose(ph);
+  delete ph.dataset.ptkFind;
+  clearTimeout(ntfFire._t);
+  ph.querySelectorAll('.ptk-wrap,.atd-wrap,.apdp,.askpop,.ntf,.ps-wrap,.cs-wrap,.msheet,.ms-scrim').forEach(x=>x.remove());
+  ph.querySelectorAll('.acv,.modev,.tplv,.safv').forEach(x=>x.classList.remove('show'));
+  ph.scrollTop=0;
+}
+function ptkGoCard(){const ph=document.querySelector('#p1 .phone'); if(!ph) return;
+  ptkPrepareShortcut(ph); openShopee(ph);
+  const c=ph.querySelector('.shopv [data-ptk],.shopv [data-rby]'); if(!c) return; const sc=c.closest('.sh-scroll'); if(!sc) return;
   const d=c.getBoundingClientRect().top-sc.getBoundingClientRect().top-140; sc.scrollBy({top:d,behavior:'smooth'}); c.classList.add('ptk-hl'); setTimeout(()=>c.classList.remove('ptk-hl'),2400);}
+function ptkGoForYouCard(){const ph=document.querySelector('#p1 .phone'); if(!ph) return;
+  ptkPrepareShortcut(ph);
+  const sc=ph.querySelector('.scroll'), c=sc&&sc.querySelector('.feed .pc[data-p="chair"]'); if(!sc||!c) return;
+  const top=c.getBoundingClientRect().top-sc.getBoundingClientRect().top+sc.scrollTop-136;
+  sc.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+  c.classList.add('ptk-hl-chair'); clearTimeout(c._chairHL); c._chairHL=setTimeout(()=>c.classList.remove('ptk-hl-chair'),2400);}
+function ptkGoAutoTasks(){const ph=document.querySelector('#p1 .phone'); if(!ph) return;
+  ptkPrepareShortcut(ph); openAssistant(ph); atmOpen(ph);}
+/* Assistant discovery: explicit send, one product, then the scene's existing reminder UI. */
+const PTK_FIND_QUERIES={
+  'nike-price':'Find me a pair of Nike sneakers under Rp400.000.',
+  'milk-rebuy':'Help me buy the milk I bought before.'
+};
+let PTK_FIND_T=null;
+function ptkFindTypeStop(){clearTimeout(PTK_FIND_T); PTK_FIND_T=null;}
+function ptkGoAssistant(){const ph=document.querySelector('#p1 .phone'); if(!ph) return;
+  ptkPrepareShortcut(ph); openAssistant(ph); ph.dataset.ptkFind='ready';
+  const body=ph.querySelector('.chatv .cbody'); if(body) body.scrollTop=body.scrollHeight;}
+function ptkFindType(ph){const mode=CF.demo, query=PTK_FIND_QUERIES[mode]; if(!query||CF.v||PTK_FIND_T) return; let k=0;
+  const step=()=>{if(CF.ph!==ph||CF.demo!==mode||!ph.querySelector('.cfocus.show')) return ptkFindTypeStop();
+    CF.v=query.slice(0,++k); cfRender(); PTK_FIND_T=k<query.length?setTimeout(step,45+Math.random()*40):null;};
+  PTK_FIND_T=setTimeout(step,180);}
+function ptkFindSend(){const ph=CF.ph, mode=CF.demo, v=(PTK_FIND_T?PTK_FIND_QUERIES[mode]:CF.v).trim(); if(!v) return;
+  ptkFindTypeStop(); CF.demo=null; delete ph.dataset.ptkFind; closeFocus();
+  if(mode==='milk-rebuy'){const id='milk', o=TK[id], r=RB[id];
+    return chatFlow(ph,bubbleU(v,[]),[{t:`I found the milk you bought on ${r.last.getDate()} ${RB_MON[r.last.getMonth()]}. Is this the one?`,
+      rich:plist([row(o.img,o.name,fmc(id,o.cur),null,`<div class="why">${AIS}<em class="deal">Bought before</em>, full cream · 6 cartons</div>`).replace('<div class="prow2"',`<div class="prow2" data-tk="${id}"`)]),
+      after:`<div class="ptk-qr" data-rbfind="${id}"><span role="button" tabindex="0">Want me to set a repurchase reminder?</span></div>`}]);}
+  const id='demo-nike', o=TK[id];
+  chatFlow(ph,bubbleU(v,[]),[{t:`Here’s a pair under your budget: the ${o.name}, at <code>${fmc(id,o.cur)}</code>.`,
+    rich:plist([row(o.img,o.name,fmc(id,o.cur),null,`<div class="why">${AIS}<em class="deal">Air cushioning</em>, comfy for everyday wear</div>`).replace('<div class="prow2"',`<div class="prow2" data-tk="${id}"`)]),
+    after:`<div class="ptk-qr" data-ptkfind="${id}"><span role="button" tabindex="0">Want me to alert you if the price drops?</span></div>`}]);}
+function ptkFindClick(ph,on){let x;
+  if(on('.chatv .cask')&&ph.dataset.ptkFind==='ready'){openFocus(ph,{bare:true,chat:true,demo:PTK_SCENE===2?'milk-rebuy':'nike-price'}); ptkFindType(ph); return true;}
+  if(CF.ph===ph&&PTK_FIND_QUERIES[CF.demo]){
+    if(on('.cf-text')){ptkFindType(ph); return true;}
+    if((x=on('.kbd .k'))&&x.dataset.k!=='go') ptkFindTypeStop();
+  }
+  if(x=on('[data-rbfind] span')){const g=x.closest('[data-rbfind]'); if(g.classList.contains('used')) return true;
+    g.classList.add('used'); closeFocus(); const id=g.dataset.rbfind;
+    chatFlow(ph,bubbleU('Yes, remind me to buy this milk again.',[]),[{t:'Sure. Choose when and how often, and I’ll remind you to buy it again.',
+      after:`<div class="ptk-card">${rbyForm(id,'card',RTASK[id]?undefined:{every:RB[id].defaultEvery||'1m',time:'09:00',qty:1,fromToday:true})}</div>`}]); return true;}
+  if(x=on('[data-ptkfind] span')){closeFocus(); ptkOpenSheet(ph,x.closest('[data-ptkfind]').dataset.ptkfind,'assistant'); return true;}
+  return false;}
+document.addEventListener('keydown',e=>{const x=e.target.closest&&e.target.closest('[data-ptkfind] span,[data-rbfind] span,[data-ntfollow] span,.prow2[data-rbbuy],.ptk-rc .pr[data-atmpdp]'); if(x&&(e.key==='Enter'||e.key===' ')){e.preventDefault(); x.click();}});
+function ptkGoBuyNow(){const ph=document.querySelector('#p1 .phone'); if(!ph) return;
+  if(PTK_SCENE===2){const id=rbyMilkDemo(); ptkPrepareShortcut(ph); return rbyPreview(ph,id);}
+  ptkPrepareShortcut(ph);
+  const id='realme', o=TK[id];
+  if(!PTASK[id]||PTASK[id].off||PTASK[id].done){if(o.orig) o.cur=o.orig; o.was0=o.cur;
+    PTASK[id]={target:ptkPct(id,5),any:false,src:'shopee',dur:30,t:++PTT};}
+  ntfReach(id); ntfOpen(ph,id,true);}
 
 /* ============================================================
-   Scene 2 · Repurchase (restock reminder) — same three card styles as the price tracker
-     1 Chat   — the tap sends the request; Migoo clarifies how often, then what time
-     2 Sheet  — the tap raises a half sheet (how often / time / quantity); Set sends it to the chat
-     3 Hybrid — the tap sends the request; the sheet comes back as a card in Migoo's reply
+   Scene 2 · Repurchase (restock reminder) — Hybrid reply card.
+   Management opens a settings sheet; purchased products enter an editable composer.
    The demo's "today" is Thu 29 Oct 2026; the item was last bought on 20 Oct.
    ============================================================ */
-const RB={sunscreen:{img:IMG['assets/u-sunscreen.jpg'],name:'Sunscreen SPF50+ Reef Safe Spray 200ml',b:'Sunscreen',n:'SPF50+ 200ml',v:'200ml · Reef safe · Waterproof',cur:98000,now:92000,last:new Date(2026,9,20),q:'Remind me to rebuy this sunscreen',lasts:'about a month'}};
-const RB_EVERY={'2w':{t:'Every 2 weeks',s:'2 weeks',d:14},'1m':{t:'Every month',s:'1 month',m:1},'2m':{t:'Every 2 months',s:'2 months',m:2}};
+const RB={sunscreen:{img:IMG['assets/u-sunscreen.jpg'],name:'Sunscreen SPF50+ Reef Safe Spray 200ml',b:'Sunscreen',n:'SPF50+ 200ml',v:'200ml · Reef safe · Waterproof',cur:98000,now:92000,last:new Date(2026,9,20),q:'Remind me to rebuy this sunscreen',lasts:'about a month'},
+  milk:{img:'./img/milk-pack.png',name:'Full Cream UHT Milk · 1 L × 6',b:'Full Cream',n:'UHT Milk · 1 L × 6',v:'Original · 1 L × 6 cartons',cur:114000,now:108000,ccy:'Rp',last:new Date(2026,9,15),q:'Remind me to rebuy this milk',lasts:'about a week',unit:'pack',promptName:'this milk',defaultEvery:'1w',defaultDays:7}
+};
+TK.milk={img:RB.milk.img,name:RB.milk.name,v:RB.milk.v,cur:RB.milk.now,was:RB.milk.cur,ccy:'Rp',consumable:true,why:'bought before'};
+const RB_EVERY={'1w':{t:'Every week',s:'1 week',d:7},'2w':{t:'Every 2 weeks',s:'2 weeks',d:14},'1m':{t:'Every month',s:'1 month',m:1},'2m':{t:'Every 2 months',s:'2 months',m:2},once:{t:'One time',s:'Once'}};
 const RB_TIME={'09:00':'9:00 AM','12:00':'12:00 PM','20:00':'8:00 PM'};
 const RTASK={};
 let RB_DRAFT={};
 const rpx=v=>'Rp'+Math.round(v).toLocaleString('id-ID');
 const RB_DAY=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], RB_MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const rbDate=d=>`${RB_DAY[d.getDay()]}, ${d.getDate()} ${RB_MON[d.getMonth()]}`;
-const rbNext=(id,ev)=>{const e=RB_EVERY[ev], d=new Date(RB[id].last); if(e.d) d.setDate(d.getDate()+e.d); else d.setMonth(d.getMonth()+e.m); return d;};
-const rbWhen=(id,ev,tm)=>`${rbDate(rbNext(id,ev))} · ${RB_TIME[tm]}`;
+const rbNext=(id,ev,draft)=>{const t=draft||RTASK[id]||{}, e=RB_EVERY[ev], d=new Date(ev==='once'||t.fromToday?RB_TODAY:RB[id].last); if(ev==='once') d.setDate(d.getDate()+(t.days||RB[id].defaultDays||30)); else if(e.d) d.setDate(d.getDate()+e.d); else d.setMonth(d.getMonth()+e.m); return d;};
+const rbWhen=(id,ev,tm,draft)=>`${rbDate(rbNext(id,ev,draft))} · ${RB_TIME[tm]}`;
+const rbyPrompt=(id,ev,days)=>`Remind me to restock ${RB[id].promptName||RB[id].name} ${ev==='once'?`in ${days||RTASK[id]?.days||RB[id].defaultDays||30} days`:RB_EVERY[ev].t.toLowerCase()}.`;
 const rbAtts=id=>{const o=RB[id];return [{img:o.img,b:o.b,n:o.n}];};
 function rbyCard(){const o=RB.sunscreen;return `<div class="sh-p cmpc" data-rby="sunscreen"><div class="pi"><img src="${o.img}" alt=""><span class="off">-6%</span></div><div class="pb"><div class="tt2">${o.name} Waterproof Tahan Air …</div><div class="bg"><span class="rb">Bought ${o.last.getDate()} ${RB_MON[o.last.getMonth()]}</span><span class="r">⭐ 4.9</span></div><div class="pr"><b>${rpx(o.now)}</b><span class="vc"></span></div><div class="cmpb"><img src="${IMG['assets/migoo-logo.png']}" alt="">Remind Me to Rebuy</div></div></div>`;}
-const sceneCard=()=>PTK_SCENE===2?rbyCard():trkCard();
-function rbyForm(id,where){const o=RB[id], t=RTASK[id]||{}, ev=t.every||'1m', tm=t.time||'09:00', qty=t.qty||1;
-  return `<div class="ptk-f rby-f" data-rbyf="${id}" data-ev="${ev}" data-tm="${tm}" data-qty="${qty}">
+const sceneCard=()=>PTK_SCENE===2?'':trkCard();
+function rbyForm(id,where,draft){const o=RB[id], t={...(RTASK[id]||{}),...draft}, suggested=o.defaultEvery||'1m', ev=t.every||suggested, tm=t.time||'09:00', qty=t.qty||1, days=t.days||o.defaultDays||30;
+  return `<div class="ptk-f rby-f" data-rbyf="${id}" data-ev="${ev}" data-tm="${tm}" data-qty="${qty}" data-days="${days}" data-from-today="${t.fromToday?'1':''}">
     <div class="ptk-pr"><img src="${o.img}" alt=""><div><div class="n"><span>${o.name}</span>${PTK_I.chev}</div><div class="v">${o.v}</div><div class="cp">Last bought ${o.last.getDate()} ${RB_MON[o.last.getMonth()]} · ${(o.fmt||rpx)(o.cur)}</div></div></div>
-    <div class="ptk-lb">Remind me every</div>
-    <div class="ptk-chips">${Object.entries(RB_EVERY).map(([k,e])=>`<span class="ptk-chip${k===ev?' on':''}" data-rbe="${k}">${e.s}${k==='1m'?'<i>Suggested</i>':''}</span>`).join('')}</div>
+    <div class="rby-copy"><small>Default reminder</small><span data-rbcopy>“${rbyPrompt(id,ev,days)}”</span></div>
+    <div class="ptk-lb">${ev==='once'?'Remind me in':'Remind me every'}</div>
+    <div class="ptk-chips">${ev==='once'?[...new Set([14,30,60,days])].sort((a,b)=>a-b).map(n=>`<span class="ptk-chip${n===days?' on':''}" data-rbdays="${n}">${n} days</span>`).join(''):[...new Set([...(suggested==='1w'?['1w','2w','1m']:['2w','1m','2m']),ev])].map(k=>`<span class="ptk-chip${k===ev?' on':''}" data-rbe="${k}">${RB_EVERY[k].s}${k===suggested?'<i>Suggested</i>':''}</span>`).join('')}</div>
     <div class="ptk-lb q">Reminder time</div>
     <div class="ptk-chips">${Object.entries(RB_TIME).map(([k,v])=>`<span class="ptk-chip${k===tm?' on':''}" data-rbt="${k}">${v}</span>`).join('')}</div>
     <div class="rby-qty"><span class="l">Quantity</span><span class="st"><b data-rbq="-1">−</b><em>${qty}</em><b data-rbq="1">+</b></span></div>
-    <div class="ptk-hint rby-hint">First reminder ${rbWhen(id,ev,tm)}</div>
-    <div class="ptk-acts"><div class="ptk-go" data-rbgo="${where}">${RTASK[id]?'Update Reminder':'Set Restock Reminder'}</div></div></div>`;}
+    <div class="ptk-hint rby-hint">${ev==='once'?'Reminder':'First reminder'} ${rbWhen(id,ev,tm,t)}</div>
+    <div class="ptk-acts"><div class="ptk-go" data-rbgo="${where}">${RTASK[id]?'Update Reminder':'Set Repurchase Reminder'}</div></div></div>`;}
 function rbySync(f){const id=f.dataset.rbyf, ev=f.dataset.ev, tm=f.dataset.tm;
   f.querySelectorAll('[data-rbe]').forEach(c=>c.classList.toggle('on',c.dataset.rbe===ev)); f.querySelectorAll('[data-rbt]').forEach(c=>c.classList.toggle('on',c.dataset.rbt===tm));
-  f.querySelector('.rby-qty em').textContent=f.dataset.qty; f.querySelector('.rby-hint').textContent=`First reminder ${rbWhen(id,ev,tm)}`;}
+  f.querySelectorAll('[data-rbdays]').forEach(c=>c.classList.toggle('on',c.dataset.rbdays===f.dataset.days));
+  f.querySelector('.rby-qty em').textContent=f.dataset.qty; f.querySelector('.rby-hint').textContent=`${ev==='once'?'Reminder':'First reminder'} ${rbWhen(id,ev,tm,{days:+f.dataset.days,fromToday:!!f.dataset.fromToday})}`; f.querySelector('[data-rbcopy]').textContent=`“${rbyPrompt(id,ev,+f.dataset.days)}”`;}
 function rbyOpenSheet(ph,id,where='sheet'){ph.querySelectorAll('.ptk-wrap').forEach(x=>x.remove());
   const w=document.createElement('div'); w.className='ptk-wrap'; w.innerHTML=`<div class="ptk-scrim" data-ptkx="1"></div><div class="ptk-sheet"><div class="grab"></div>${rbyForm(id,where)}<div class="hi2"></div></div>`;
   ph.appendChild(w); requestAnimationFrame(()=>requestAnimationFrame(()=>w.classList.add('on')));}
 function rbyReceipt(id){if(PTK_MODE===1) return '';
   const o=RB[id], t=RTASK[id];
   return `<div class="ptk-rc"><div class="h"><span class="dot"></span>Restock Reminder · Active</div>
-    <div class="pr"><img src="${o.img}" alt=""><div><div class="n">${o.name}</div><div class="v">${o.v}</div></div></div>
+    <div class="pr" data-atmpdp="${id}" role="button" tabindex="0" aria-label="View ${esc(o.name)}"><img src="${o.img}" alt=""><div><div class="n">${o.name}</div><div class="v">${o.v}</div></div></div>
     <div class="kv"><span>Repeat</span><b>${RB_EVERY[t.every].t}</b></div>
     <div class="kv"><span>Next reminder</span><b>${t.snoozed||rbWhen(id,t.every,t.time)}</b></div>
     <div class="kv"><span>Quantity</span><b>${t.qty}</b></div>
     <div class="kv"><span>Last price</span><b>${(o.fmt||rpx)(o.cur)}</b></div>
     <div class="ft"><span data-rbed="${id}">Edit</span><span data-atmopen="1">View your Auto-Tasks ›</span></div></div>`;}
-const rbSay=(id,t)=>`${RB_EVERY[t.every].t.toLowerCase()}, ${RB_TIME[t.time]}${t.qty>1?` · ${t.qty} ${RB[id].unit||'bottle'}s`:''}`;
+const rbSay=(id,t)=>`${t.every==='once'?`In ${t.days||30} days`:RB_EVERY[t.every].t.toLowerCase()}, ${RB_TIME[t.time]}${t.qty>1?` · ${t.qty} ${RB[id].unit||'bottle'}s`:''}`;
 function rbySave(id,o){const old=RTASK[id]; RTASK[id]={every:'1m',time:'09:00',qty:1,...old,...o,snoozed:null,t:++PTT}; atmRefresh();}
 function rbyDone(id,upd){const t=RTASK[id];
+  if(t.every==='once') return [{tag:upd?'Auto-task updated':AT,t:`${upd?'Updated':'Done'}. I’ll remind you to rebuy this on <code>${rbWhen(id,t.every,t.time)}</code>.`,rich:rbyReceipt(id)}];
   return [{tag:upd?'Auto-task updated':AT,t:upd?`Updated. Next reminder is <code>${rbWhen(id,t.every,t.time)}</code>, then ${RB_EVERY[t.every].t.toLowerCase()}. Still one reminder for this item.`
     :`Done. I’ll remind you on <code>${rbWhen(id,t.every,t.time)}</code>, then ${RB_EVERY[t.every].t.toLowerCase()}. Before each reminder I check the price and stock, so you can buy again in one tap.`,rich:rbyReceipt(id)}];}
 function rbyQR(id,step){const opts=step==='every'?['1m','2m'].map(k=>[`${RB_EVERY[k].t} · next ${rbDate(rbNext(id,k))}`,k]):[['9:00 AM','09:00'],['8:00 PM','20:00']];
@@ -3687,8 +3946,9 @@ function rbyQuick(ph,x){const g=x.closest('.ptk-qr'); if(g.classList.contains('u
     return chatFlow(ph,bubbleU(say,[]),[{t:`Got it, ${say.toLowerCase()}. What time should I remind you?`,after:rbyQR(id,'time')}]);}
   rbySave(id,{...RB_DRAFT,time:v}); chatFlow(ph,bubbleU(x.textContent,[]),rbyDone(id,false));}
 function rbySubmit(ph,f,where){const id=f.dataset.rbyf, upd=!!RTASK[id];
-  rbySave(id,{every:f.dataset.ev,time:f.dataset.tm,qty:+f.dataset.qty}); const t=RTASK[id], say=rbSay(id,t);
-  if(where==='atm'){ptkCloseSheet(ph); return toast(ph,`Updated · ${RB_EVERY[t.every].t.toLowerCase()}, ${RB_TIME[t.time]}`);}
+  rbySave(id,{every:f.dataset.ev,time:f.dataset.tm,qty:+f.dataset.qty,days:+f.dataset.days||30,fromToday:!!f.dataset.fromToday}); const t=RTASK[id], say=rbSay(id,t);
+  if(where==='atm'||where==='atd'){ptkCloseSheet(ph); if(where==='atd') atdRefresh(ph); return toast(ph,`Updated · ${RB_EVERY[t.every].t.toLowerCase()}, ${RB_TIME[t.time]}`);}
+  if(where==='picker'){ptkCloseSheet(ph); closeFocus(); atmOpen(ph); return toast(ph,upd?'Rebuy reminder updated':'Rebuy reminder set');}
   if(where==='sheet'){const u=upd?`Change it to ${say}`:`${RB[id].q} · ${say}`; ptkCloseSheet(ph); return setTimeout(()=>ptkToChat(ph,bubbleU(u,upd?[]:rbAtts(id)),rbyDone(id,upd)),200);}
   f.classList.add('done'); f.querySelector('.ptk-go').textContent=`Set · ${RB_EVERY[t.every].s}, ${RB_TIME[t.time]}`;
   chatFlow(ph,bubbleU(upd?`Change it to ${say}`:say[0].toUpperCase()+say.slice(1),[]),rbyDone(id,upd));}
@@ -3697,12 +3957,17 @@ function rbyEdit(ph,id){const t=RTASK[id];
   if(PTK_MODE===1) return chatFlow(ph,bubbleU('Change the schedule',[]),[{t:`Sure. I’m set to remind you ${RB_EVERY[t.every].t.toLowerCase()} at ${RB_TIME[t.time]}. How often instead?`,after:rbyQR(id,'every')}]);
   chatFlow(ph,bubbleU('Change the schedule',[]),[{t:'Sure. Set a new schedule:',after:`<div class="ptk-card">${rbyForm(id,'card')}</div>`}]);}
 /* what the reminder looks like when it fires */
-function rbyPreview(ph,id){const o=RB[id], t=RTASK[id], d=o.cur-o.now;
-  const fx=o.fmt||rpx; const segs=[{tag:'Restock reminder',t:`Time to restock your <b>${o.b} ${o.n}</b>. You bought ${t.qty>1?t.qty+' '+(o.unit||'bottle')+'s':'it'} on ${o.last.getDate()} ${RB_MON[o.last.getMonth()]} for <code>${(o.fmt||rpx)(o.cur)}</code>; the same seller has it at <code>${(o.fmt||rpx)(o.now)}</code> today, ${(o.fmt||rpx)(d)} less, and it’s in stock.`,
-    after:`<div class="rby-acts" data-rbacts="${id}"><span class="buy" data-rbbuy="${id}">Buy again · ${(o.fmt||rpx)(o.now*t.qty)}</span><span data-rbsn="${id}">Snooze 3 days</span><span data-rbed="${id}">Change schedule</span></div>`}];
+function rbyPreview(ph,id){const o=RB[id], t=RTASK[id], d=o.cur-o.now, milk=id==='milk';
+  const fx=o.fmt||rpx, buy=`Buy again · ${fx(o.now*t.qty)}`;
+  const product=milk?plist([row(o.img,o.name,fx(o.now),null,`<div class="why">${AIS}<em class="deal">Your usual pick</em> · 6 cartons</div>`).replace('<div class="prow2"',`<div class="prow2" data-rbbuy="${id}" role="button" tabindex="0" aria-label="Buy ${esc(o.name)} again"`)]):'';
+  const segs=[{tag:'Restock reminder',t:milk?'Milk restock time! 🥛 Don’t forget to top up — your usual milk is ready to buy again.':`Time to restock your <b>${o.b} ${o.n}</b>. You bought ${t.qty>1?t.qty+' '+(o.unit||'bottle')+'s':'it'} on ${o.last.getDate()} ${RB_MON[o.last.getMonth()]} for <code>${fx(o.cur)}</code>; the same seller has it at <code>${fx(o.now)}</code> today, ${fx(d)} less, and it’s in stock.`,
+    rich:milk?`${product}<div class="ntf-buy" data-rbbuy="${id}">${buy}</div>`:'',
+    after:`<div class="rby-acts" data-rbacts="${id}">${milk?'':`<span class="buy" data-rbbuy="${id}">${buy}</span>`}<span data-rbsn="${id}">Snooze 3 days</span><span data-rbed="${id}">Change schedule</span></div>`}];
   flowStop(); const body=chatBody(ph); body.insertAdjacentHTML('beforeend',`<div class="rby-sys">${rbDate(rbNext(id,t.every))} · ${RB_TIME[t.time]}</div>`);
   setTimeout(()=>chatFlow(ph,'',segs),100);}
 function rbyClick(ph,on){let x;
+  if(x=on('[data-rbdays]')){const f=x.closest('.rby-f'); if(f.classList.contains('done')) return true; f.dataset.days=x.dataset.rbdays; rbySync(f); return true;}
+  if(on('[data-ptkx]')){const f=ph.querySelector('.rby-f'); if(f?.querySelector('[data-rbgo]')?.dataset.rbgo==='picker'){ptkCloseSheet(ph); closeFocus(); atmOpen(ph); return true;}}
   if(x=on('[data-rby]')){rbyStart(ph,x.dataset.rby); return true;}
   if(x=on('[data-rbe]')){const f=x.closest('.rby-f'); if(f.classList.contains('done')) return true; f.dataset.ev=x.dataset.rbe; rbySync(f); return true;}
   if(x=on('[data-rbt]')){const f=x.closest('.rby-f'); if(f.classList.contains('done')) return true; f.dataset.tm=x.dataset.rbt; rbySync(f); return true;}
@@ -3722,28 +3987,40 @@ function rbyClick(ph,on){let x;
    · the switch pauses a task; the title opens its edit sheet; Adjust with Migoo takes it to the chat
    · Add Auto-Task → Migoo home, the sentence in the box, Select Products on top
    ============================================================ */
-const ATM_I={back:PTK_I.back,chev:`<svg viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,.35)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>`};
+const ATM_I={back:PTK_I.back};
 const ATM_ADD_Q='Set up an autotask to notify me when the price of these shoes drops to $100.';
 function atmItems(){
   const groups={};
   Object.entries(PTASK).forEach(([id,t])=>{const g=t.grp||id; (groups[g]=groups[g]||{kind:'price',ids:[],t:0,task:t}).ids.push(id); groups[g].t=Math.max(groups[g].t,t.t||0);});
   Object.entries(RTASK).forEach(([id,t])=>{groups['r:'+id]={kind:'rby',ids:t.items||[id],t:t.t||0,task:t};});
   return Object.entries(groups).sort((a,b)=>b[1].t-a[1].t);}
+function atmFacts(o){const id=o.ids[0], t=o.task;
+  if(o.kind==='rby') return `<div class="atm-prices rby"><div><small>Reminder</small><b>${RB_EVERY[t.every].t}</b></div><div><small>Next reminder</small><b>${t.snoozed||rbWhen(id,t.every,t.time)}</b></div></div>`;
+  return '';}
 function atmCard([g,o]){const t=o.task, id=o.ids[0], off=o.ids.every(k=>(o.kind==='rby'?RTASK:PTASK)[k].off);
-  const title=o.kind==='rby'?'Restock reminder':'Price & stock alert';
-  const desc=o.kind==='rby'?`${RB_EVERY[t.every].t} · next ${t.snoozed||rbWhen(id,t.every,t.time)}`
-    :t.any||o.ids.length>1?'Any price or stock move - tell me':(TK[id].cur<=t.target?`Hit your ${fmS(id,t.target)} target - buy now`:`Tell me when it drops to ${fmS(id,t.target)}`);
-  return `<div class="atm-c${off?' off':''}" data-atmg="${g}"><div class="hd">Migoo Commerce Agent</div>
-    <div class="tl"><span class="t" data-atmed="${g}">${title}${ATM_I.chev}</span><span class="sw${off?'':' on'}" data-atmsw="${g}"><i></i></span></div>
-    <div class="ds">${t.done?`Done · ordered at ${t.done}`:`${off?'Paused · ':''}${desc}`}</div>
-    <div class="th">${o.ids.map(k=>`<img src="${itemOf(k).img}" alt="" data-atmpdp="${k}">`).join('')}</div>
-    <div class="nv">Notify via: Shopee</div>
-    <div class="adj" data-atmadj="${g}">Adjust with Migoo</div></div>`;}
+  const item=o.kind==='rby'?(RB[id]||TK[id]):TK[id], hit=o.kind==='price'&&o.ids.length===1&&!t.any&&item.cur<=t.target;
+  const name=o.ids.length>1?`${o.ids.length} products`:item.name;
+  const variant=o.ids.length>1?o.ids.map(k=>(RB[k]||TK[k]).name).join(' · '):(item.v||'');
+  const kind=o.kind==='rby'?'Restock reminder':'Price tracker';
+  const state=t.done?'Completed':off?'Paused':o.kind==='rby'?'Reminder active':o.ids.length>1||t.any?`Watching ${o.ids.length>1?`${o.ids.length} products`:'price changes'}`:hit?`Your target price of ${fmS(id,t.target)} has been reached.`:'Watching price';
+  const stateTone=t.done?'':off?'paused':o.kind==='rby'?'active':hit?'':'watching';
+  const notice=o.kind==='price'&&!off&&!t.done;
+  const pausedCopy=off&&!t.done;
+  const stateText=pausedCopy?'Auto-task paused. Turn it back on whenever you need.':notice?(hit?`Your target price of ${fmS(id,t.target)} has been reached.`:o.ids.length>1?'We’re watching these products. We’ll alert you about price or stock changes.':t.any?'We’re watching this price. We’ll alert you on any drop or stockout.':`We’re watching this price. We’ll alert you at or below ${fmS(id,t.target)}.`):state;
+  const action=o.kind==='rby'?'Change reminder':hit?'Buy now':o.ids.length===1&&!t.any?'Adjust target':'Adjust with Migoo';
+  const productAttr=o.ids.length===1?`data-atmpdp="${id}"`:`data-atmed="${g}"`;
+  const current=o.kind==='price'&&o.ids.length===1?`<div class="atm-current">${fmc(id,item.cur)}</div>`:'';
+  return `<div class="atm-c${off?' off':''}" data-atmg="${g}">
+    <div class="atm-head"><div class="atm-source"><small>${kind}</small></div><span class="sw${off?'':' on'}" data-atmsw="${g}"><i></i></span></div>
+    <div class="atm-product" ${productAttr}><img src="${item.img}" alt=""><div class="atm-info"><div class="atm-name"><span>${esc(name)}</span></div><div class="atm-subrow"><div class="atm-variant">${esc(variant)}</div>${current}</div></div></div>
+    ${atmFacts(o)}
+    <div class="atm-state${stateTone?' '+stateTone:''}${notice||pausedCopy?' notice':''}">${stateText}</div>
+    <div class="atm-actions"><div class="adj${hit?' buy':''}" ${hit?'data-atmbuy':`data-atmadj="${g}"`}>${action}</div>${o.kind==='price'?`<div class="atm-more-wrap"><button type="button" class="atm-more" data-atmmore="${g}" aria-label="Task options">···</button><div class="atm-menu">${hit?`<button type="button" data-atmprice="${g}">Adjust price target</button>`:''}<button type="button" class="delete" data-atmdel="${g}">Delete task</button></div></div>`:''}</div></div>`;}
 function atmHTML(){const items=atmItems();
   return `<div class="sb"><span>9:41</span>${sbIcons()}</div><div class="tpd-h"><span class="bk" data-atmback="1">${ATM_I.back}</span><b>Auto-Task</b></div>
     <div class="atm-body">${items.length?items.map(atmCard).join(''):'<div class="atm-emp"><b>No auto-tasks yet</b><span>Tell Migoo what to keep an eye on — a price, a restock, a sale.</span></div>'}
-    <div class="atm-app" data-atmapp="1">Auto-Task From Migoo APP</div></div>
-    <div class="atm-f"><div class="ptk-go" data-atmadd="1">Add Auto-Task</div></div>`;}
+    </div>
+    <div class="atm-f"><div class="ptk-go" data-atmadd="1"><span class="atm-plus"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v8M6 10h8"/></svg></span>Add Auto-Task</div></div>`;}
 function atmEl(ph){let el=ph.querySelector('.atmv'); if(!el){el=document.createElement('div'); el.className='atmv'; const hi=ph.querySelector(':scope>.homei'); if(hi) hi.before(el); else ph.appendChild(el);} return el;}
 function atmOpen(ph){closeDrawer(ph); const el=atmEl(ph); el.innerHTML=atmHTML(); el.classList.add('show'); el.classList.remove('in'); void el.offsetWidth; el.classList.add('in');}
 function atmClose(ph){ph.querySelector('.atmv')?.classList.remove('show');}
@@ -3767,10 +4044,10 @@ function atmAdjustSend(){const ph=CF.ph, a=CF.adj, v=CF.v, atts=CF.att, edited=v
   setTimeout(()=>ptkAsk(ph,a.id,bubbleU(v,atts),`Sure. The ${o.b?ptkShort(a.id):o.name} is <code>${fmc(a.id,o.cur)}</code> now and I’m set to tell you ${t.any?'about any price or stock move':`at <code>${fmc(a.id,t.target)}</code>`}.`),120);}
 /* Add Auto-Task: Migoo home, the sentence in the box, Select Products on top */
 function atmAdd(ph){atmClose(ph); tpdClose(ph); closeShopee(ph); ph.querySelector('.chatv')?.classList.remove('show');
-  openFocus(ph,{cap:1,v:ATM_ADD_Q}); openSheet(ph,1);}
-/* keep the typed sentence when products come back from the picker */
+  openFocus(ph,{cap:1,v:PTK_SCENE===2?'Help me set a rebuy reminder.':ATM_ADD_Q}); openSheet(ph,1);}
+/* Task tabs supply their own preset; comparisons keep the typed sentence. */
 const _sheetConfirm=sheetConfirm;
-sheetConfirm=function(ph){const v=CF.v; _sheetConfirm(ph); if(v){CF.v=v; cfRender();}};
+sheetConfirm=function(ph){if(PK.intent) return chatTaskConfirm(ph); const v=CF.v, taskPicker=PK.cap===1; _sheetConfirm(ph); if(v&&!taskPicker){CF.v=v; cfRender();}};
 /* items picked for tracking become real tasks, so they show up in Auto-Task and Track Price Drops */
 const _replyFor=replyFor;
 replyFor=function(v,ctx){const out=_replyFor(v,ctx);
@@ -3791,11 +4068,16 @@ function atmClick(ph,on){let x;
   if(on('[data-atmopen]')){atmOpen(ph); return true;}
   if(on('[data-atmback]')){atmClose(ph); return true;}
   if(x=on('[data-atmsw]')){const o=atmGroup(x.dataset.atmsw), st=o.kind==='rby'?RTASK:PTASK, off=!o.ids.every(k=>st[k].off); o.ids.forEach(k=>st[k].off=off); atmRefresh(); toast(ph,off?'Auto-task paused':'Auto-task resumed'); return true;}
+  if(x=on('[data-atmmore]')){const m=x.parentElement.querySelector('.atm-menu'), was=m.classList.contains('open'); ph.querySelectorAll('.atm-menu.open').forEach(y=>y.classList.remove('open')); if(!was) m.classList.add('open'); return true;}
+  if(x=on('[data-atmprice]')){const g=x.dataset.atmprice, o=atmGroup(g); x.closest('.atm-menu').classList.remove('open'); if(o.ids.length===1) return ptkOpenSheet(ph,o.ids[0],'atm'); return atmAdjust(ph,g);}
+  if(x=on('[data-atmdel]')){const o=atmGroup(x.dataset.atmdel), st=o.kind==='rby'?RTASK:PTASK; o.ids.forEach(k=>delete st[k]); tpdRefresh(); atmRefresh(); toast(ph,'Auto-task deleted'); return true;}
   if(x=on('[data-atmed]')){atdOpen(ph,x.dataset.atmed); return true;}
-  if(x=on('[data-atmadj]')){atmAdjust(ph,x.dataset.atmadj); return true;}
+  if(x=on('[data-atmbuy]')){const id=x.closest('[data-atmg]')&&x.closest('[data-atmg]').dataset.atmg; const o=atmGroup(id); const k=o.ids[0];
+    ckoOpen(ph,k); return true;}
+  if(x=on('[data-atmadj]')){const g=x.dataset.atmadj, o=atmGroup(g), id=o.ids[0];
+    if(o.kind==='rby') rbyOpenSheet(ph,id,'atm'); else if(o.ids.length===1&&!o.task.any) ptkOpenSheet(ph,id,'atm'); else atmAdjust(ph,g); return true;}
   if(on('[data-atmadd]')){atmAdd(ph); return true;}
-  if(on('[data-atmapp]')){toast(ph,'Opens the Migoo app'); return true;}
-  if(on('.atmv')) return true;
+  if(on('.atmv')){ph.querySelectorAll('.atm-menu.open').forEach(y=>y.classList.remove('open')); return true;}
   return false;}
 
 /* ---------- Auto-Task detail (half sheet): prompt, attachments, notify via ---------- */
@@ -3807,38 +4089,37 @@ function atmName(o){const id=o.ids[0];
 function atmDesc(o){const id=o.ids[0], t=o.task;
   if(o.kind==='rby') return `Remind me to rebuy the ${RB[id].b.toLowerCase()} ${RB_EVERY[t.every].t.toLowerCase()}, at ${RB_TIME[t.time]}, and check the price before I buy.`;
   if(o.ids.length>1||t.any) return `Tell me when any of ${o.ids.length>1?'these items':'this item'} drops in price or goes out of stock.`;
-  return `Tell me when the ${itemShort(id)} drops to ${fmS(id,t.target)} or lower. One alert, with a buy link.`;}
+  return `Tell me when the ${itemShort(id)} drops to ${fmS(id,t.target)} or lower.`;}
 function atmPrompt(o){const id=o.ids[0], t=o.task; if(t.prompt) return t.prompt;
   if(o.kind==='rby'){const r=RB[id]; return `${RB_EVERY[t.every].t} at ${RB_TIME[t.time]}, remind me to rebuy ${r.name} (${t.qty} ${r.unit||'bottle'}${t.qty>1?'s':''}). Before reminding, check the price and stock at the last seller, and include a Buy again link.`;}
   const names=o.ids.map(k=>itemOf(k).name);
   if(o.ids.length>1||t.any) return `Monitor the price and stock of ${names.slice(0,-1).join(', ')}${names.length>1?' and ':''}${names.slice(-1)}. When any of them drops in price or goes out of stock, send me one alert with the new price and a buy link. Check a few times a day.`;
   return `Monitor the price and stock of ${names[0]}${TK[id].v?` (${TK[id].v})`:''}${t.src==='shopee'?' on Shopee':''}. When it drops to ${fmc(id,t.target)} or lower, or goes out of stock, send me one alert with the new price and a buy link. Check a few times a day${t.dur==='11.11'?' until the 11.11 sale ends':t.dur==='0'?' until I stop it':' for the next 30 days'}.`;}
 let ATD=null;
-function atdAttHTML(){return ATD.ids.map(k=>{const o=itemOf(k);return `<div class="atd-a" data-atdpdp="${k}"><img src="${o.img}" alt=""><span>${o.name}</span><i data-atdrm="${k}">${PTK_I.x}</i></div>`;}).join('')+`<div class="atd-add" data-atdadd="1"><svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>`;}
-function atdOpen(ph,g){const o=atmGroup(g); ATD={g,kind:o.kind,ids:[...o.ids],orig:[...o.ids],prompt:atmPrompt(o)};
+function atdProductHTML(){return ATD.ids.map(k=>{const o=itemOf(k);return `<div class="atd-a" data-atmpdp="${k}"><img src="${o.img}" alt=""><span>${esc(o.name)}</span></div>`;}).join('');}
+function atdSettingLabel(o){return o.kind==='rby'?'Reminder schedule':o.ids.length>1||o.task.any?'Price alert':'Target price';}
+function atdSettingHTML(o){const id=o.ids[0], t=o.task;
+  if(o.kind==='rby') return `<div><b>${RB_EVERY[t.every].t}</b><small>Next reminder: ${t.snoozed||rbWhen(id,t.every,t.time)}</small></div>`;
+  if(o.ids.length>1||t.any) return `<div><b>Any price or stock change</b><small>${o.ids.length>1?`Watching ${o.ids.length} products`:'Watching this product'}</small></div>`;
+  return `<div><b data-atd-target>≤ ${fmS(id,t.target)}</b><small data-atd-current>Current price: ${fmc(id,TK[id].cur)}</small></div>`;}
+function atdActionHTML(o){if(o.kind==='rby') return `<div class="ptk-go" data-atdchange-schedule="1">Change reminder</div>`;
+  if(o.ids.length===1&&!o.task.any) return `<div class="ptk-go" data-atdchange-price="1">Change target price</div>`;
+  return `<div class="ptk-go" data-atdadj="1">Adjust with Migoo</div>`;}
+function atdRefresh(ph){const w=ph.querySelector('.atd-wrap'); if(!w||!ATD) return; const o=atmGroup(ATD.g);
+  const lb=w.querySelector('[data-atd-setting-label]'), row=w.querySelector('[data-atd-setting]');
+  if(lb) lb.textContent=atdSettingLabel(o); if(row) row.innerHTML=atdSettingHTML(o);}
+function atdOpen(ph,g){const o=atmGroup(g); ATD={g,kind:o.kind,ids:[...o.ids],orig:[...o.ids]};
   ph.querySelectorAll('.atd-wrap').forEach(x=>x.remove());
   const w=document.createElement('div'); w.className='atd-wrap';
   w.innerHTML=`<div class="ptk-scrim" data-atdx="1"></div><div class="ptk-sheet atd"><div class="grab"></div>
     <div class="atd-h"><b>${atmName(o)}</b><span class="more" data-atdmore="1">•••</span><div class="menu"><span data-atdpause="1">${o.ids.every(k=>(o.kind==='rby'?RTASK:PTASK)[k].off)?'Resume':'Pause'}</span><span class="del" data-atddel="1">Delete</span></div></div>
     <div class="atd-sub">Run by Migoo Commerce Agent</div>
-    <div class="atd-body"><div class="atd-ds">${atmDesc(o)}</div>
-      <div class="atd-lb">Prompt</div><textarea class="atd-p" data-atdp="1" rows="5" aria-label="Prompt">${esc(ATD.prompt)}</textarea>
-      <div class="atd-lb">Attachment</div><div class="atd-as">${atdAttHTML()}</div>
+    <div class="atd-body"><div class="atd-lb" data-atd-setting-label>${atdSettingLabel(o)}</div><div class="atd-setting" data-atd-setting>${atdSettingHTML(o)}</div>
+      <div class="atd-lb">Product</div><div class="atd-as">${atdProductHTML()}</div>
       <div class="atd-lb">Notify via</div><span class="atd-nv">Shopee</span></div>
-    <div class="ptk-go off" data-atdup="1">Update</div><div class="hi2"></div></div>`;
+    ${atdActionHTML(o)}<div class="hi2"></div></div>`;
   ph.appendChild(w); requestAnimationFrame(()=>requestAnimationFrame(()=>w.classList.add('on'))); setTimeout(()=>w.classList.add('on'),60);}
 function atdClose(ph){const w=ph.querySelector('.atd-wrap'); if(!w) return; w.classList.remove('on'); setTimeout(()=>w.remove(),300);}
-function atdDirty(ph){const w=ph.querySelector('.atd-wrap'); if(!w) return; const p=w.querySelector('.atd-p').value;
-  const d=p!==ATD.prompt||ATD.ids.join()!==ATD.orig.join(); w.querySelector('[data-atdup]').classList.toggle('off',!d||!ATD.ids.length);}
-function atdRenderAtt(ph){const w=ph.querySelector('.atd-wrap'); if(w) w.querySelector('.atd-as').innerHTML=atdAttHTML(); atdDirty(ph);}
-function atdUpdate(ph){const w=ph.querySelector('.atd-wrap'), p=w.querySelector('.atd-p').value.trim();
-  if(ATD.kind==='rby'){const id=ATD.orig[0]; RTASK[id].items=ATD.ids.includes(id)?ATD.ids:[id,...ATD.ids]; if(p!==ATD.prompt) RTASK[id].prompt=p; RTASK[id].t=++PTT;}
-  else{const gone=ATD.orig.filter(k=>!ATD.ids.includes(k)), added=ATD.ids.filter(k=>!ATD.orig.includes(k)), keep=ATD.ids.filter(k=>ATD.orig.includes(k));
-    gone.forEach(k=>delete PTASK[k]);
-    const grp=ATD.ids.length>1?(keep.length&&PTASK[keep[0]].grp)||'g'+(++PTT):null;
-    added.forEach(k=>{PTASK[k]={target:TK[k].cur,any:true,src:'migoo',t:0};});
-    ATD.ids.forEach(k=>{PTASK[k].grp=grp; PTASK[k].t=++PTT; if(p!==ATD.prompt) PTASK[k].prompt=p;});}
-  atdClose(ph); tpdRefresh(); toast(ph,'Auto-task updated');}
 function atdDelete(ph){const st=ATD.kind==='rby'?RTASK:PTASK; ATD.orig.forEach(k=>delete st[k]); atdClose(ph); tpdRefresh(); toast(ph,'Auto-task deleted');}
 /* ---------- a product page for any tracked item (Migoo PDP style), with the Auto-task tag ---------- */
 const PDP_I={x:`<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>`,
@@ -3847,7 +4128,7 @@ const PDP_I={x:`<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width=
   dn:`<svg viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>`};
 const taskOfItem=k=>atmItems().find(([g,o])=>o.ids.includes(k));
 function apdpOpen(ph,k){const o=itemOf(k), isRb=!!RB[k], ccyOf=v=>isRb?(o.fmt||rpx)(v):fmc(k,v), price=isRb?o.now:o.cur, was=isRb?o.cur:o.was, tg=taskOfItem(k);
-  const off=was&&was>price?Math.round((1-price/was)*100):0, shopee=isRb||ccy(k)==='Rp', store=shopee?'Shopee':'Walmart';
+  const off=was&&was>price?Math.round((1-price/was)*100):0, shopee=isRb||ccy(k)==='Rp', store=shopee?'Shopee':(o.store||Object.values(PKI).find(x=>x.img===o.img)?.st||'Everyday Deals');
   const vr=(o.v||'').split(' · '), why=tg?(tg[1].kind==='rby'?`Restock reminder · ${RB_EVERY[tg[1].task.every].t.toLowerCase()}, next ${rbWhen(tg[1].ids[0],tg[1].task.every,tg[1].task.time)}`:atmDesc(tg[1])):'';
   ph.querySelectorAll('.apdp').forEach(x=>x.remove());
   const el=document.createElement('div'); el.className='apdp'; el.dataset.id=k;
@@ -3869,19 +4150,15 @@ function atdClick(ph,on){let x;
   if(on('[data-apdpbuy]')){toast(ph,'Opens the store page · next step'); return true;}
   if(x=on('[data-apdpask]')){const k=x.dataset.apdpask, o=itemOf(k); apdpClose(ph); atdClose(ph); atmClose(ph); tpdClose(ph); closeShopee(ph); openAssistant(ph); openFocus(ph,{chat:true,bare:true,att:[{img:o.img,b:o.b||o.name,n:o.n||''}]}); return true;}
   if(on('.apdp')) return true;
-  if(x=on('[data-atdrm]')){const k=x.dataset.atdrm; ATD.ids=ATD.ids.filter(i=>i!==k); atdRenderAtt(ph); return true;}
-  if(x=on('[data-atdpdp]')){apdpOpen(ph,x.dataset.atdpdp); return true;}
-  if(on('[data-atdadd]')){TPD.pick=null; TPD.pickFor='atd'; tpdPick(ph,'recent'); return true;}
-  if(on('[data-tpdpok]')&&TPD.pickFor==='atd'){if(!TPD.pick) return true; if(!ATD.ids.includes(TPD.pick)) ATD.ids.push(TPD.pick); TPD.pick=null; TPD.pickFor=null; ptkCloseSheet(ph); atdRenderAtt(ph); setTimeout(()=>{const s=ph.querySelector('.atd-as'); if(s) s.scrollLeft=s.scrollWidth;},50); return true;}
-  if(on('[data-ptkx]')&&TPD.pickFor==='atd'){TPD.pickFor=null; ptkCloseSheet(ph); return true;}
+  if(on('[data-atdchange-price]')){const id=ATD.ids[0]; if(ATD.kind==='price'&&ATD.ids.length===1&&!PTASK[id].any) ptkOpenSheet(ph,id,'atd'); return true;}
+  if(on('[data-atdchange-schedule]')){if(ATD.kind==='rby') rbyOpenSheet(ph,ATD.ids[0],'atd'); return true;}
+  if(on('[data-atdadj]')){atmAdjust(ph,ATD.g); return true;}
   if(on('[data-atdx]')){atdClose(ph); return true;}
   if(on('[data-atdmore]')){ph.querySelector('.atd-h').classList.toggle('open'); return true;}
   if(on('[data-atdpause]')){const st=ATD.kind==='rby'?RTASK:PTASK, off=!ATD.orig.every(k=>st[k].off); ATD.orig.forEach(k=>st[k].off=off); atdClose(ph); tpdRefresh(); toast(ph,off?'Auto-task paused':'Auto-task resumed'); return true;}
   if(on('[data-atddel]')){atdDelete(ph); return true;}
-  if(x=on('[data-atdup]')){if(!x.classList.contains('off')) atdUpdate(ph); return true;}
   if(on('.atd-wrap')){const h=ph.querySelector('.atd-h.open'); if(h&&!on('.atd-h')) h.classList.remove('open'); return true;}
   return false;}
-document.addEventListener('input',e=>{if(e.target.matches&&e.target.matches('[data-atdp]')){const ph=e.target.closest('.phone'); if(ph) atdDirty(ph);}});
 
 /* ============================================================
    Ask this: tap one product card in the chat → a small "Ask this" pop → the item is quoted in the box,
@@ -3949,51 +4226,62 @@ let EV_LAST=null; document.addEventListener('click',e=>{EV_LAST=e;},true);
 
 /* ============================================================
    Notification: a price task's condition is met → iOS push at the top, the item's photo on the right.
-   Tapping it lands one of two ways (?nt=1|2):
-     1 PDP — the product page opens and the half-screen checkout rises over it
-     2 Chat — Migoo posts the item card with Buy now under it; Buy now opens the same checkout
+   Tapping it opens the price-alert message. Buy now opens quick checkout.
    ============================================================ */
-let NTF_MODE=(()=>{const m=new URLSearchParams(location.search).get('nt'); if(/^[12]$/.test(m||'')) return +m; try{const s=localStorage.getItem('ptk_nt'); if(/^[12]$/.test(s||'')) return +s;}catch(e){} return 1;})();
-const NTF_DESC={1:'点推送直接进商品页（PDP），并弹出半屏 checkout。',2:'点推送进入对话，Migoo 返回商品卡，卡片下方是 Buy now，点了进 checkout。'};
-const NTF_SHOPEE=`<svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#EE4D2D"/><path d="M12.5 15h15l-1.2 15.2c-.1.9-.8 1.6-1.7 1.6H15.4c-.9 0-1.6-.7-1.7-1.6z" fill="#fff"/><path d="M16 15.5v-1.8a4 4 0 0 1 8 0v1.8" fill="none" stroke="#fff" stroke-width="1.8"/><text x="20" y="28.6" text-anchor="middle" font-size="10.5" font-weight="700" fill="#EE4D2D" font-family="-apple-system,system-ui,sans-serif">S</text></svg>`;
+const NTF_MIGOO=`<img src="${IMG['assets/migoo-logo.png']}" alt="">`;
 let NTF_HIT=null;
 /* which task fires: the newest active Shopee price task; the Realme GT8 if there is none */
 function ntfPick(){const ids=Object.keys(PTASK).filter(k=>!PTASK[k].off&&ccy(k)==='Rp').sort((a,b)=>PTASK[b].t-PTASK[a].t);
   if(ids.length) return ids[0];
   const o=TK.realme; if(o.orig) o.cur=o.orig; else o.orig=o.cur; o.was0=o.cur;   /* a fresh run starts from the original price */
   PTASK.realme={target:ptkPct('realme',5),any:false,src:'shopee',dur:'30',t:++PTT}; return 'realme';}
-function ntfFire(ph){const id=ntfPick(), o=TK[id], t=PTASK[id];
+function ntfReach(id){const o=TK[id], t=PTASK[id];
   if(!o.orig) o.orig=o.cur; if(!o.was0) o.was0=o.cur;                                         /* the price when the alert was set */
   const now=t.any?Math.floor(o.cur*.95/1000)*1000:Math.floor(t.target*.99/1000)*1000; o.cur=now; t.hitAt=now; NTF_HIT=id; tpdRefresh();
+  return now;}
+function ntfFire(ph){if(PTK_SCENE===2) return rbyNotify(ph); const id=ntfPick(), o=TK[id], t=PTASK[id], now=ntfReach(id);
   ph.querySelectorAll('.ntf').forEach(x=>x.remove());
   const el=document.createElement('div'); el.className='ntf'; el.dataset.ntf=id;
-  el.innerHTML=`<span class="ic">${NTF_SHOPEE}</span><div class="tx"><div class="hd"><b>Price hit 🎉 ${itemShort(id)}</b><span>now</span></div>
+  el.innerHTML=`<span class="ic">${NTF_MIGOO}</span><div class="tx"><div class="hd"><b>Price hit 🎉 ${itemShort(id)}</b><span>now</span></div>
     <div class="bd"><span>Now ${fmc(id,now)}${t.any?'':`, under your ${fmc(id,t.target)} target`}. Tap to buy.</span><img src="${o.img}" alt=""></div></div>`;
   ph.appendChild(el); requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('on'))); setTimeout(()=>el.classList.add('on'),40);
   clearTimeout(ntfFire._t); ntfFire._t=setTimeout(()=>ntfHide(ph),9000);}
 function ntfHide(ph){const el=ph.querySelector('.ntf'); if(!el) return; el.classList.remove('on'); setTimeout(()=>el.remove(),350);}
-function ntfOpen(ph,id){ntfHide(ph); const o=TK[id], t=PTASK[id];
-  ph.querySelectorAll('.ptk-wrap,.atd-wrap,.askpop').forEach(x=>x.remove()); closeDrawer(ph); closeFocus();
-  if(NTF_MODE===1){atmClose(ph); tpdClose(ph); apdpOpen(ph,id); return setTimeout(()=>ckoOpen(ph,id),520);}
+/* Scene 2 shortcuts always demonstrate milk; seed a weekly demo reminder when needed. */
+function rbyMilkDemo(){const id='milk'; if(!RTASK[id]) rbySave(id,{every:'1w',time:'09:00',qty:1,fromToday:true}); return id;}
+function rbyNotify(ph){const id=rbyMilkDemo(), o=RB[id];
+  ph.querySelectorAll('.ntf').forEach(x=>x.remove());
+  const el=document.createElement('div'); el.className='ntf'; el.dataset.rbyntf=id;
+  el.innerHTML=`<span class="ic">${NTF_MIGOO}</span><div class="tx"><div class="hd"><b>Milk restock time! 🥛</b><span>now</span></div>
+    <div class="bd"><span>Don’t forget your milk — tap to stock up now!</span><img src="${o.img}" alt=""></div></div>`;
+  ph.appendChild(el); requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('on')));
+  clearTimeout(ntfFire._t); ntfFire._t=setTimeout(()=>ntfHide(ph),9000);}
+function ntfOpen(ph,id,instant=false){ntfHide(ph); const o=TK[id], t=PTASK[id];
+  ph.querySelectorAll('.ptk-wrap,.atd-wrap,.apdp,.askpop').forEach(x=>x.remove()); closeDrawer(ph); closeFocus();
   const drop=(o.was0||o.cur)-o.cur;
-  ptkToChat(ph,'',[{tag:'Price alert',t:`Good news — the ${itemShort(id)} just dropped to <code>${fmc(id,o.cur)}</code>${t.any?'':`, under your ${fmc(id,t.target)} target`}. That’s ${fmc(id,drop)} less than when you set the alert, and it’s in stock.`,
-    rich:`${plist([`<div class="prow2 ntf-pr" data-tk="${id}"><img src="${o.img}" alt=""><div class="pt"><div class="ptx"><div class="pn">${o.name}</div><div class="why">${AIS}<em class="deal">hit your price</em>, ${o.v}</div></div><div class="pp">${fmc(id,o.cur)}<s>${fmc(id,o.was0||o.was)}</s></div></div></div>`])}<div class="ntf-buy" data-ckgo="${id}">Buy now · ${fmc(id,o.cur)}</div>`}]);}
+  const msg={tag:'Price alert',t:`Good news — the ${itemShort(id)} just dropped to <code>${fmc(id,o.cur)}</code>${t.any?'':`, under your ${fmc(id,t.target)} target`}. That’s ${fmc(id,drop)} less than when you set the alert, and it’s in stock.`,
+    rich:`${plist([`<div class="prow2 ntf-pr" data-tk="${id}"><img src="${o.img}" alt=""><div class="pt"><div class="ptx"><div class="pn">${o.name}</div><div class="why">${AIS}<em class="deal">hit your price</em>, ${o.v}</div></div><div class="pp">${fmc(id,o.cur)}<s>${fmc(id,o.was0||o.was)}</s></div></div></div>`])}<div class="ntf-buy" data-ckgo="${id}">Buy now · ${fmc(id,o.cur)}</div>`,
+    after:`<div class="ptk-qr" data-ntfollow="${id}"><span role="button" tabindex="0" data-ptked="${id}">Adjust price target</span><span role="button" tabindex="0" data-atmpdp="${id}">View product details</span></div>`};
+  if(instant){const body=chatBody(ph); body.querySelectorAll('[data-demo-buy]').forEach(x=>x.remove());
+    body.insertAdjacentHTML('beforeend',`<div class="ma" data-demo-buy="${id}"><div class="b"><div class="btag">${TAB.bell}<span>${msg.tag}</span></div><span class="bt">${msg.t}</span><div class="crich">${msg.rich}</div></div></div><div class="authw crich" data-demo-buy="${id}">${msg.after}</div>`);
+    body.scrollTop=body.scrollHeight; return;}
+  ptkToChat(ph,'',[msg]);}
 /* ---------- half-screen checkout (Shopee style) ---------- */
 let CKO=null;
-function ckoHTML(id){const o=TK[id], ship=0, vch=o.cur>5e6?50000:o.cur>1e6?20000:0, total=o.cur+ship-vch, saved=(o.was0||o.was||o.cur)-o.cur;
+function ckoHTML(id){const o=TK[id], qty=CKO?.id===id?CKO.qty||1:1, subtotal=o.cur*qty, ship=0, vch=o.cur>5e6?50000:o.cur>1e6?20000:0, total=subtotal+ship-vch, saved=(o.was0||o.was||o.cur)-o.cur;
   return `<div class="ptk-scrim" data-ckx="1"></div><div class="ptk-sheet cko"><div class="grab"></div>
     <div class="cko-h"><b>Checkout</b><span class="x" data-ckx="1">${IC_X}</span></div>
     <div class="cko-body">
       <div class="cko-ad"><svg viewBox="0 0 24 24" fill="none" stroke="#EE4D2D" stroke-width="1.8"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg><div><b>Budi Santoso</b> <span>(+62) 812-****-4471</span><p>Jl. Kemang Raya No. 12, Mampang Prapatan, Jakarta Selatan</p></div><i>›</i></div>
-      <div class="cko-it"><img src="${o.img}" alt=""><div><div class="n">${o.name}</div><div class="v">${o.v}</div><div class="p"><b>${fmc(id,o.cur)}</b><s>${fmc(id,o.was0||o.was)}</s><span>×1</span></div></div></div>
+      <div class="cko-it"><img src="${o.img}" alt=""><div><div class="n">${o.name}</div><div class="v">${o.v}</div><div class="p"><b>${fmc(id,o.cur)}</b><s>${fmc(id,o.was0||o.was)}</s><span>×${qty}</span></div></div></div>
       ${saved>0&&PTASK[id]?`<div class="cko-mg">${AIS}<span>Migoo caught this drop — ${fmc(id,saved)} less than when you set the alert.</span></div>`:saved>0?`<div class="cko-mg">${AIS}<span>${fmc(id,saved)} under its usual price today.</span></div>`:''}
       <div class="cko-rw"><span>Shipping</span><b>Reguler · arrives 31 Oct – 2 Nov</b><em>Free</em></div>
       <div class="cko-rw"><span>Shopee Voucher</span><b>${vch?`−${fmc(id,vch)} applied`:'None available'}</b><i>›</i></div>
       <div class="cko-rw"><span>Payment</span><b>SPayLater · 0% for 3 months</b><i>›</i></div>
-      <div class="cko-sum"><div><span>Merchandise subtotal</span><span>${fmc(id,o.cur)}</span></div><div><span>Shipping</span><span>${fmc(id,ship)}</span></div>${vch?`<div><span>Voucher</span><span class="g">−${fmc(id,vch)}</span></div>`:''}</div></div>
+      <div class="cko-sum"><div><span>Merchandise subtotal</span><span>${fmc(id,subtotal)}</span></div><div><span>Shipping</span><span>${fmc(id,ship)}</span></div>${vch?`<div><span>Voucher</span><span class="g">−${fmc(id,vch)}</span></div>`:''}</div></div>
     <div class="cko-f"><div class="t"><span>Total</span><b>${fmc(id,total)}</b></div><div class="go" data-ckplace="${id}">Place Order</div></div>
     <div class="hi2"></div></div>`;}
-function ckoOpen(ph,id){ph.querySelectorAll('.cko-wrap').forEach(x=>x.remove()); CKO={id};
+function ckoOpen(ph,id,qty=1){ph.querySelectorAll('.cko-wrap').forEach(x=>x.remove()); CKO={id,qty};
   const w=document.createElement('div'); w.className='ptk-wrap cko-wrap'; w.innerHTML=ckoHTML(id); ph.appendChild(w);
   requestAnimationFrame(()=>requestAnimationFrame(()=>w.classList.add('on'))); setTimeout(()=>w.classList.add('on'),40);}
 function ckoClose(ph){const w=ph.querySelector('.cko-wrap'); if(!w) return; w.classList.remove('on'); setTimeout(()=>w.remove(),300);}
@@ -4001,9 +4289,10 @@ function ckoPlace(ph,id){const w=ph.querySelector('.cko-wrap'), o=TK[id], t=PTAS
   if(t){t.off=true; t.done=fmc(id,o.cur);}                          /* the job is done: the alert stops */
   tpdRefresh();
   w.querySelector('.cko').innerHTML=`<div class="grab"></div><div class="cko-ok"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
-    <b>Order placed</b><p>${o.name}<br>${fmc(id,o.cur)} · arrives 31 Oct – 2 Nov</p>${t?'<p class="s">Migoo turned off this price alert — the job is done.</p>':o.consumable&&PTK_SCENE===2?'<p class="s">Migoo will follow up in Assistant about a rebuy reminder.</p>':''}</div>
+    <b>Order placed</b><p>${o.name}${CKO.qty>1?` × ${CKO.qty}`:''}<br>${fmc(id,o.cur*(CKO.qty||1))} · arrives 31 Oct – 2 Nov</p>${t?'<p class="s">Migoo turned off this price alert — the job is done.</p>':o.consumable&&PTK_SCENE===2?'<p class="s">Migoo will follow up in Assistant about a rebuy reminder.</p>':''}</div>
     <div class="cko-f one"><div class="go ghost" data-ckdone="1">Done</div></div><div class="hi2"></div>`;}
 function ntfClick(ph,on){let x;
+  if(x=on('.ntf[data-rbyntf]')){const id=x.dataset.rbyntf; ptkPrepareShortcut(ph); rbyPreview(ph,id); return true;}
   if(x=on('.ntf')){ntfOpen(ph,x.dataset.ntf); return true;}
   if(x=on('[data-ckgo]')){ckoOpen(ph,x.dataset.ckgo); return true;}
   if(on('[data-ckx]')){ckoClose(ph); return true;}
@@ -4012,14 +4301,10 @@ function ntfClick(ph,on){let x;
   if(on('.pdp-overlay .buy-main')){const id=ph.querySelector('.pdp-overlay').dataset.id; if(TK[id]){ckoOpen(ph,id); return true;}}
   if(on('.apdp [data-apdpbuy]')){const el=ph.querySelector('.apdp'), id=el&&el.dataset.id; if(id&&(ccy(id)==='Rp'||(TK[id]&&TK[id].consumable))){ckoOpen(ph,id); return true;}}
   return false;}
-/* the notification group on the right of the phone: fire the push, pick where a tap lands (no reload) */
+/* demo notification trigger */
 (()=>{const side=document.querySelector('.ptside'); if(!side) return;
-  const sync=()=>{side.querySelectorAll('[data-nt]').forEach(x=>x.classList.toggle('on',+x.dataset.nt===NTF_MODE)); const d=document.getElementById('ntfD'); if(d) d.textContent=NTF_DESC[NTF_MODE];};
-  sync();
-  side.addEventListener('click',e=>{let x; const ph=document.querySelector('#p1 .phone');
-    if(x=e.target.closest('[data-nt]')){NTF_MODE=+x.dataset.nt; try{localStorage.setItem('ptk_nt',NTF_MODE);}catch(_){} sync(); return;}
-    if(e.target.closest('[data-ntfire]')&&ph) ntfFire(ph);
-    if(e.target.closest('[data-rbbuydemo]')&&ph) rbBuyDemo(ph);});})();
+  side.addEventListener('click',e=>{const ph=document.querySelector('#p1 .phone');
+    if(e.target.closest('[data-ntfire]')&&ph) ntfFire(ph);});})();
 
 /* ============================================================
    Scene 2 · after a purchase: Migoo asks in Assistant whether to set a rebuy reminder
@@ -4053,13 +4338,18 @@ function rbfClick(ph,on){let x;
     if(x.dataset.v==='no'){chatFlow(ph,bubbleU('No thanks',[]),[{t:'Okay. If you change your mind, it’s one tap from Auto-Task.'}]); return true;}
     rbyFollow(ph,id,x.textContent); return true;}
   if(on('[data-ckdone]')){const id=CKO&&CKO.id; ckoClose(ph); if(id) setTimeout(()=>ckoAfter(ph,id),320); return true;}
-  if(x=on('[data-rbbuy]')){x.closest('.rby-acts').classList.add('used'); ckoOpen(ph,x.dataset.rbbuy); return true;}
+  if(x=on('[data-rbbuy]')){const id=x.dataset.rbbuy, r=RB[id];
+    if(!TK[id]) TK[id]={img:r.img,name:r.name,v:r.v,cur:r.now,was:r.cur,ccy:r.ccy||(r.fmt?'$':'Rp'),consumable:true,why:'bought before'};
+    ckoOpen(ph,id,RTASK[id].qty); return true;}
   return false;}
 
 /* ---------- toilet tissue: a consumable in the morning briefing, the way into a purchase → rebuy follow-up ---------- */
 RB.sunscreen.unit='bottle'; RB.sunscreen.life='A 200ml bottle lasts most people about a month.';
 RB.tp={img:'./img/tp-rolls.jpg',name:'Soft Toilet Tissue 3-Ply, 12 Rolls',b:'Toilet tissue',n:'3-Ply · 12 Rolls',v:'3-Ply · 12 Rolls · Unscented',cur:15.99,now:12.99,last:new Date(2026,8,28),q:'Remind me to rebuy this toilet tissue',lasts:'about a month',unit:'pack',
   life:'A 12-roll pack lasts a household of two about a month.',fmt:v=>'$'+(+v).toFixed(2)};
+RB.tp.promptName='the 12-roll toilet tissue pack'; RB.tp.defaultDays=30;
+RB['rb-sunscreen']={img:IMG['assets/u-sunscreen.jpg'],name:'Sunscreen SPF50+ Reef Safe Spray 200ml',b:'Sunscreen',n:'SPF50+ 200ml',v:'200ml · Reef safe · Waterproof',cur:17.99,now:16.49,last:new Date(2026,9,4),q:'Remind me to rebuy this sunscreen',lasts:'about two months',defaultEvery:'2m',defaultDays:60,unit:'bottle',promptName:'this SPF50+ sunscreen',fmt:v=>'$'+(+v).toFixed(2)};
+RB['rb-coffee']={img:IMG['assets/prod-coffeecup.jpg'],name:'Ground Coffee · Medium Roast, 12 oz',b:'Ground coffee',n:'Medium Roast · 12 oz',v:'12 oz · Medium roast',cur:14.99,now:13.49,last:new Date(2026,9,3),q:'Remind me to rebuy this ground coffee',lasts:'about two weeks',defaultEvery:'2w',defaultDays:14,unit:'bag',promptName:'this ground coffee',fmt:v=>'$'+(+v).toFixed(2)};
 TK.tp={img:RB.tp.img,name:RB.tp.name,v:RB.tp.v,cur:12.99,was:15.99,consumable:true,why:'bought every month'};
 const tpRow=()=>`<div class="prow2" data-tk="tp"><img src="${TK.tp.img}" alt=""><div class="pt"><div class="ptx"><div class="pn">${TK.tp.name}</div><div class="why">${AIS}<em class="deal">running low</em>, last bought 28 Sep</div></div><div class="pp">$12.99<s>$15.99</s></div></div></div>`;
 /* Ask this: right-click (a long press on the phone); a plain tap opens the product page */
@@ -4087,7 +4377,7 @@ function rbyAsk(ph,id,userHTML,lead){
   const t=`${lead} Set how often and when below.`; chatFlow(ph,userHTML,[{t}]); flowT.push(setTimeout(()=>rbyOpenSheet(ph,id,'sheet'),flowMs(t)));}
 
 mount();
-if(new URLSearchParams(location.search).get('go')) setTimeout(ptkGoCard,700);
+if(new URLSearchParams(location.search).get('go')) setTimeout(PTK_SCENE===2?ptkGoAutoTasks:ptkGoCard,700);
 </script>
 </body>
 </html>
