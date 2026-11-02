@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Migoo · Best Price</title>
+<title>电商 Auto-Task 全流程 Demo · Migoo in Shopee</title>
 <style>
   :root{
     --sf:"SF Pro Text","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
@@ -17,8 +17,8 @@
   *{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased}
   body{font-family:var(--sf);background:#E9EBEF;color:var(--text);padding:34px 20px 70px}
   .head{text-align:center}
-  .head h1{font-size:22px;font-weight:600;color:#081021}
-  .head p{font-size:13px;color:#6B7280;margin-top:6px}
+  .head h1{font-size:24px;line-height:1.4;font-weight:600;color:#081021}
+  .head p{font-size:14px;line-height:1.5;color:#6B7280;margin-top:6px}
   /* phone left, options right — never stacked. In a window narrower than both, the page scrolls sideways. */
   .panel,.panel.min{display:none!important}   /* v2: options locked (tt2 · th7 · pk1 · cp0) */
   .stage{display:flex;gap:28px;justify-content:center;justify-content:safe center;align-items:flex-start;margin-top:26px;width:max-content;min-width:100%}
@@ -1767,6 +1767,7 @@
 <body>
 <svg width="0" height="0" style="position:absolute"><defs><linearGradient id="aig" x1="0" y1="8" x2="16" y2="8" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2F8BFF"/><stop offset="1" stop-color="#8E88FF"/></linearGradient></defs></svg>
 
+<header class="head"><h1>电商 Auto-Task 全流程 Demo</h1><p>以 Migoo in Shopee 为例</p></header>
 <div class="usw wsw"><span data-f="web" style="display:none">Direction 1 · 跳 Safari 开 migoo.ai</span><span data-f="direct" style="display:none">Direction 2 · 站内直发，需支付时跳 Web</span><span data-f="direct3">Direction 3 · 站内直发，需支付时跳 Web</span><span data-f="task" style="display:none">Direction 4 · 跳 New Task 开新 session</span><span data-f="task5" style="display:none">main flow</span><span class="wmore" data-wmore="1">切换 ▾</span><div class="tsw"><span data-t="3">New Task tab · 极端版 ⟲</span></div></div>
 <div class="usw" style="margin-top:-6px"><span data-u="new" class="on">新用户（首次点 Migoo 弹授权）</span><span data-u="old">老用户（直接发出）</span></div>
 <div class="usw csw" style="margin-top:-6px"><span data-c="1" class="on">授权 Option 1 · 发送前弹窗</span><span data-c="2">授权 Option 2 · 会话内引导卡</span></div>
@@ -1779,6 +1780,13 @@
       <button type="button" data-ptswforYou="1"><span>2 · 定位 Migoo 电商Tab 的推荐流 ›</span><small>打开商品详情 → Track price</small></button>
       <button type="button" data-ptswatm="1"><span>3 · 去 Auto-Task 管理页 ›</span><small>通过 Add Auto-Task 创建</small></button>
       <button type="button" data-ptswassistant="1"><span>4 · Assistant 找 Nike 运动鞋 ›</span><small>点击输入框 → 发送 → 降价提醒气泡</small></button>
+      <button type="button" data-ptswpricedrop="1"><span>5 · Assistant 的 Price drop 入口 ›</span><small>点击 Price drop → 购物车选商品 → 设置目标价</small></button>
+      <button type="button" data-ptswrepurchase="1"><span>3 · Assistant 的 Repurchase 入口 ›</span><small>点击 Repurchase → 已购商品 → 设置复购提醒</small></button>
+    </div></div>
+    <div class="grp"><div class="ptsw"><span class="lb">Auto-Task 管理</span></div><div class="ptquick">
+      <button type="button" data-ptswmanage="page"><span>1 · 在 Auto-Task 管理页管理 ›</span><small>找到已有任务 → 调整设置、暂停或恢复</small></button>
+      <button type="button" data-ptswmanage="chat"><span>2 · 在会话中修改手机目标价 ›</span><small>Realme GT8 → 发送改价请求 → 更新目标价</small></button>
+      <button type="button" data-ptswmanage="receipt"><span>3 · 设置成功后继续编辑 ›</span><small>成功卡片 → Edit → 修改设置并保存</small></button>
     </div></div>
     <div class="grp"><div class="ptsw"><span class="lb">通知与购买</span><span class="ntb" data-ntfire="1"><img src="./img/migoo-logo.png" alt="">推送 · 价格达成</span></div><div class="ptquick">
       <button type="button" data-ptswbuy="1"><span>Buy now · Realme GT8 ›</span><small>价格已达成 → Buy now → Checkout</small></button>
@@ -2185,16 +2193,16 @@ const PKI={
   pods:{img:IMG['assets/prod-headphones.jpg'],b:'AirPods Max',n:'Over-Ear Headphones',v:'Silver',pr:549,st:'Apple',in:['likes'],trk:'In your likes for 3 weeks'},
   watch:{img:IMG['assets/prod-watch.jpg'],b:'Casio',n:'Vintage Digital Watch',v:'Gold',pr:59,st:'Casio Official Store',in:['recent']},
   speaker:{img:IMG['assets/prod-speaker.jpg'],b:'Marshall',n:'Emberton II',v:'Black & Brass',pr:129,st:'Marshall Official Store',in:['cart']},
-  milk:{img:'./img/milk-pack.png',b:'Full Cream',n:'UHT Milk · 1 L × 6',v:'Original · 6 cartons',pr:108000,ccy:'Rp',displayPrice:'Rp108.000',st:'Daily Dairy Store',in:[],rb:'milk',rebuy:'Bought 15 Oct · Suggested weekly restock'},
+  milk:{img:'./img/milk-pack.png',b:'Full Cream',n:'UHT Milk · 1 L × 6',v:'Original · 6 cartons',pr:108000,ccy:'Rp',displayPrice:'Rp108.000',st:'Daily Dairy Store',in:[],rb:'milk',rebuy:'Bought 15 Oct · Suggested weekly repurchase'},
   tp:{img:'./img/tp-rolls.jpg',b:'Soft',n:'Toilet Tissue · 12 Rolls',v:'3-Ply · Unscented',pr:12.99,displayPrice:'$12.99',st:'Soft Home Store',in:['recent','cart'],rb:'tp',rebuy:'Bought 28 Sep · usually lasts about a month'},
-  rbSunscreen:{img:IMG['assets/u-sunscreen.jpg'],b:'Sunscreen',n:'SPF50+ Reef Safe Spray',v:'200ml · Waterproof',pr:17.99,displayPrice:'$17.99',st:'SunCare Store',in:['recent','likes'],rb:'rb-sunscreen',rebuy:'Bought 4 Oct · Suggested restock in 60 days'},
-  rbCoffee:{img:IMG['assets/prod-coffeecup.jpg'],b:'Ground Coffee',n:'Medium Roast · 12 oz',v:'12 oz · Medium roast',pr:14.99,displayPrice:'$14.99',st:'Daily Brew Coffee',in:['recent'],rb:'rb-coffee',rebuy:'Bought 3 Oct · Suggested restock in 2 weeks'},
+  rbSunscreen:{img:IMG['assets/u-sunscreen.jpg'],b:'Sunscreen',n:'SPF50+ Reef Safe Spray',v:'200ml · Waterproof',pr:17.99,displayPrice:'$17.99',st:'SunCare Store',in:['recent','likes'],rb:'rb-sunscreen',rebuy:'Bought 4 Oct · Suggested repurchase in 60 days'},
+  rbCoffee:{img:IMG['assets/prod-coffeecup.jpg'],b:'Ground Coffee',n:'Medium Roast · 12 oz',v:'12 oz · Medium roast',pr:14.99,displayPrice:'$14.99',st:'Daily Brew Coffee',in:['recent'],rb:'rb-coffee',rebuy:'Bought 3 Oct · Suggested repurchase in 2 weeks'},
 };
 const PKT0={cp1:{sug:'Worth comparing',key:'cmp',ok:()=>'Confirm',min:2,max:2},
             cp0:{sug:'Worth comparing',key:'cmp1',ok:()=>'Confirm',min:1,max:1}};
 const PKT={get 0(){return PKT0[CFG.cp];},
            1:{sug:'Purchased',key:'rebuy',ok:()=>'Confirm',min:1,max:1}};
-let PK={cap:0,tab:'sug',sel:[],intent:null};
+let PK={cap:0,tab:'sug',sel:[],intent:null,from:null};
 const pkType=()=>PK.intent?{...PKT[PK.cap],min:1,max:1}:PKT[PK.cap];
 const pkTaskIntent=()=>PK.cap===1&&PK.tab==='sug'?'repurchase':'price-drop';
 const pkItems=()=>Object.entries(PKI).filter(([id,o])=>PK.tab==='sug'?!!o[PKT[PK.cap].key]:o.in.includes(PK.tab));
@@ -2209,13 +2217,14 @@ function sheetHTML(){
 function sheetRender(){const w=CF.ph&&CF.ph.querySelector('.cfocus .ps-wrap'); if(!w) return; w.innerHTML=sheetHTML();
   const tabs=w.querySelector('.ps-tabs'), active=tabs.querySelector('.on'); if(active) tabs.scrollLeft=Math.max(0,active.offsetLeft-tabs.offsetLeft-12);}
 function openSheet(ph,cap,options={}){
-  PK={cap,tab:options.tab||'sug',sel:[],intent:options.intent||null};
+  PK={cap,tab:options.tab||'sug',sel:[],intent:options.intent||null,from:options.from||null};
   ph.querySelectorAll('.cfocus .ps-wrap').forEach(w=>w.remove());
   const w=document.createElement('div'); w.className='ps-wrap'; ph.querySelector('.cfocus').appendChild(w);
   ph.querySelector('.kbd').classList.remove('show');            /* the sheet covers the keyboard; it comes back with the composer */
   sheetRender();
 }
 function closeSheet(ph=CF.ph){if(!ph) return; ph.querySelectorAll('.cfocus .ps-wrap').forEach(w=>w.remove());
+  if(PK.from==='atm'){PK.from=null; PK.sel=[]; closeFocus(); return;}
   if(PK.intent){PK.intent=null; PK.sel=[]; closeFocus(); return;}
   ph.querySelector('.kbd').classList.add('show');}
 /* Assistant task chips: pick one product and send its setup request immediately. */
@@ -2247,9 +2256,10 @@ function purchasedPreset(key){
 function sheetConfirm(ph){
   if(PK.cap===1){
     const id=PK.sel[0], item=PKI[id]; if(PK.sel.length!==1||!item) return;
+    const repurchase=pkTaskIntent()==='repurchase'; if(repurchase&&!item.rb) return;
+    if(PK.from==='atm') PK.from=null;  /* Keep management behind the draft; ptkToChat leaves it on Send. */
     const att=[{img:item.img,b:item.b,n:item.n,pr:item.pr,pid:item.pid||null}];
-    if(pkTaskIntent()==='repurchase'){
-      if(!item.rb) return;
+    if(repurchase){
       return openFocus(ph,{cap:1,att,purchased:{id:item.rb,pick:id},v:purchasedPreset(id)+'.'});
     }
     return openFocus(ph,{cap:1,att,pricePick:id,v:`Set a price drop alert for ${item.b} ${item.n}.`});
@@ -2279,9 +2289,9 @@ function pickerPriceSend(){
 function purchasedSend(){const ph=CF.ph, picked=CF.purchased, v=CF.v.trim(), atts=CF.att;
   if(!v) return;
   const item=PKI[picked.pick], r=RB[picked.id], user=bubbleU(v,atts), low=v.toLowerCase();
-  if(/(?:don't|do not|cancel|stop|不要|取消).*(?:remind|rebuy|restock|提醒|回购|复购)/i.test(v)){
+  if(/(?:don't|do not|cancel|stop|不要|取消).*(?:remind|rebuy|repurchase|提醒|回购|复购)/i.test(v)){
     CF.purchased=null; return ptkToChat(ph,user,[{t:'Okay, I won’t create a reminder.'}]);}
-  if(/rebuy|restock|buy.*again|回购|复购|补货/i.test(v)||(/remind|提醒/i.test(v)&&!/price|drop|below|降价|价格/i.test(v))){
+  if(/rebuy|repurchase|buy.*again|回购|复购|补货/i.test(v)||(/remind|提醒/i.test(v)&&!/price|drop|below|降价|价格/i.test(v))){
     const delay=low.match(/\b(?:in|after)\s+(\d+)\s*(day|week|month)s?\b/), zh=v.match(/(\d+)\s*天/), repeat=low.match(/\b(?:every|each)\s+(?:(\d+)\s+)?(day|week|month)s?\b/);
     const days=delay?+delay[1]*(delay[2]==='week'?7:delay[2]==='month'?30:1):zh?+zh[1]:(r.defaultDays||30);
     if(days<1||days>3650) return toast(ph,'Choose a reminder between 1 and 3,650 days from now');
@@ -2376,7 +2386,7 @@ function replyFor(v,ctx){
   return [{t:`On it. From what you’ve told me before, here’s where I’d start:`,rich:plist([prow('chair'),prow('samba')])}];
 }
 const CCI=()=>({video:AI.ln('<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3z"/>'),listing:AI.ln('<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 16l5-5 4 4 3-3 6 6"/><circle cx="16" cy="9" r="1.5"/>'),model:AI.ln('<circle cx="12" cy="7" r="3.5"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/>'),deck:AI.ln('<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M12 17v4M8 21h8"/>')});
-const SCH=[['price-drop','Price drop alert',null,'Choose a product to track'],
+const SCH=[['price-drop','Price drop',null,'Choose a product to track'],
   ['repurchase','Repurchase',null,'Choose a product to buy again'],
   ['voucher','Voucher','<path d="M3.5 6.5h17v3.5a2 2 0 0 0 0 4v3.5h-17V14a2 2 0 0 0 0-4z"/><path d="M14 7v2M14 11v2M14 15v2"/>','Which shop or item?'],
   ['orders','Orders','<rect x="5" y="4.5" width="14" height="16" rx="2"/><path d="M9 3.5h6v3H9zM8.5 11h7M8.5 15h5"/>','Which order?']];
@@ -3647,13 +3657,15 @@ function ptkPdpOpen(ph,pid){if(!P[pid]||!PDPD[pid]) return; pdpAlertToastHide(ph
 const PTK_DUR={30:'Next 30 days','11.11':'Until 11.11 ends','0':'Until you stop it'};
 function ptkReceipt(id){if(PTK_MODE===1) return '';   /* chat style: the confirmation is the text alone */
   const o=TK[id],t=PTASK[id];
-  return `<div class="ptk-rc"><div class="h"><span class="dot"></span>Price Tracker · Active</div>
+  return `<div class="ptk-rc"><div class="h"><span class="dot"></span>Price Tracker · ${t.off?'Paused':'Active'}</div>
     <div class="pr" data-atmpdp="${id}" role="button" tabindex="0" aria-label="View ${esc(o.name)}"><img src="${o.img}" alt=""><div><div class="n">${o.name}</div><div class="v">${o.v}</div></div></div>
     <div class="kv"><span>Alert me at</span><b>${t.any?'Any drop':'≤ '+fmc(id,t.target)}</b></div>
     <div class="kv"><span>Price now</span><b>${fmc(id,o.cur)}</b></div>
     <div class="kv"><span>Watching</span><b>${PTK_DUR[t.dur]||PTK_DUR[30]}</b></div>
     <div class="ft"><span data-ptked="${id}">Edit</span><span data-atmopen="1">View your Auto-Tasks ›</span></div></div>`;}
-function ptkSave(id,target,any,src,dur){const old=PTASK[id]; PTASK[id]={...old,target,any:!!any,src:old?old.src:src,dur:dur!=null?dur:(old&&old.dur!=null?old.dur:30),t:++PTT}; tpdRefresh();}
+function refreshTaskReceipts(id,kind){const attr=kind==='rby'?'data-rbed':'data-ptked', render=kind==='rby'?rbyReceipt:ptkReceipt;
+  document.querySelectorAll(`.ptk-rc [${attr}]`).forEach(el=>{if(el.getAttribute(attr)===id) el.closest('.ptk-rc').outerHTML=render(id);});}
+function ptkSave(id,target,any,src,dur){const old=PTASK[id]; PTASK[id]={...old,target,any:!!any,src:old?old.src:src,dur:dur!=null?dur:(old&&old.dur!=null?old.dur:30),t:++PTT}; tpdRefresh(); refreshTaskReceipts(id,'price');}
 const ptkShort=id=>{const o=TK[id];return o.pdpId?o.name:o.b?`${o.b} ${o.n.split(' ')[0]}`:o.name;};
 /* ---------- Shopee entry: Hybrid ---------- */
 const PTK_MODE=3;
@@ -3684,7 +3696,7 @@ function ptkSubmit(ph,f,where){const id=f.dataset.ptkf, o=TK[id], v=ptkParse(id,
   const upd=!!PTASK[id], pct=Math.round((1-v/o.cur)*100);
   ptkSave(id,v,false,where==='tpd'||where==='pdp'||where==='assistant'?'migoo':where==='atd'?(PTASK[id]?.src||'migoo'):(o.source||'shopee'));
   if(o.pdpId) ALERTS[o.pdpId]={target:v,any:false};
-  if(where==='atd'||where==='atm'||where==='receipt'){ptkCloseSheet(ph); if(where==='atd') atdRefresh(ph); else if(where==='atm') atmRefresh(); else ph.querySelectorAll('[data-ptked]').forEach(e=>{if(e.dataset.ptked===id){const r=e.closest('.ptk-rc'); if(r) r.outerHTML=ptkReceipt(id);}}); return toast(ph,`Updated · alert at ${fmc(id,v)}`);}
+  if(where==='atd'||where==='atm'||where==='receipt'){ptkCloseSheet(ph); if(where==='atd') atdRefresh(ph); else if(where==='atm') atmRefresh(); return toast(ph,`Updated · alert at ${fmc(id,v)}`);}
   if(where==='tpd'){ptkCloseSheet(ph); toast(ph,upd?`Updated · alert at ${fmc(id,v)}`:`Price tracker set · ${fmc(id,v)}`); return tpdShow(ph,'main',{flash:id});}
   if(where==='pdp'){ptkCloseSheet(ph); refreshPDP(ph); pdpAlertToast(ph,o.pdpId,`${upd?'Price alert updated':'Price alert set'} · We’ll let you know when it drops to ${fmc(id,v)}.`); return;}
   const bot=[{tag:upd?'Auto-task updated':AT,t:upd?`Updated. I’ll tell you at <code>${fmc(id,v)}</code> or lower now, about ${pct}% under today. Still one task for this item.`
@@ -3799,18 +3811,24 @@ const ptkGo=sc=>{try{localStorage.setItem('ptk_scene',sc);}catch(_){} location.s
 (()=>{const side=document.querySelector('.ptside'); if(!side) return;
   side.querySelectorAll('[data-sc]').forEach(x=>x.classList.toggle('on',+x.dataset.sc===PTK_SCENE));
   if(PTK_SCENE===2){
-    side.querySelectorAll('[data-ptswgo],[data-ptswforYou]').forEach(x=>x.remove());
-    side.querySelector('[data-ptswatm]').innerHTML='<span>1 · 去 Auto-Task 管理页 ›</span><small>Add Auto-Task → Purchased → 复购提醒</small>';
-    side.querySelector('[data-ptswassistant]').innerHTML='<span>2 · Assistant 找回购牛奶 ›</span><small>点击输入框 → 发送 → 确认商品 → 复购提醒气泡</small>';
+    side.querySelectorAll('[data-ptswgo],[data-ptswforYou],[data-ptswpricedrop]').forEach(x=>x.remove());
+    const manageEntry=side.querySelector('[data-ptswatm]'), assistantEntry=side.querySelector('[data-ptswassistant]');
+    assistantEntry.innerHTML='<span>1 · Assistant 找回购牛奶 ›</span><small>点击输入框 → 发送 → 确认商品 → 复购提醒气泡</small>';
+    manageEntry.innerHTML='<span>2 · 去 Auto-Task 管理页 ›</span><small>Add Auto-Task → Purchased → 复购提醒</small>';
+    manageEntry.before(assistantEntry);
+    side.querySelector('[data-ptswmanage="chat"]').innerHTML='<span>2 · 在会话中修改牛奶复购周期 ›</span><small>编辑并发送请求 → 更新周期 → 查看结果</small>';
     side.querySelector('[data-ntfire]').innerHTML='<img src="./img/migoo-logo.png" alt="">推送 · 牛奶该复购啦';
     side.querySelector('[data-ptswbuy]').innerHTML='<span>Buy again · 牛奶 ›</span><small>牛奶复购商品卡 → Quick checkout</small>';
-  }
+  }else side.querySelector('[data-ptswrepurchase]').remove();
   side.addEventListener('click',e=>{let x;
     if(x=e.target.closest('[data-sc]')) return ptkGo(+x.dataset.sc);
     if(e.target.closest('[data-ptswgo]')) return ptkGoCard();
     if(e.target.closest('[data-ptswforYou]')) return ptkGoForYouCard();
     if(e.target.closest('[data-ptswatm]')) return ptkGoAutoTasks();
     if(e.target.closest('[data-ptswassistant]')) return ptkGoAssistant();
+    if(e.target.closest('[data-ptswpricedrop]')) return ptkGoTaskChip('price-drop');
+    if(e.target.closest('[data-ptswrepurchase]')) return ptkGoTaskChip('repurchase');
+    if(x=e.target.closest('[data-ptswmanage]')) return ptkGoManage(x.dataset.ptswmanage);
     if(e.target.closest('[data-ptswbuy]')) return ptkGoBuyNow();});})();
 function ptkPrepareShortcut(ph){
   flowStop(); closeFocus(); closeDrawer(ph); closeSearch(ph); closeResults(ph); closeTask(ph); closePDP(ph); closeChat(ph); closeShopee(ph); tpdClose(ph); atmClose(ph);
@@ -3832,6 +3850,31 @@ function ptkGoForYouCard(){const ph=document.querySelector('#p1 .phone'); if(!ph
   c.classList.add('ptk-hl-chair'); clearTimeout(c._chairHL); c._chairHL=setTimeout(()=>c.classList.remove('ptk-hl-chair'),2400);}
 function ptkGoAutoTasks(){const ph=document.querySelector('#p1 .phone'); if(!ph) return;
   ptkPrepareShortcut(ph); openAssistant(ph); atmOpen(ph);}
+/* Management shortcuts use saved tasks and the existing chat / settings UI. */
+function ptkManagementTask(){
+  if(PTK_SCENE===2) return {kind:'rby',id:rbyMilkDemo(),group:'r:milk'};
+  const id='realme'; if(!PTASK[id]) ptkSave(id,ptkPct(id,5),false,'shopee',30);
+  return {kind:'price',id,group:PTASK[id].grp||id};}
+function ptkManagementMessage(ph,key,segs){const body=chatBody(ph);
+  body.querySelectorAll('[data-demo-manage]').forEach(x=>x.remove());
+  body.insertAdjacentHTML('beforeend',segs.map(s=>`<div class="ma" data-demo-manage="${key}"><div class="b">${s.tag?`<div class="btag">${TAB.bell}<span>${s.tag}</span></div>`:''}<span class="bt">${s.t}</span>${s.rich?`<div class="crich">${s.rich}</div>`:''}</div></div>`).join(''));
+  body.scrollTop=body.scrollHeight;}
+function ptkGoManage(route){const ph=document.querySelector('#p1 .phone'); if(!ph) return;
+  ptkPrepareShortcut(ph); openAssistant(ph);
+  const task=ptkManagementTask(), id=task.id;
+  if(route==='chat'){
+    if(task.kind==='rby'){const t=RTASK[id], next=t.every==='2w'?'1w':'2w';
+      ptkManagementMessage(ph,'chat',[{tag:'Repurchase reminder',t:`Your milk reminder is set for <code>${RB_EVERY[t.every].t.toLowerCase()}</code> at <code>${RB_TIME[t.time]}</code>. What schedule would work better?`}]);
+      return atmAdjust(ph,task.group,{v:`Change my milk repurchase reminder to ${RB_EVERY[next].t.toLowerCase()}.`});}
+    const t=PTASK[id], next=ptkPct(id,t.target===ptkPct(id,10)?15:10);
+    ptkManagementMessage(ph,'chat',[{tag:'Price tracker',t:`Your price alert for the ${ptkShort(id)} is set to <code>${t.any?'any price drop':fmc(id,t.target)}</code>. What price should I watch for?`}]);
+    return atmAdjust(ph,task.group,{v:`Change my ${ptkShort(id)} price target to ${fmc(id,next)}.`});}
+  if(route==='page'){atmOpen(ph); const body=ph.querySelector('.atm-body'), card=[...body.querySelectorAll('[data-atmg]')].find(x=>x.dataset.atmg===task.group);
+    if(card) body.scrollTop+=card.getBoundingClientRect().top-body.getBoundingClientRect().top-16;
+    return;}
+  const t=task.kind==='rby'?RTASK[id]:PTASK[id];
+  if(t.off) return ptkManagementMessage(ph,'receipt',[{tag:AT,t:'This auto-task is paused. You can edit its settings here or resume it in Auto-Task.',rich:task.kind==='rby'?rbyReceipt(id):ptkReceipt(id)}]);
+  ptkManagementMessage(ph,'receipt',task.kind==='rby'?rbyDone(id,false):[{tag:AT,t:`Done. I’ll notify you when the ${ptkShort(id)} ${t.any?'drops in price':`hits <code>${fmc(id,t.target)}</code> or lower`}.`,rich:ptkReceipt(id)}]);}
 /* Assistant discovery: explicit send, one product, then the scene's existing reminder UI. */
 const PTK_FIND_QUERIES={
   'nike-price':'Find me a pair of Nike sneakers under Rp400.000.',
@@ -3842,6 +3885,12 @@ function ptkFindTypeStop(){clearTimeout(PTK_FIND_T); PTK_FIND_T=null;}
 function ptkGoAssistant(){const ph=document.querySelector('#p1 .phone'); if(!ph) return;
   ptkPrepareShortcut(ph); openAssistant(ph); ph.dataset.ptkFind='ready';
   const body=ph.querySelector('.chatv .cbody'); if(body) body.scrollTop=body.scrollHeight;}
+function ptkGoTaskChip(intent){const ph=document.querySelector('#p1 .phone'); if(!ph) return;
+  ptkPrepareShortcut(ph); openAssistant(ph);
+  const body=ph.querySelector('.chatv .cbody'); if(body) body.scrollTop=body.scrollHeight;
+  const chips=ph.querySelector('.chatv .cchips'); if(!chips) return;
+  chips.querySelectorAll('[data-cchip]').forEach(x=>x.classList.toggle('on',x.dataset.cchip===intent));
+  const active=chips.querySelector('.on'); if(active) chips.scrollLeft=Math.max(0,active.offsetLeft-chips.offsetLeft-12);}
 function ptkFindType(ph){const mode=CF.demo, query=PTK_FIND_QUERIES[mode]; if(!query||CF.v||PTK_FIND_T) return; let k=0;
   const step=()=>{if(CF.ph!==ph||CF.demo!==mode||!ph.querySelector('.cfocus.show')) return ptkFindTypeStop();
     CF.v=query.slice(0,++k); cfRender(); PTK_FIND_T=k<query.length?setTimeout(step,45+Math.random()*40):null;};
@@ -3878,7 +3927,7 @@ function ptkGoBuyNow(){const ph=document.querySelector('#p1 .phone'); if(!ph) re
   ntfReach(id); ntfOpen(ph,id,true);}
 
 /* ============================================================
-   Scene 2 · Repurchase (restock reminder) — Hybrid reply card.
+   Scene 2 · Repurchase reminder — Hybrid reply card.
    Management opens a settings sheet; purchased products enter an editable composer.
    The demo's "today" is Thu 29 Oct 2026; the item was last bought on 20 Oct.
    ============================================================ */
@@ -3895,7 +3944,7 @@ const RB_DAY=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], RB_MON=['Jan','Feb','M
 const rbDate=d=>`${RB_DAY[d.getDay()]}, ${d.getDate()} ${RB_MON[d.getMonth()]}`;
 const rbNext=(id,ev,draft)=>{const t=draft||RTASK[id]||{}, e=RB_EVERY[ev], d=new Date(ev==='once'||t.fromToday?RB_TODAY:RB[id].last); if(ev==='once') d.setDate(d.getDate()+(t.days||RB[id].defaultDays||30)); else if(e.d) d.setDate(d.getDate()+e.d); else d.setMonth(d.getMonth()+e.m); return d;};
 const rbWhen=(id,ev,tm,draft)=>`${rbDate(rbNext(id,ev,draft))} · ${RB_TIME[tm]}`;
-const rbyPrompt=(id,ev,days)=>`Remind me to restock ${RB[id].promptName||RB[id].name} ${ev==='once'?`in ${days||RTASK[id]?.days||RB[id].defaultDays||30} days`:RB_EVERY[ev].t.toLowerCase()}.`;
+const rbyPrompt=(id,ev,days)=>`Remind me to repurchase ${RB[id].promptName||RB[id].name} ${ev==='once'?`in ${days||RTASK[id]?.days||RB[id].defaultDays||30} days`:RB_EVERY[ev].t.toLowerCase()}.`;
 const rbAtts=id=>{const o=RB[id];return [{img:o.img,b:o.b,n:o.n}];};
 function rbyCard(){const o=RB.sunscreen;return `<div class="sh-p cmpc" data-rby="sunscreen"><div class="pi"><img src="${o.img}" alt=""><span class="off">-6%</span></div><div class="pb"><div class="tt2">${o.name} Waterproof Tahan Air …</div><div class="bg"><span class="rb">Bought ${o.last.getDate()} ${RB_MON[o.last.getMonth()]}</span><span class="r">⭐ 4.9</span></div><div class="pr"><b>${rpx(o.now)}</b><span class="vc"></span></div><div class="cmpb"><img src="${IMG['assets/migoo-logo.png']}" alt="">Remind Me to Rebuy</div></div></div>`;}
 const sceneCard=()=>PTK_SCENE===2?'':trkCard();
@@ -3919,7 +3968,7 @@ function rbyOpenSheet(ph,id,where='sheet'){ph.querySelectorAll('.ptk-wrap').forE
   ph.appendChild(w); requestAnimationFrame(()=>requestAnimationFrame(()=>w.classList.add('on')));}
 function rbyReceipt(id){if(PTK_MODE===1) return '';
   const o=RB[id], t=RTASK[id];
-  return `<div class="ptk-rc"><div class="h"><span class="dot"></span>Restock Reminder · Active</div>
+  return `<div class="ptk-rc"><div class="h"><span class="dot"></span>Repurchase Reminder · ${t.off?'Paused':'Active'}</div>
     <div class="pr" data-atmpdp="${id}" role="button" tabindex="0" aria-label="View ${esc(o.name)}"><img src="${o.img}" alt=""><div><div class="n">${o.name}</div><div class="v">${o.v}</div></div></div>
     <div class="kv"><span>Repeat</span><b>${RB_EVERY[t.every].t}</b></div>
     <div class="kv"><span>Next reminder</span><b>${t.snoozed||rbWhen(id,t.every,t.time)}</b></div>
@@ -3927,7 +3976,9 @@ function rbyReceipt(id){if(PTK_MODE===1) return '';
     <div class="kv"><span>Last price</span><b>${(o.fmt||rpx)(o.cur)}</b></div>
     <div class="ft"><span data-rbed="${id}">Edit</span><span data-atmopen="1">View your Auto-Tasks ›</span></div></div>`;}
 const rbSay=(id,t)=>`${t.every==='once'?`In ${t.days||30} days`:RB_EVERY[t.every].t.toLowerCase()}, ${RB_TIME[t.time]}${t.qty>1?` · ${t.qty} ${RB[id].unit||'bottle'}s`:''}`;
-function rbySave(id,o){const old=RTASK[id]; RTASK[id]={every:'1m',time:'09:00',qty:1,...old,...o,snoozed:null,t:++PTT}; atmRefresh();}
+function rbySave(id,o){const old=RTASK[id]; RTASK[id]={every:'1m',time:'09:00',qty:1,...old,...o,snoozed:null,t:++PTT};
+  if(!Object.prototype.hasOwnProperty.call(o,'prompt')) delete RTASK[id].prompt;
+  atmRefresh(); refreshTaskReceipts(id,'rby');}
 function rbyDone(id,upd){const t=RTASK[id];
   if(t.every==='once') return [{tag:upd?'Auto-task updated':AT,t:`${upd?'Updated':'Done'}. I’ll remind you to rebuy this on <code>${rbWhen(id,t.every,t.time)}</code>.`,rich:rbyReceipt(id)}];
   return [{tag:upd?'Auto-task updated':AT,t:upd?`Updated. Next reminder is <code>${rbWhen(id,t.every,t.time)}</code>, then ${RB_EVERY[t.every].t.toLowerCase()}. Still one reminder for this item.`
@@ -3947,20 +3998,17 @@ function rbyQuick(ph,x){const g=x.closest('.ptk-qr'); if(g.classList.contains('u
   rbySave(id,{...RB_DRAFT,time:v}); chatFlow(ph,bubbleU(x.textContent,[]),rbyDone(id,false));}
 function rbySubmit(ph,f,where){const id=f.dataset.rbyf, upd=!!RTASK[id];
   rbySave(id,{every:f.dataset.ev,time:f.dataset.tm,qty:+f.dataset.qty,days:+f.dataset.days||30,fromToday:!!f.dataset.fromToday}); const t=RTASK[id], say=rbSay(id,t);
-  if(where==='atm'||where==='atd'){ptkCloseSheet(ph); if(where==='atd') atdRefresh(ph); return toast(ph,`Updated · ${RB_EVERY[t.every].t.toLowerCase()}, ${RB_TIME[t.time]}`);}
+  if(where==='atm'||where==='atd'||where==='receipt'){ptkCloseSheet(ph); if(where==='atd') atdRefresh(ph); return toast(ph,`Updated · ${RB_EVERY[t.every].t.toLowerCase()}, ${RB_TIME[t.time]}`);}
   if(where==='picker'){ptkCloseSheet(ph); closeFocus(); atmOpen(ph); return toast(ph,upd?'Rebuy reminder updated':'Rebuy reminder set');}
   if(where==='sheet'){const u=upd?`Change it to ${say}`:`${RB[id].q} · ${say}`; ptkCloseSheet(ph); return setTimeout(()=>ptkToChat(ph,bubbleU(u,upd?[]:rbAtts(id)),rbyDone(id,upd)),200);}
   f.classList.add('done'); f.querySelector('.ptk-go').textContent=`Set · ${RB_EVERY[t.every].s}, ${RB_TIME[t.time]}`;
   chatFlow(ph,bubbleU(upd?`Change it to ${say}`:say[0].toUpperCase()+say.slice(1),[]),rbyDone(id,upd));}
-function rbyEdit(ph,id){const t=RTASK[id];
-  if(PTK_MODE===2) return rbyOpenSheet(ph,id);
-  if(PTK_MODE===1) return chatFlow(ph,bubbleU('Change the schedule',[]),[{t:`Sure. I’m set to remind you ${RB_EVERY[t.every].t.toLowerCase()} at ${RB_TIME[t.time]}. How often instead?`,after:rbyQR(id,'every')}]);
-  chatFlow(ph,bubbleU('Change the schedule',[]),[{t:'Sure. Set a new schedule:',after:`<div class="ptk-card">${rbyForm(id,'card')}</div>`}]);}
+function rbyEdit(ph,id){return rbyOpenSheet(ph,id,'receipt');}
 /* what the reminder looks like when it fires */
 function rbyPreview(ph,id){const o=RB[id], t=RTASK[id], d=o.cur-o.now, milk=id==='milk';
   const fx=o.fmt||rpx, buy=`Buy again · ${fx(o.now*t.qty)}`;
   const product=milk?plist([row(o.img,o.name,fx(o.now),null,`<div class="why">${AIS}<em class="deal">Your usual pick</em> · 6 cartons</div>`).replace('<div class="prow2"',`<div class="prow2" data-rbbuy="${id}" role="button" tabindex="0" aria-label="Buy ${esc(o.name)} again"`)]):'';
-  const segs=[{tag:'Restock reminder',t:milk?'Milk restock time! 🥛 Don’t forget to top up — your usual milk is ready to buy again.':`Time to restock your <b>${o.b} ${o.n}</b>. You bought ${t.qty>1?t.qty+' '+(o.unit||'bottle')+'s':'it'} on ${o.last.getDate()} ${RB_MON[o.last.getMonth()]} for <code>${fx(o.cur)}</code>; the same seller has it at <code>${fx(o.now)}</code> today, ${fx(d)} less, and it’s in stock.`,
+  const segs=[{tag:'Repurchase reminder',t:milk?'Time to repurchase milk! 🥛 Don’t forget to top up — your usual milk is ready to buy again.':`Time to repurchase your <b>${o.b} ${o.n}</b>. You bought ${t.qty>1?t.qty+' '+(o.unit||'bottle')+'s':'it'} on ${o.last.getDate()} ${RB_MON[o.last.getMonth()]} for <code>${fx(o.cur)}</code>; the same seller has it at <code>${fx(o.now)}</code> today, ${fx(d)} less, and it’s in stock.`,
     rich:milk?`${product}<div class="ntf-buy" data-rbbuy="${id}">${buy}</div>`:'',
     after:`<div class="rby-acts" data-rbacts="${id}">${milk?'':`<span class="buy" data-rbbuy="${id}">${buy}</span>`}<span data-rbsn="${id}">Snooze 3 days</span><span data-rbed="${id}">Change schedule</span></div>`}];
   flowStop(); const body=chatBody(ph); body.insertAdjacentHTML('beforeend',`<div class="rby-sys">${rbDate(rbNext(id,t.every))} · ${RB_TIME[t.time]}</div>`);
@@ -3974,7 +4022,7 @@ function rbyClick(ph,on){let x;
   if(x=on('[data-rbq]')){const f=x.closest('.rby-f'); if(f.classList.contains('done')) return true; f.dataset.qty=Math.max(1,Math.min(9,+f.dataset.qty+ +x.dataset.rbq)); rbySync(f); return true;}
   if(x=on('[data-rbgo]')){const f=x.closest('.rby-f'); if(!f.classList.contains('done')) rbySubmit(ph,f,x.dataset.rbgo); return true;}
   if(x=on('.ptk-qr[data-rbqr] span')){rbyQuick(ph,x); return true;}
-  if(x=on('[data-rbed]')){const a=x.closest('.rby-acts'); if(a) a.classList.add('used'); rbyEdit(ph,x.dataset.rbed); return true;}
+  if(x=on('[data-rbed]')){rbyEdit(ph,x.dataset.rbed); return true;}
   if(x=on('[data-rbpv]')){rbyPreview(ph,x.dataset.rbpv); return true;}
   if(x=on('[data-rbbuy]')){x.closest('.rby-acts').classList.add('used'); toast(ph,`Opens Shopee checkout · ${RTASK[x.dataset.rbbuy].qty} item`); return true;}
   if(x=on('[data-rbsn]')){const id=x.dataset.rbsn, d=rbNext(id,RTASK[id].every); d.setDate(d.getDate()+3); RTASK[id].snoozed=`${rbDate(d)} · ${RB_TIME[RTASK[id].time]}`; x.closest('.rby-acts').classList.add('used');
@@ -3983,7 +4031,7 @@ function rbyClick(ph,on){let x;
 
 /* ============================================================
    Auto-Task management page (drawer → Auto-Task), per the Figma flow 2073-12499
-   · one card per task: price alerts from Track Price Drops / the Shopee card, restock reminders from scene 2
+   · one card per task: price alerts from Track Price Drops / the Shopee card, repurchase reminders from scene 2
    · the switch pauses a task; the title opens its edit sheet; Adjust with Migoo takes it to the chat
    · Add Auto-Task → Migoo home, the sentence in the box, Select Products on top
    ============================================================ */
@@ -4001,12 +4049,13 @@ function atmCard([g,o]){const t=o.task, id=o.ids[0], off=o.ids.every(k=>(o.kind=
   const item=o.kind==='rby'?(RB[id]||TK[id]):TK[id], hit=o.kind==='price'&&o.ids.length===1&&!t.any&&item.cur<=t.target;
   const name=o.ids.length>1?`${o.ids.length} products`:item.name;
   const variant=o.ids.length>1?o.ids.map(k=>(RB[k]||TK[k]).name).join(' · '):(item.v||'');
-  const kind=o.kind==='rby'?'Restock reminder':'Price tracker';
-  const state=t.done?'Completed':off?'Paused':o.kind==='rby'?'Reminder active':o.ids.length>1||t.any?`Watching ${o.ids.length>1?`${o.ids.length} products`:'price changes'}`:hit?`Your target price of ${fmS(id,t.target)} has been reached.`:'Watching price';
-  const stateTone=t.done?'':off?'paused':o.kind==='rby'?'active':hit?'':'watching';
+  const kind=o.kind==='rby'?'Repurchase reminder':'Price tracker';
+  const state=t.done?'Completed':off?'Paused':o.kind==='rby'?'':o.ids.length>1||t.any?`Watching ${o.ids.length>1?`${o.ids.length} products`:'price changes'}`:hit?`Your target price of ${fmS(id,t.target)} has been reached.`:'Watching price';
+  const stateTone=t.done?'':off?'paused':o.kind==='price'&&!hit?'watching':'';
   const notice=o.kind==='price'&&!off&&!t.done;
   const pausedCopy=off&&!t.done;
-  const stateText=pausedCopy?'Auto-task paused. Turn it back on whenever you need.':notice?(hit?`Your target price of ${fmS(id,t.target)} has been reached.`:o.ids.length>1?'We’re watching these products. We’ll alert you about price or stock changes.':t.any?'We’re watching this price. We’ll alert you on any drop or stockout.':`We’re watching this price. We’ll alert you at or below ${fmS(id,t.target)}.`):state;
+  const pausedText=o.kind==='price'?(o.ids.length===1&&!t.any?`Paused · Target ${fmS(id,t.target)}`:'Paused · Price & stock alerts'):'Auto-task paused. Turn it back on whenever you need.';
+  const stateText=pausedCopy?pausedText:notice?(hit?`Your target price of ${fmS(id,t.target)} has been reached.`:o.ids.length>1?'We’re watching these products. We’ll alert you about price or stock changes.':t.any?'We’re watching this price. We’ll alert you on any drop or stockout.':`We’re watching this price. We’ll alert you at or below ${fmS(id,t.target)}.`):state;
   const action=o.kind==='rby'?'Change reminder':hit?'Buy now':o.ids.length===1&&!t.any?'Adjust target':'Adjust with Migoo';
   const productAttr=o.ids.length===1?`data-atmpdp="${id}"`:`data-atmed="${g}"`;
   const current=o.kind==='price'&&o.ids.length===1?`<div class="atm-current">${fmc(id,item.cur)}</div>`:'';
@@ -4014,11 +4063,11 @@ function atmCard([g,o]){const t=o.task, id=o.ids[0], off=o.ids.every(k=>(o.kind=
     <div class="atm-head"><div class="atm-source"><small>${kind}</small></div><span class="sw${off?'':' on'}" data-atmsw="${g}"><i></i></span></div>
     <div class="atm-product" ${productAttr}><img src="${item.img}" alt=""><div class="atm-info"><div class="atm-name"><span>${esc(name)}</span></div><div class="atm-subrow"><div class="atm-variant">${esc(variant)}</div>${current}</div></div></div>
     ${atmFacts(o)}
-    <div class="atm-state${stateTone?' '+stateTone:''}${notice||pausedCopy?' notice':''}">${stateText}</div>
+    ${stateText?`<div class="atm-state${stateTone?' '+stateTone:''}${notice||pausedCopy?' notice':''}">${stateText}</div>`:''}
     <div class="atm-actions"><div class="adj${hit?' buy':''}" ${hit?'data-atmbuy':`data-atmadj="${g}"`}>${action}</div>${o.kind==='price'?`<div class="atm-more-wrap"><button type="button" class="atm-more" data-atmmore="${g}" aria-label="Task options">···</button><div class="atm-menu">${hit?`<button type="button" data-atmprice="${g}">Adjust price target</button>`:''}<button type="button" class="delete" data-atmdel="${g}">Delete task</button></div></div>`:''}</div></div>`;}
 function atmHTML(){const items=atmItems();
   return `<div class="sb"><span>9:41</span>${sbIcons()}</div><div class="tpd-h"><span class="bk" data-atmback="1">${ATM_I.back}</span><b>Auto-Task</b></div>
-    <div class="atm-body">${items.length?items.map(atmCard).join(''):'<div class="atm-emp"><b>No auto-tasks yet</b><span>Tell Migoo what to keep an eye on — a price, a restock, a sale.</span></div>'}
+    <div class="atm-body">${items.length?items.map(atmCard).join(''):'<div class="atm-emp"><b>No auto-tasks yet</b><span>Tell Migoo what to keep an eye on — a price, a repurchase, a sale.</span></div>'}
     </div>
     <div class="atm-f"><div class="ptk-go" data-atmadd="1"><span class="atm-plus"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v8M6 10h8"/></svg></span>Add Auto-Task</div></div>`;}
 function atmEl(ph){let el=ph.querySelector('.atmv'); if(!el){el=document.createElement('div'); el.className='atmv'; const hi=ph.querySelector(':scope>.homei'); if(hi) hi.before(el); else ph.appendChild(el);} return el;}
@@ -4027,24 +4076,24 @@ function atmClose(ph){ph.querySelector('.atmv')?.classList.remove('show');}
 function atmRefresh(){document.querySelectorAll('.atmv.show').forEach(el=>{const b=el.querySelector('.atm-body'), y=b?b.scrollTop:0; el.innerHTML=atmHTML(); const nb=el.querySelector('.atm-body'); if(nb) nb.scrollTop=y;});}
 const atmGroup=g=>atmItems().find(([k])=>k===g)[1];
 /* Adjust with Migoo: the chat opens with the items quoted and a sentence in the box; sending it starts the adjust turn */
-function atmAdjust(ph,g){const o=atmGroup(g), id=o.ids[0], prompt=atmPrompt(o);
+function atmAdjust(ph,g,opts={}){const o=atmGroup(g), id=o.ids[0], prompt=atmPrompt(o);
   const atts=o.ids.map(k=>{const it=itemOf(k);return {img:it.img,b:it.b||it.name,n:it.n||''};});
   atdClose(ph); atmClose(ph); tpdClose(ph); closeShopee(ph); openAssistant(ph);
-  openFocus(ph,{chat:true,bare:true,att:atts,v:prompt});                   /* the task's own prompt comes back into the box */
+  openFocus(ph,{chat:true,bare:true,editable:true,att:atts,v:opts.v??prompt});
   CF.adj={kind:o.kind,id,ids:o.ids,prompt};}
-function atmAdjustSend(){const ph=CF.ph, a=CF.adj, v=CF.v, atts=CF.att, edited=v.trim()!==a.prompt.trim(); closeFocus();
+function atmAdjustSend(){const ph=CF.ph, a=CF.adj, v=CF.v.trim(), atts=CF.att, edited=v!==a.prompt.trim(); if(!v) return; closeFocus(); CF.adj=null;
   if(a.kind==='rby'){const t=RTASK[a.id];
-    if(edited){const ev=/every 2 weeks/i.test(v)?'2w':/every 2 months/i.test(v)?'2m':/every month/i.test(v)?'1m':t.every, tm=(v.match(/\b(9:00 AM|12:00 PM|8:00 PM)\b/i)||[])[1], time=tm?Object.keys(RB_TIME).find(k=>RB_TIME[k].toLowerCase()===tm.toLowerCase()):t.time;
-      if(ev!==t.every||time!==t.time){rbySave(a.id,{every:ev,time,prompt:v}); return setTimeout(()=>chatFlow(ph,bubbleU(v,atts),rbyDone(a.id,true)),120);}}
-    return setTimeout(()=>rbyAsk(ph,a.id,bubbleU(v,atts),`Sure. I’m set to remind you ${RB_EVERY[t.every].t.toLowerCase()} at ${RB_TIME[t.time]}.`),120);}
+    if(edited){const ev=/every (?:2|two) weeks|(?:每)?两周|每2周|每14天/i.test(v)?'2w':/every (?:2|two) months|(?:每)?两个月|每2个月/i.test(v)?'2m':/every (?:1 |one )?month|monthly|每个?月/i.test(v)?'1m':/every (?:1 |one )?week|weekly|每[周週]|每星期|每7天/i.test(v)?'1w':t.every, tm=(v.match(/\b(9:00 AM|12:00 PM|8:00 PM)\b/i)||[])[1], time=tm?Object.keys(RB_TIME).find(k=>RB_TIME[k].toLowerCase()===tm.toLowerCase()):t.time;
+      if(ev!==t.every||time!==t.time){rbySave(a.id,{every:ev,time,prompt:v,fromToday:true}); return flowT.push(setTimeout(()=>chatFlow(ph,bubbleU(v,atts),rbyDone(a.id,true)),120));}}
+    return flowT.push(setTimeout(()=>rbyAsk(ph,a.id,bubbleU(v,atts),`Sure. I’m set to remind you ${RB_EVERY[t.every].t.toLowerCase()} at ${RB_TIME[t.time]}.`),120));}
   const o=TK[a.id], t=PTASK[a.id];
   if(edited&&a.ids.length===1){const ms=v.match(/(?:Rp|\$)\s?[\d.,]+/gi), nv=ms?ptkParse(a.id,ms[ms.length-1].replace(/^\$/,'')):0;
     if(nv>0&&nv<o.cur&&nv!==t.target){ptkSave(a.id,nv,false,t.src); PTASK[a.id].prompt=v;
-      return setTimeout(()=>chatFlow(ph,bubbleU(v,atts),[{tag:'Auto-task updated',t:`Updated. I’ll tell you at <code>${fmc(a.id,nv)}</code> or lower now. Still one task for this item.`,rich:ptkReceipt(a.id)}]),120);}}
-  setTimeout(()=>ptkAsk(ph,a.id,bubbleU(v,atts),`Sure. The ${o.b?ptkShort(a.id):o.name} is <code>${fmc(a.id,o.cur)}</code> now and I’m set to tell you ${t.any?'about any price or stock move':`at <code>${fmc(a.id,t.target)}</code>`}.`),120);}
-/* Add Auto-Task: Migoo home, the sentence in the box, Select Products on top */
-function atmAdd(ph){atmClose(ph); tpdClose(ph); closeShopee(ph); ph.querySelector('.chatv')?.classList.remove('show');
-  openFocus(ph,{cap:1,v:PTK_SCENE===2?'Help me set a rebuy reminder.':ATM_ADD_Q}); openSheet(ph,1);}
+      return flowT.push(setTimeout(()=>chatFlow(ph,bubbleU(v,atts),[{tag:'Auto-task updated',t:`Updated. I’ll tell you at <code>${fmc(a.id,nv)}</code> or lower now. Still one task for this item.`,rich:ptkReceipt(a.id)}]),120));}}
+  flowT.push(setTimeout(()=>ptkAsk(ph,a.id,bubbleU(v,atts),`Sure. The ${o.b?ptkShort(a.id):o.name} is <code>${fmc(a.id,o.cur)}</code> now and I’m set to tell you ${t.any?'about any price or stock move':`at <code>${fmc(a.id,t.target)}</code>`}.`),120));}
+/* Keep management underneath the picker and composer until the user sends the request. */
+function atmAdd(ph){tpdClose(ph); closeShopee(ph);
+  openFocus(ph,{cap:1,v:PTK_SCENE===2?'Help me set a rebuy reminder.':ATM_ADD_Q}); openSheet(ph,1,{from:'atm'});}
 /* Task tabs supply their own preset; comparisons keep the typed sentence. */
 const _sheetConfirm=sheetConfirm;
 sheetConfirm=function(ph){if(PK.intent) return chatTaskConfirm(ph); const v=CF.v, taskPicker=PK.cap===1; _sheetConfirm(ph); if(v&&!taskPicker){CF.v=v; cfRender();}};
@@ -4067,7 +4116,7 @@ function atmClick(ph,on){let x;
   if(on('[data-dfn="Auto-Task"]')){atmOpen(ph); return true;}
   if(on('[data-atmopen]')){atmOpen(ph); return true;}
   if(on('[data-atmback]')){atmClose(ph); return true;}
-  if(x=on('[data-atmsw]')){const o=atmGroup(x.dataset.atmsw), st=o.kind==='rby'?RTASK:PTASK, off=!o.ids.every(k=>st[k].off); o.ids.forEach(k=>st[k].off=off); atmRefresh(); toast(ph,off?'Auto-task paused':'Auto-task resumed'); return true;}
+  if(x=on('[data-atmsw]')){const o=atmGroup(x.dataset.atmsw), st=o.kind==='rby'?RTASK:PTASK, off=!o.ids.every(k=>st[k].off); o.ids.forEach(k=>{st[k].off=off; refreshTaskReceipts(k,o.kind);}); atmRefresh(); toast(ph,off?'Auto-task paused':'Auto-task resumed'); return true;}
   if(x=on('[data-atmmore]')){const m=x.parentElement.querySelector('.atm-menu'), was=m.classList.contains('open'); ph.querySelectorAll('.atm-menu.open').forEach(y=>y.classList.remove('open')); if(!was) m.classList.add('open'); return true;}
   if(x=on('[data-atmprice]')){const g=x.dataset.atmprice, o=atmGroup(g); x.closest('.atm-menu').classList.remove('open'); if(o.ids.length===1) return ptkOpenSheet(ph,o.ids[0],'atm'); return atmAdjust(ph,g);}
   if(x=on('[data-atmdel]')){const o=atmGroup(x.dataset.atmdel), st=o.kind==='rby'?RTASK:PTASK; o.ids.forEach(k=>delete st[k]); tpdRefresh(); atmRefresh(); toast(ph,'Auto-task deleted'); return true;}
@@ -4084,7 +4133,7 @@ function atmClick(ph,on){let x;
 const itemOf=k=>RB[k]||TK[k];
 const itemShort=k=>{const o=itemOf(k); return o.b?`${o.b} ${(o.n||'').split(' ')[0]}`.trim():o.name;};
 function atmName(o){const id=o.ids[0];
-  if(o.kind==='rby') return `${RB[id].b} Restock`;
+  if(o.kind==='rby') return `${RB[id].b} Repurchase`;
   return o.ids.length>1?'Price & Stock Watch':`${itemShort(id)} Price Watch`;}
 function atmDesc(o){const id=o.ids[0], t=o.task;
   if(o.kind==='rby') return `Remind me to rebuy the ${RB[id].b.toLowerCase()} ${RB_EVERY[t.every].t.toLowerCase()}, at ${RB_TIME[t.time]}, and check the price before I buy.`;
@@ -4129,7 +4178,7 @@ const PDP_I={x:`<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width=
 const taskOfItem=k=>atmItems().find(([g,o])=>o.ids.includes(k));
 function apdpOpen(ph,k){const o=itemOf(k), isRb=!!RB[k], ccyOf=v=>isRb?(o.fmt||rpx)(v):fmc(k,v), price=isRb?o.now:o.cur, was=isRb?o.cur:o.was, tg=taskOfItem(k);
   const off=was&&was>price?Math.round((1-price/was)*100):0, shopee=isRb||ccy(k)==='Rp', store=shopee?'Shopee':(o.store||Object.values(PKI).find(x=>x.img===o.img)?.st||'Everyday Deals');
-  const vr=(o.v||'').split(' · '), why=tg?(tg[1].kind==='rby'?`Restock reminder · ${RB_EVERY[tg[1].task.every].t.toLowerCase()}, next ${rbWhen(tg[1].ids[0],tg[1].task.every,tg[1].task.time)}`:atmDesc(tg[1])):'';
+  const vr=(o.v||'').split(' · '), why=tg?(tg[1].kind==='rby'?`Repurchase reminder · ${RB_EVERY[tg[1].task.every].t.toLowerCase()}, next ${rbWhen(tg[1].ids[0],tg[1].task.every,tg[1].task.time)}`:atmDesc(tg[1])):'';
   ph.querySelectorAll('.apdp').forEach(x=>x.remove());
   const el=document.createElement('div'); el.className='apdp'; el.dataset.id=k;
   el.innerHTML=`<div class="ap-im"><img src="${o.img}" alt=""><div class="sb"><span>9:41</span>${sbIcons()}</div><span class="ap-x" data-apdpx="1">${PDP_I.x}</span>
@@ -4191,7 +4240,7 @@ function askTK(q){const id='q-'+(q.b+' '+q.n).toLowerCase().replace(/[^a-z0-9]+/
   if(!TK[id]) TK[id]={img:q.img,name:`${q.b} ${q.n}`.trim(),b:q.ccy==='Rp'?q.b:undefined,n:q.ccy==='Rp'?q.n:undefined,v:q.pid&&P[q.pid]?'':'',cur:q.pr,ccy:q.ccy==='Rp'?'Rp':undefined,why:'quoted from the chat'}; return id;}
 function askTask(q,want){const id=askTK(q);
   const any=!want||want>=q.pr; PTASK[id]={...PTASK[id],target:any?q.pr:want,any,src:'migoo',t:++PTT}; tpdRefresh(); return id;}
-const askKind=v=>{const low=v.toLowerCase(); return /remind|rebuy|restock|every (week|month)/.test(low)?'rby':/tell me|alert|notify|track|watch|drops?|below|price drop|let me know/.test(low)?'price':/good price|worth|deal|cheap/.test(low)?'good':null;};
+const askKind=v=>{const low=v.toLowerCase(); return /remind|rebuy|repurchase|every (week|month)/.test(low)?'rby':/tell me|alert|notify|track|watch|drops?|below|price drop|let me know/.test(low)?'price':/good price|worth|deal|cheap/.test(low)?'good':null;};
 function askSend(){if(ASK_T&&ASK_FULL) CF.v=ASK_FULL;   /* send while it is still typing: send the whole sample */
   const ph=CF.ph, q=CF.quote, v=CF.v.trim(), atts=CF.att, kind=askKind(v); askStop();
   if(!kind) return _askPrevSend();
@@ -4252,7 +4301,7 @@ function rbyMilkDemo(){const id='milk'; if(!RTASK[id]) rbySave(id,{every:'1w',ti
 function rbyNotify(ph){const id=rbyMilkDemo(), o=RB[id];
   ph.querySelectorAll('.ntf').forEach(x=>x.remove());
   const el=document.createElement('div'); el.className='ntf'; el.dataset.rbyntf=id;
-  el.innerHTML=`<span class="ic">${NTF_MIGOO}</span><div class="tx"><div class="hd"><b>Milk restock time! 🥛</b><span>now</span></div>
+  el.innerHTML=`<span class="ic">${NTF_MIGOO}</span><div class="tx"><div class="hd"><b>Time to repurchase milk! 🥛</b><span>now</span></div>
     <div class="bd"><span>Don’t forget your milk — tap to stock up now!</span><img src="${o.img}" alt=""></div></div>`;
   ph.appendChild(el); requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('on')));
   clearTimeout(ntfFire._t); ntfFire._t=setTimeout(()=>ntfHide(ph),9000);}
@@ -4309,7 +4358,7 @@ function ntfClick(ph,on){let x;
 /* ============================================================
    Scene 2 · after a purchase: Migoo asks in Assistant whether to set a rebuy reminder
    · a consumable bought through the checkout (in scene 2) → "order placed" + a follow-up question
-   · tapping it enters the restock auto-task setup, in the current card style (chat / sheet / card)
+   · tapping it enters the repurchase auto-task setup, in the current card style (chat / sheet / card)
    · already reminding? the order just moves the next reminder, no question
    ============================================================ */
 TK.sunscreen={img:RB.sunscreen.img,name:RB.sunscreen.name,v:RB.sunscreen.v,cur:RB.sunscreen.now,was:RB.sunscreen.cur,ccy:'Rp',consumable:true,why:'bought on Shopee'};
@@ -4324,11 +4373,11 @@ function ckoAfter(ph,id){const o=TK[id]; apdpClose(ph); closePDP(ph);   /* back 
   if(!(PTK_SCENE===2&&o&&o.consumable)) return; const r=RB[id];
   if(r){r.last=new Date(RB_TODAY); r.cur=o.cur;}                       /* this order is the new "last bought" */
   apdpClose(ph); closePDP(ph);
-  const t=RTASK[id], segs=t?[{t:`Done — your ${r.b.toLowerCase()} arrives 31 Oct – 2 Nov. Your restock reminder stays ${RB_EVERY[t.every].t.toLowerCase()}; the next one moves to <code>${rbWhen(id,t.every,t.time)}</code>.`,rich:rbyReceipt(id)}]
+  const t=RTASK[id], segs=t?[{t:`Done — your ${r.b.toLowerCase()} arrives 31 Oct – 2 Nov. Your repurchase reminder stays ${RB_EVERY[t.every].t.toLowerCase()}; the next one moves to <code>${rbWhen(id,t.every,t.time)}</code>.`,rich:rbyReceipt(id)}]
     :[{t:`Done — your ${r?r.b.toLowerCase():o.name} arrives 31 Oct – 2 Nov. ${r&&r.life||''} Want me to remind you before it runs out?`,
        after:`<div class="ptk-qr" data-rbfu="${id}"><span data-v="go">Remind me to rebuy it in a month</span><span data-v="no">No thanks</span></div>`}];
   if(ph.querySelector('.chatv.show')&&!ph.querySelector('.tpdv.show,.atmv.show')) chatFlow(ph,'',segs); else ptkToChat(ph,'',segs);}
-/* the follow-up → the restock setup, in the card style picked on the right */
+/* the follow-up → the repurchase setup, in the card style picked on the right */
 function rbyFollow(ph,id,text){const say=bubbleU(text,[]);
   if(PTK_MODE===2) return rbyOpenSheet(ph,id,'sheet');
   if(PTK_MODE===1) return chatFlow(ph,say,[{t:`Sure. You bought it today. ${RB[id].life||''} How often should I remind you?`,after:rbyQR(id,'every')}]);
@@ -4377,7 +4426,7 @@ function rbyAsk(ph,id,userHTML,lead){
   const t=`${lead} Set how often and when below.`; chatFlow(ph,userHTML,[{t}]); flowT.push(setTimeout(()=>rbyOpenSheet(ph,id,'sheet'),flowMs(t)));}
 
 mount();
-if(new URLSearchParams(location.search).get('go')) setTimeout(PTK_SCENE===2?ptkGoAutoTasks:ptkGoCard,700);
+if(PTK_SCENE===2||new URLSearchParams(location.search).get('go')) setTimeout(PTK_SCENE===2?ptkGoAssistant:ptkGoCard,700);
 </script>
 </body>
 </html>
